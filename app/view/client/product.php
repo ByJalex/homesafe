@@ -75,7 +75,7 @@ template::header('Home Safe', 1);
     </div>
 </div>
 
-<div class="site-section block-3 site-blocks-2">
+<div class="site-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-7 site-section-heading text-center pt-4">

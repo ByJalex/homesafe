@@ -31,7 +31,8 @@ class template
             <link rel="stylesheet" href="../../../public/css/aos.css">
             <link rel="stylesheet" href="../../../public/css/style.css">
             <link rel="stylesheet" href="../../../public/css/stylev2.css" type="text/css">
-
+            <link rel="stylesheet" href="../../../public/css/font-awesome-4.7/css/font-awesome.min.css" type="text/css">
+            <link rel="stylesheet" href="../../../public/css/font-awesome-5/css/fontawesome-all.min.css" type="text/css">
 
         </head>
 

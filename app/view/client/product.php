@@ -9,16 +9,42 @@ template::header('Home Safe', 1);
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="item-entry">
-                    <a href="#" class="product-item md-height bg-gray d-block">
-                        <img src="../../../public/images/prod_2.png" alt="Image" class="img-fluid">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner item-entry">
+                        <div class="carousel-item active">
+                            <a href="#" class="product-item md-height bg-gray d-block">
+                                <img src="../../../public/images/prod_2.png" alt="Image" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="#" class="product-item md-height bg-gray d-block">
+                                <img src="../../../public/images/prod_2.png" alt="Image" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="#" class="product-item md-height bg-gray d-block">
+                                <img src="../../../public/images/prod_2.png" alt="Image" class="img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span aria-hidden="true"><i class="fas fa-chevron-left text-black"></i></span>
+                        <span class="sr-only text-dark">Previous</span>
                     </a>
-
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <spanaria-hidden="true"><i class="fas fa-chevron-right text-black"></i></span>
+                        <span class="sr-only text-dark">Next</span>
+                    </a>
                 </div>
-
             </div>
             <div class="col-md-6">
                 <h2 class="text-black">Nombre del producto</h2>
+                
                 <div class="star-rating">
                     <span class="icon-star2 text-warning"></span>
                     <span class="icon-star2 text-warning"></span>

@@ -1,7 +1,7 @@
 <?php
 
 define ("servidor","localhost");
-define ("usuario","root");
+define ("usuario","postgres");
 define ("password","password");
 define ("bd","home_safe");
 

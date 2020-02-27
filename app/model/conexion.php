@@ -1,8 +1,8 @@
 <?php
-require_once('../global/config.php');
+require_once('../../global/config.php');
 class conexion
 {
-
+    //Variable para rotornar la conexion
     private static $con;
 
     public static function conectar()
@@ -19,4 +19,3 @@ class conexion
         }
     }
 }
-

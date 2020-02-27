@@ -43,9 +43,9 @@ class template
                 <div class="site-navbar bg-white py-2">
                     <div class="search-wrap position-fixed">
                         <div class="container">
-                            <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-                            <form action="#" method="post">
-                                <input type="text" class="form-control" placeholder="Busque por palabra clave">
+                            <a href="" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                            <form>
+                                <input id="searchProd" type="text" class="form-control" placeholder="Busque por palabra clave">
                             </form>
                         </div>
                     </div>
@@ -70,7 +70,7 @@ class template
                                                 <li><a href="#">Marca 3</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="category.php">Categorias</a></li>
+                                        <li><a href="categories.php">Categorias</a></li>
                                         <?php if (!isset($_SESSION['usuario'])) { ?>
                                             <li class="<?php if ($active === 4) {echo "active";}?>"><a href="login.php">Iniciar sesión</a></li>
                                         <?php } else { ?>

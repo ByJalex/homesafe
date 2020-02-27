@@ -11,7 +11,7 @@ template::header('Home Safe', 1);
         <div class="site-block-cover-content">
           <h2 class="sub-title">#ENTERATE DE NUESTROS PRODUCTOS</h2>
           <h1>MAS RECIENTES</h1>
-          <p><a href="#" class="btn btn-black rounded-0">Ver ahora</a></p>
+          <p><a href="news.php" class="btn btn-black rounded-0">Ver ahora</a></p>
         </div>
       </div>
       <div class="col-md-6 order-1 align-self-end">

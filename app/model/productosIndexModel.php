@@ -14,4 +14,6 @@ class productos{
         $datos = queryManager::registros('SELECT * FROM categoria_p');
         return $datos;
     }
+
+    
 }

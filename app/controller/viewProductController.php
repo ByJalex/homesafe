@@ -36,6 +36,7 @@ $asd = product::viewProduct($_GET['id_prod']);
     <div class="col-md-6">
         <h2 class="text-black"><?php echo $asd['nombre_p'] ?></h2>
         <div class="star-rating">
+            
             <?php if ($asd['ranking'] <= 1) {
             ?>
                 <span class="icon-star2 text-warning"></span>
@@ -95,7 +96,15 @@ $asd = product::viewProduct($_GET['id_prod']);
             </div>
 
         </div>
-        <p><a href="cart.html" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a></p>
+        <p>
+            <?php
+            $redireccion = '';
+            if(!isset($_SESSION['login'])){
+                $redireccion = 'login.php';
+            }
+            ?>
+            <a type="button" href="<?php echo $redireccion?>" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Add To Cart</a>
+        </p>
 
     </div>
 </div>

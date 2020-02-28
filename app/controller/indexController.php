@@ -13,7 +13,7 @@ class indexController
             foreach ($list as $prod) {
             ?>
                 <div class="col-lg-4 col-md-6 item-entry mb-4">
-                    <a href="product.php?id_prod=<?php echo $prod['id_producto'] ?>" class="product-item md-height bg-gray d-block">
+                    <a href="product?id_prod=<?php echo $prod['id_producto'] ?>" class="product-item md-height bg-gray d-block">
                         <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
                     </a>
                     <h2 class="item-title"><a href="product.php?id_prod=<?php echo $prod['id_producto'] ?>"><?php echo $prod['Producto'] ?></a></h2>

@@ -25,10 +25,12 @@ template::header('Home Safe', 1);
   <div class="container">
     <div class="row">
       <div class="title-section mb-5 col-12">
-        <h2 class="text-uppercase">Productos populares</h2>
+        <h2 class="text-uppercase">Productos mas comprados</h2>
       </div>
     </div>
-    <?php require_once('../../controller/indexController.php');?>
+    <?php require_once('../../controller/indexController.php');
+    indexController::popularProducts();
+    ?>
   </div>
 </div>
 
@@ -43,41 +45,9 @@ template::header('Home Safe', 1);
       <div class="col-md-12 block-3">
         <div class="nonloop-block-3 owl-carousel">
 
-          <div class="item">
-            <div class="item-entry">
-              <a href="#" class="product-item md-height bg-gray d-block">
-                <img src="../../../public/images/model_1.png" alt="Image" class="img-fluid">
-              </a>
-              <h2 class="item-title"><a href="#">Nombre de categoria</a></h2>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-entry">
-              <a href="#" class="product-item md-height bg-gray d-block">
-                <img src="../../../public/images/model_1.png" alt="Image" class="img-fluid">
-              </a>
-              <h2 class="item-title"><a href="#">Nombre de categoria</a></h2>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-entry">
-              <a href="#" class="product-item md-height bg-gray d-block">
-                <img src="../../../public/images/model_1.png" alt="Image" class="img-fluid">
-              </a>
-              <h2 class="item-title"><a href="#">Nombre de categoria</a></h2>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-entry">
-              <a href="#" class="product-item md-height bg-gray d-block">
-                <img src="../../../public/images/model_1.png" alt="Image" class="img-fluid">
-              </a>
-              <h2 class="item-title"><a href="#">Nombre de categoria</a></h2>
-            </div>
-          </div>
+          <?php
+          indexController::showCategory();
+          ?>
 
         </div>
       </div>

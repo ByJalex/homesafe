@@ -1,6 +1,7 @@
 <?php
 require_once('../../model/productModel.php');
 $asd = product::viewProduct($_GET['id_prod']);
+#print_r($asd);
 ?>
 <div class="row">
     <div class="col-md-6">
@@ -33,18 +34,55 @@ $asd = product::viewProduct($_GET['id_prod']);
         </div>
     </div>
     <div class="col-md-6">
-        <h2 class="text-black"><?php echo $asd['nombre_p']?></h2>
+        <h2 class="text-black"><?php echo $asd['nombre_p'] ?></h2>
         <div class="star-rating">
-            <span class="icon-star2 text-warning"></span>
-            <span class="icon-star2 text-warning"></span>
-            <span class="icon-star2 text-warning"></span>
-            <span class="icon-star2 text-warning"></span>
-            <span class="icon-star2 text-warning"></span>
+            <?php if ($asd['ranking'] <= 1) {
+            ?>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+            <?php
+            } else if ($asd['ranking'] <= 2) {
+            ?>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+            <?php
+            } else if ($asd['ranking'] <= 3) {
+            ?>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-gray"></span>
+                <span class="icon-star2 text-gray"></span>
+            <?php
+            } else if ($asd['ranking'] <= 4) {
+            ?>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-gray"></span>
+            <?php
+            } else if ($asd['ranking'] <= 5) {
+            ?>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+                <span class="icon-star2 text-warning"></span>
+            <?php
+            }
+            ?>
             <span><a href="" class="p-3 text-black colora">Reseñas</a></span>
         </div>
-        <p><?php echo $asd['descripcion_p']?></p>
+        <p><?php echo $asd['descripcion_p'] ?></p>
         <!--<p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>-->
-        <p><strong class="text-primary h4">$<?php echo $asd['precio_p']?></strong></p>
+        <p><strong class="text-primary h4">$<?php echo $asd['precio_p'] ?></strong></p>
         <div class="mb-5">
             <div class="input-group mb-3" style="max-width: 120px;">
                 <div class="input-group-prepend">

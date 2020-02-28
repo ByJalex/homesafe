@@ -2,9 +2,10 @@
 require_once('../../templates/template.php');
 template::header('Home Safe', 0);
 ?>
+
+<link rel="stylesheet" href="../../../public/css/stripe.css">
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br>
-<link rel="stylesheet" href="../../../public/css/stripe.css">
 <div class="site-section">
     <div class="container">
         <div class="row">
@@ -108,30 +109,38 @@ template::header('Home Safe', 0);
                             </table>
 
                             <div class="border p-3 mb-3">
-                                <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Pagar con Stripe</a></h3>
-
+                                <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Pagar con tarjeta</a></h3>
                                 <div class="collapse" id="collapsebank">
                                     <div class="py-2">
-                                        <p class="mb-0">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                        <p class="mb-0">Ingrese su tarjeta de credito o debito</p>
+                                        <form action="pay/process_payment.php" method="post" id="payment-form">
+                                            <div class="form-row">
+                                                <label for="card-element">
+                                                    <p class="mb-0"></p>
+                                                </label>
+                                                <div id="card-element" class="form-control input-lg">
+                                                    <!-- A Stripe Element will be inserted here. -->
+                                                </div>
 
+                                                <!-- Used to display form errors. -->
+                                                <div id="card-errors" role="alert"></div>
+                                            </div>
+                                            <div class="p-1">
+                                                <button class="btn btn-primary btn-lg btn-block">Realizar pago</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-lg btn-block" onclick="window.location='thankyou.html'">Place Order</button>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <!-- </form> -->
     </div>
 </div>
-
+<script src="https://js.stripe.com/v3/"></script>
+<script src="../../../public/js/stripe.js"></script>
 <?php
 require_once('../../templates/template.php');
 template::footer();

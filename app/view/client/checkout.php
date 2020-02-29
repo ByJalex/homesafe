@@ -15,7 +15,7 @@ template::header('Home Safe', 0);
                     <div class="form-group">
                         <label for="c_country" class="text-black">Pais <span class="text-danger">*</span></label>
                         <select id="c_country" class="form-control">
-                            <option value="1">Select a country</option>
+                            <option value="1">Seleccionar un pais</option>
                             <option value="2">bangladesh</option>
                             <option value="3">Algeria</option>
                             <option value="4">Afghanistan</option>
@@ -74,7 +74,7 @@ template::header('Home Safe', 0);
                                     <button class="btn btn-primary btn-sm px-4" type="button" id="button-addon2">Aplicar</button>
                                 </div>
                             </div>
-
+                            <label for="c_code" class="text-danger mb-3 d-none">Cupon no valido.</label>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,6 @@ template::header('Home Safe', 0);
                                                 <div id="card-element" class="form-control input-lg">
                                                     <!-- A Stripe Element will be inserted here. -->
                                                 </div>
-
                                                 <!-- Used to display form errors. -->
                                                 <div id="card-errors" role="alert"></div>
                                             </div>

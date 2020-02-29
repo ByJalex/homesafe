@@ -9,16 +9,20 @@ template::header('Home Safe', 4);
             <img height="auto" class="img-fluid" src="https://www.crucial.com.au/blog/wp-content/uploads/2016/10/capture1.jpg" alt="">
         </div>
         <div class="col-lg-6 col-sm-12">
-            <h2 class="text-black">Iniciar sesión</h2>
-            <p class="">Bienvenido de nuevo. Por favor ingrese a su cuenta.</p>
+            <h2 class="text-black">Registrate en HomeSafe</h2>
+            <p class="">Create una cuenta para comenzar a comprar.</p>
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Correo</label>
-                    <input required type="text" class="form-control" id="usuario" aria-describedby="emailHelp">
+                    <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Usuario</label>
+                    <input required type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Clave</label>
-                    <input required type="password" class="form-control" id="clave" placeholder="">
+                    <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="">
                 </div>
                 <div class="form-group form-check">
                     <div class="row">
@@ -31,13 +35,14 @@ template::header('Home Safe', 4);
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-black rounded-0" id="login">Iniciar sesión</button>
-                <a href="sign_up.php" type="submit" class="btn reg rounded-0">Registrarse</a>
+                <button  type="submit" class="btn btn-black rounded-0">Registrarse</button>
+                <a href="login.php" type="submit" class="btn reg rounded-0">Iniciar sesión</a>
             </form>
         </div>
         
     </div>
 </div>
+
 <!--Importar el footer-->
 <?php
 require_once('../../templates/template.php');

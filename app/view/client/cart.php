@@ -141,7 +141,7 @@ template::header('Home Safe', 0);
 
                         <div class="row">
                             <div class="col-md-12">
-                                <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout'">Proceder a pagar</button>
+                                <button class="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.php'">Proceder a pagar</button>
                             </div>
                         </div>
                     </div>

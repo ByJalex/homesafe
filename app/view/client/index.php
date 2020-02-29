@@ -28,27 +28,150 @@ template::header('Home Safe', 1);
         <h2 class="text-uppercase">Productos mas comprados</h2>
       </div>
     </div>
-    <?php require_once('../../controller/indexController.php');
-    indexController::popularProducts();
-    ?>
-  </div>
-</div>
 
-<div class="site-section">
-  <div class="container">
     <div class="row">
-      <div class="title-section text-center mb-5 col-12">
-        <h2 class="text-uppercase">Categorias</h2>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
       </div>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 item-entry mb-4">
+        <a href="product.php?id_prod=1" class="product-item md-height bg-gray d-block">
+          <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+        </a>
+        <h2 class="item-title"><a href="product.php?id_prod=1">Titulo del producto</a></h2>
+        <strong class="item-price">$50.00</strong>
+        <div class="star-rating">
+          <span class="icon-star2 text-warning"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+          <span class="icon-star2 text-gray"></span>
+        </div>
+      </div>
+
     </div>
-    <div class="row">
-      <div class="col-md-12 block-3">
-        <div class="nonloop-block-3 owl-carousel">
 
-          <?php
-          indexController::showCategory();
-          ?>
+  </div>
 
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="title-section text-center mb-5 col-12">
+          <h2 class="text-uppercase">Categorias</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 block-3">
+          <div class="nonloop-block-3 owl-carousel">
+
+            <div class="item">
+              <div class="item-entry">
+                <a href="#" class="product-item md-height bg-gray d-block">
+                  <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
+                </a>
+                <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-entry">
+                <a href="#" class="product-item md-height bg-gray d-block">
+                  <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
+                </a>
+                <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-entry">
+                <a href="#" class="product-item md-height bg-gray d-block">
+                  <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
+                </a>
+                <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-entry">
+                <a href="#" class="product-item md-height bg-gray d-block">
+                  <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
+                </a>
+                <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

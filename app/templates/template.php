@@ -60,37 +60,24 @@ class template
                             <div class="main-nav d-none d-lg-block">
                                 <nav class="site-navigation text-right text-md-center" role="navigation">
                                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li class="<?php if ($active === 1) {echo "active";}?>"><a href="index">Explorar</a></li>
+                                        <li class="<?php if ($active === 1) {echo "active";}?>"><a href="index.php">Explorar</a></li>
                                         <li class="has-children">
-                                            <a href="index">Marcas</a>
+                                            <a href="#">Marcas</a>
                                             <ul class="dropdown">
                                                 <!--Peticion a la base de datos, marcas mas usadas...-->
-                                                <li><a href="#">Marca 1</a></li>
-                                                <li><a href="#">Marca 2</a></li>
-                                                <li><a href="#">Marca 3</a></li>
+                                                <li><a href="#">Nombre de la marca</a></li>
+                                                <li><a href="#">Nombre de la marca</a></li>
+                                                <li><a href="#">Nombre de la marca</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="categories">Categorias</a></li>
-                                        <?php if (!isset($_SESSION['usuario'])) { ?>
-                                            <li class="<?php if ($active === 4) {echo "active";}?>"><a href="login">Iniciar sesión</a></li>
-                                        <?php } else { ?>
-                                            <li class="has-children">
-                                                <a href="index">Mi cuenta</a>
-                                                <ul class="dropdown">
-                                                    <!--Peticion a la base de datos, marcas mas usadas...-->
-                                                    <li><a href="#">josue_ayala27</a></li>
-                                                    <li><a href="#">Historial de compras</a></li>
-                                                    <li><a href="#">Configuración</a></li>
-                                                    <li><a href="#">Cerrar sesión</a></li>
-                                                </ul>
-                                            </li>
-                                        <?php } ?>
+                                        <li><a href="categories.php">Categorias</a></li>
+                                        <li class="<?php if ($active === 4) {echo "active";}?>"><a href="login.php">Iniciar sesión</a></li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="icons">
                                 <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-                                <a href="cart" class="icons-btn d-inline-block bag">
+                                <a href="cart.php" class="icons-btn d-inline-block bag">
                                     <span class="icon-shopping-bag"></span>
                                     <!--Icono del carrito de compras-->
                                     <!--<span class="number">4</span>-->

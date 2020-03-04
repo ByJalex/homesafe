@@ -1,6 +1,6 @@
 <?php
 require_once('../../templates/template.php');
-template::header('Home Safe', 4);
+template::header('Iniciar sesión', 4);
 ?>
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <div class="container">

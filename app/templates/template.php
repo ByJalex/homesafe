@@ -70,7 +70,7 @@ class template
                                                 <li><a href="#">Nombre de la marca</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="categories.php">Categorias</a></li>
+                                        <li class="<?php if ($active === 3) {echo "active";}?>"><a href="categories.php">Categorias</a></li>
                                         <li class="<?php if ($active === 4) {echo "active";}?>"><a href="login.php">Iniciar sesión</a></li>
                                     </ul>
                                 </nav>
@@ -114,6 +114,7 @@ class template
                                 <a href="" class="mb-1 p-2 font-weight-light colora">Privacidad</a>
                                 <a href="terms_of_sale.php" class="mb-1 p-2 font-weight-light colora">Condiciones de venta</a>
                                 <a href="" class="mb-1 p-2 font-weight-light colora">Condiciones de servicio</a>
+                                <a href="contact.php" class="mb-1 p-2 font-weight-light colora">Ayuda</a>
                             </form>
                         </div>
                     </nav>

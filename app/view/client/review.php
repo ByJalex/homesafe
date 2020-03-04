@@ -2,6 +2,17 @@
 require_once('../../templates/template.php');
 template::header('Home Safe', 0);
 ?>
+<style>
+    .satu {
+        max-width: auto;
+        height: 43vh;
+    }
+
+    .dua {
+        height: 100%;
+        overflow: auto;
+    }
+</style>
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br>
 
@@ -40,33 +51,64 @@ template::header('Home Safe', 0);
             </div>
             <div class="col-md-6">
                 <h2 class="text-black">Nombre del producto</h2>
-                <div class="star-rating">
-                        <span class="icon-star2 text-warning"></span>
-                        <span class="icon-star2 text-gray"></span>
-                        <span class="icon-star2 text-gray"></span>
-                        <span class="icon-star2 text-gray"></span>
-                        <span class="icon-star2 text-gray"></span>
-                    <span><a href="review.php?id_prod=<?php echo $_GET['id_prod']?>" class="p-3 text-black colora">Reseñas</a></span>
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum fugiat fuga sit soluta. Expedita possimus illum debitis repellendus, voluptas, quam facere commodi recusandae laborum reiciendis eum labore dignissimos id! Eveniet?</p>
-                <!--<p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>-->
-                <p><strong class="text-primary h4">$50.00</strong></p>
-                <div class="mb-5">
-                    <div class="input-group mb-3" style="max-width: 120px;">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                <div class="star-rating">
+                    <span><a href="" class="colora px-2">$90.00</a></span>
+                    <span class="icon-star2 text-warning"></span>
+                    <span class="icon-star2 text-gray"></span>
+                    <span class="icon-star2 text-gray"></span>
+                    <span class="icon-star2 text-gray"></span>
+                    <span class="icon-star2 text-gray"></span>
+                    <span><a href="product.php?id_prod=<?php echo $_GET['id_prod']?>" class="p-3 text-black colora">Descripción</a></span>
+                </div>
+                <p class="text-black">Comentarios</p>
+                <div class="satu">
+                    <div class="dua">
+                        <div class="comment">
+                            <div class="star-rating">
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-light"></span>
+                                <span class="icon-star2 text-light"></span>
+                                <span class="icon-star2 text-light"></span>
+                                <span class="icon-star2 text-light"></span>
+                            </div>
+                            <a href="" class="colora">josue_ayala27 - </a><span>01/01/2020</span>
+                            <p>Muy util esta vaina loca</p>
+                            <hr>
                         </div>
-                        <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                        <div class="comment">
+                            <div class="star-rating">
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-light"></span>
+                            </div>
+                            <a href="" class="colora">josue_ayala27 - </a><span>01/01/2020</span>
+                            <p>Muy util esta vaina loca</p>
+                            <hr>
+                        </div>
+                        <div class="comment">
+                            <div class="star-rating">
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-gray"></span>
+                                <span class="icon-star2 text-light"></span>
+                                <span class="icon-star2 text-light"></span>
+                                <span class="icon-star2 text-light"></span>
+                            </div>
+                            <a href="" class="colora">josue_ayala27 - </a><span>01/01/2020</span>
+                            <p>Muy util esta vaina loca</p>
+                            <hr>
                         </div>
                     </div>
-
                 </div>
-                <p>
-                    <a type="button" href="#" class="buy-now btn btn-sm height-auto px-4 py-3 btn-primary">Añadir al carro</a>
-                </p>
-
             </div>
         </div>
     </div>

@@ -1,2 +1,3 @@
 HomeSafe is an online store of technological products for your home...
+MEMO ES HERMOSO
 Root folder: app / view / client / index

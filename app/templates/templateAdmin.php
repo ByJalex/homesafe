@@ -38,7 +38,7 @@ class Page
               <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
-                <div class="sidebar-brand-text mx-3">HOME SAFE</div>
+                <div class="sidebar-brand-text mx-3"><img src="../../../public/images/logo.png" alt="google" width="200px" class="img-fluid"></div>
               </a>
         
               <!-- Divider -->

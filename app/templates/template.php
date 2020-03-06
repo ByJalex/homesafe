@@ -100,16 +100,17 @@ class template
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Icono1</a>
+                                    <a class="nav-link" href="https://www.facebook.com/Home-safe-101232988135757/?modal=admin_todo_tour"> <i class="fab fa-facebook-square"></i></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Icono1</a>
+                                    <a class="nav-link" href="https://www.instagram.com/homesafe.sv/?hl=es-la"><i class="fab fa-instagram"></i></i></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Icono1</a>
+                                    <a class="nav-link" href="#"><i class="fas fa-envelope"></i></a>
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0 ">
+                                <a href="aboutus.php" class="mb-1 p-2 font-weight-light colora">Sobre nostros </a>
                                 <a href="" class="mb-1 p-2 font-weight-light colora">El Salvador</a>
                                 <a href="" class="mb-1 p-2 font-weight-light colora">Privacidad</a>
                                 <a href="terms_of_sale.php" class="mb-1 p-2 font-weight-light colora">Condiciones de venta</a>

@@ -29,9 +29,45 @@ Page::headerTemplate('Principal');
                     <div class="col-lg-6">
                             <form class="form-inline mb-3">
                             <input class="form-control mr-sm-2" type="search" placeholder="Buscar cupones..." aria-label="Search">
-                            <a href="#" class="btn btn-success btn-circle">
+                            <a href="#" class="btn btn-success btn-circle" data-toggle="modal" data-target="#exampleModalCenter">
                                 <i class="fas fa-check"></i>
                             </a>
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">Agregar cupon</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body container-fluid col-md-6">
+                                      <form>
+                                          <div class="form-group mb-3">
+                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Codigo del cupon">
+                                          </div>
+                                          <div class="form-group mb-3">
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Descuento">
+                                          </div>
+                                          <div class="form-group mb-3">
+                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad">
+                                          </div>
+                                          <div class="form-group">
+                                          <label for="exampleFormControlSelect1" class="mr-3">Validez</label>
+                                          <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Disponible</option>
+                                            <option>Agotado</option>
+                                          </select>
+                                        </div>
+                                        </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Agregar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             </form>
                     </div>
 

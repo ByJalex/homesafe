@@ -110,8 +110,7 @@ class template
                                 </li>
                             </ul>
                             <form class="form-inline my-2 my-lg-0 ">
-                                <a href="aboutus.php" class="mb-1 p-2 font-weight-light colora">Sobre nostros </a>
-                                <a href="" class="mb-1 p-2 font-weight-light colora">El Salvador</a>
+                                <a href="aboutus.php" class="mb-1 p-2 font-weight-light colora">Sobre nosotros </a>
                                 <a href="" class="mb-1 p-2 font-weight-light colora">Privacidad</a>
                                 <a href="terms_of_sale.php" class="mb-1 p-2 font-weight-light colora">Condiciones de venta</a>
                                 <a href="" class="mb-1 p-2 font-weight-light colora">Condiciones de servicio</a>

@@ -33,7 +33,7 @@ class template
             <link rel="stylesheet" href="../../../public/css/stylev2.css" type="text/css">
             <link rel="stylesheet" href="../../../public/css/font-awesome-4.7/css/font-awesome.min.css" type="text/css">
             <link rel="stylesheet" href="../../../public/css/font-awesome-5/css/fontawesome-all.min.css" type="text/css">
-            
+
         </head>
 
         <body>
@@ -60,7 +60,9 @@ class template
                             <div class="main-nav d-none d-lg-block">
                                 <nav class="site-navigation text-right text-md-center" role="navigation">
                                     <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                        <li class="<?php if ($active === 1) {echo "active";}?>"><a href="index.php">Explorar</a></li>
+                                        <li class="<?php if ($active === 1) {
+                                                        echo "active";
+                                                    } ?>"><a href="index.php">Explorar</a></li>
                                         <li class="has-children">
                                             <a href="#">Marcas</a>
                                             <ul class="dropdown">
@@ -70,8 +72,12 @@ class template
                                                 <li><a href="#">Nombre de la marca</a></li>
                                             </ul>
                                         </li>
-                                        <li class="<?php if ($active === 3) {echo "active";}?>"><a href="categories.php">Categorias</a></li>
-                                        <li class="<?php if ($active === 4) {echo "active";}?>"><a href="login.php">Iniciar sesión</a></li>
+                                        <li class="<?php if ($active === 3) {
+                                                        echo "active";
+                                                    } ?>"><a href="categories.php">Categorias</a></li>
+                                        <li class="<?php if ($active === 4) {
+                                                        echo "active";
+                                                    } ?>"><a href="login.php">Iniciar sesión</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -124,7 +130,6 @@ class template
             <?php
 
             ?>
-
             <script src="../../../public/js/jquery-3.3.1.min.js"></script>
             <script src="../../../public/js/jquery-ui.js"></script>
             <script src="../../../public/js/popper.min.js"></script>

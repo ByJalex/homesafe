@@ -29,9 +29,31 @@ template::header('Home Safe', 1);
           <h2 class="text-uppercase">Productos mas comprados</h2>
         </div>
       </div>
-
+      <div class="text-center " id="preloader">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+          <circle cx="76.8829" cy="53.1171" r="5" fill="#93dbe9">
+            <animate attributeName="cx" values="80;50" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="cy" values="50;80" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill" values="#93dbe9;#689cc5" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+          </circle>
+          <circle cx="46.8829" cy="76.8829" r="5" fill="#689cc5">
+            <animate attributeName="cx" values="50;20" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="cy" values="80;50.00000000000001" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill" values="#689cc5;#5e6fa3" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+          </circle>
+          <circle cx="23.1171" cy="46.8829" r="5" fill="#5e6fa3">
+            <animate attributeName="cx" values="20;49.99999999999999" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="cy" values="50.00000000000001;20" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill" values="#5e6fa3;#3b4368" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+          </circle>
+          <circle cx="53.1171" cy="23.1171" r="5" fill="#3b4368">
+            <animate attributeName="cx" values="49.99999999999999;80" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="cy" values="20;49.99999999999999" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+            <animate attributeName="fill" values="#3b4368;#93dbe9" keyTimes="0;1" dur="0.53475935828877s" repeatCount="indefinite"></animate>
+          </circle>
+        </svg>
+      </div>
       <div class="row">
-
         <div class="col-lg-4 col-md-6 item-entry mb-4" v-for="prod in allProductsPopular">
           <a :href="redirectPopularProduct(prod.id_producto)" class="product-item md-height bg-gray d-block">
             <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">

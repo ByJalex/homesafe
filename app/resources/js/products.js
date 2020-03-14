@@ -20,6 +20,7 @@ var app = new Vue({
                 .then(function (response) {
                     app.allProductsPopular = response.data.popularProducts;
                     app.allErrorsPopularProducts = response.data.error;
+                    $('#preloader').css('display', 'none');
                 });
         },
     },

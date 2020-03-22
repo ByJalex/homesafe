@@ -16,15 +16,20 @@ var app = new Vue({
             return ruta;
         },
         getPopularProducts: function () {
-            axios.get('http://localhost/homesafe/app/api/products.php?accion=popularProducts')
+            axios.get('http://localhost/homesafe/app/core/api/products.php?accion=popularProducts')
                 .then(function (response) {
                     app.allProductsPopular = response.data.popularProducts;
                     app.allErrorsPopularProducts = response.data.error;
                     $('#preloader').css('display', 'none');
                 });
         },
+        lol: function(idProducto){
+            let param = 'Añadiste el producto '+idProducto+' al carrito';
+            console.log(param);
+        }
     },
     computed: {
 
     },
 })
+

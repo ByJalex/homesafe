@@ -193,10 +193,9 @@ template::header('Home Safe', 0);
         </div>
     </div>
 </div>
-
 <script src="../../../public/js/vue.js"></script>
 <script src="../../../public/js/axios.min.js"></script>
-<script src="../../resources/js/review.js"></script>
+<script src="../../core/controllers/review.js"></script>
 <?php
 require_once('../../templates/template.php');
 template::footer();

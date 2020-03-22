@@ -63,7 +63,7 @@ template::header('Home Safe', 0);
                                 </td>
                                 <td>$49.00</td>
                                 <td>
-                                <div class="row center">
+                                    <div class="row center">
                                         <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
                                         <div class="input-group mb-3" style="max-width: 120px;">
                                             <div class="input-group-prepend">
@@ -150,7 +150,8 @@ template::header('Home Safe', 0);
         </div>
     </div>
 </div>
-
+<script src="../../../public/js/vue.js"></script>
+<script src="../../../public/js/axios.min.js"></script>
 <?php
 require_once('../../templates/template.php');
 template::footer();

@@ -10,7 +10,7 @@ const cart = new Vue({
     },
     mounted: function () {
         this.cantidadProd();
-        var datos = JSON.parse(localStorage.getItem('carrito_compras'));
+        var datos = JSON.parse(localStorage.getItem('homesafe'));
         if (datos === null) {
             this.miCarrito = [];
         } else {
@@ -53,12 +53,12 @@ const cart = new Vue({
             });
             this.cantidadProd();
             this.calcSuma();
-            localStorage.setItem('carrito_compras', JSON.stringify(this.miCarrito));
+            localStorage.setItem('homesafe', JSON.stringify(this.miCarrito));
         },
         eliminarProdCarrito: function (id, index) {
             this.miCarritoProcesado.splice(index, 1);
             this.cantidadProd();
-            localStorage.setItem('carrito_compras', JSON.stringify(this.miCarrito));
+            localStorage.setItem('homesafe', JSON.stringify(this.miCarrito));
             console.log('index eliminado:' + index + ' id_producto: ' + id);
             this.limpiarMiCarrito(id);
         },
@@ -67,7 +67,7 @@ const cart = new Vue({
                 return indice.id_producto !== id;
             })
             console.log(this.miCarrito);
-            localStorage.setItem('carrito_compras', JSON.stringify(this.miCarrito));
+            localStorage.setItem('homesafe', JSON.stringify(this.miCarrito));
         },
         calcSuma: function () {
             const miCarritoSinDuplicados = this.miCarrito.reduce((acumulador, valorActual) => {
@@ -102,7 +102,7 @@ const cart = new Vue({
             this.calcSuma();
             console.log(this.miCarrito);
             console.log(nombre);
-            localStorage.setItem('carrito_compras', JSON.stringify(this.miCarrito));
+            localStorage.setItem('homesafe', JSON.stringify(this.miCarrito));
         }
     },
 })

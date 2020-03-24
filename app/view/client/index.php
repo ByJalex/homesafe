@@ -4,7 +4,7 @@ template::header('Home Safe', 1);
 ?>
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br><br>
-<div id="app">
+<div>
   <div class="site-blocks-cover" data-aos="">
     <div class="container">
       <div class="row">
@@ -54,16 +54,16 @@ template::header('Home Safe', 1);
         </svg>
       </div>
 
-      <div id="">
+      <div>
         <div class="row">
           <div class="col-lg-4 col-md-6 item-entry mb-4" v-for="prod in allProductsPopular">
             <a :href="redirectPopularProduct(prod.id_producto)" class="product-item md-height bg-gray d-block">
               <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
             </a>
-            <h2 class="item-title"><a :href="redirectPopularProduct(prod.id_producto)">{{prod.Producto}}</a><span class="float-right mr-4">
-                <a @click="lol(prod.id_producto)"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABOklEQVRIS92UzVHDMBBGv60AUgFQAZMKoANIBcAVDoQK9FQB4QDXQAWEDqADdwBUgDsQI8bOCOLYMhPPMOiolfbtfvtjGvjYwP71jwBA2KBcBTCO/pYSbRIQQnj33u9+A9TRAzNJl5IegNM+WTnnpmZ2nf5dKTIQya+SSmDUBwA8SzqQNAEWjRnES+dcYWb7ks6A+xwIsC3po3o7Aso2QJ3qE3CcCYjvHiW9AIf1n8Y5WBdNG6jK9CSEcOW9j3X8OmsHrdLwKCf6H2/GQJEDiB007wm4Aabpn9ZV4ZwrzWxL0h7w1hPWLlG01rpKWgCTIQD1TGT5BlYU6dymsU1DCDMz2+mi/ArQ5bTL3plBVYtbSeeS7oCLZG813md3UeJoucpTGdIN3CRP66ClUQDDZtClc5s9qwZ/GvAJq1V9GR4AnrQAAAAASUVORK5CYII=" /></a>
-                <a><img class="ml-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABUElEQVRIS8VV0VXDMAw8TUBHKBMAExAmATZgA182YIOWSSgbhAnoCHQC8eSn5DmNnbgfofmKI+vOOp8UwcqPrIyP6xCQfAHwDKDxCg8isg8hfNh6KZ6qMqqA5AbAJ4D7gnSdf5+LP5H87fNHBCGETkTuVPUkIm8ADr6xUdV3EbmxdRIfCJN4R/JhQuBl7zx5m57CZdmoaiQUkaYQP/ohXknu496eiaQlPwIYgpc6rD8kgC+S8f5SAnXAW5LHS8G9yi2AH3+P2P9KsLpE5v0dALOYyTRYrUYut7jJY1afXrKB9DYFYPYb+XmOJO0fVf1u23bok0mjmRWtF2pJzsHPLTyZRZZQS7IEPnJRKkENSQ14kSDt3JxcteCzBCUSrzQORLvQ3NgoTtOcUzJy2bYq8MUKkjmVXrxN08WTZ8f1ktfnpmkp9zq/zJrRULtn9Qr+ABuK+Rku42C5AAAAAElFTkSuQmCC" /></a></span></h2>
-            <strong class="item-price">${{prod.Precio}}</strong>
+            <h2 class="item-title"><a :href="redirectPopularProduct(prod.id_producto)">{{prod.nombre_p}}</a><span class="float-right mr-4">
+                <a @click="agregarCarro(prod.id_producto, prod.nombre_p, prod.precio_p)"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABOklEQVRIS92UzVHDMBBGv60AUgFQAZMKoANIBcAVDoQK9FQB4QDXQAWEDqADdwBUgDsQI8bOCOLYMhPPMOiolfbtfvtjGvjYwP71jwBA2KBcBTCO/pYSbRIQQnj33u9+A9TRAzNJl5IegNM+WTnnpmZ2nf5dKTIQya+SSmDUBwA8SzqQNAEWjRnES+dcYWb7ks6A+xwIsC3po3o7Aso2QJ3qE3CcCYjvHiW9AIf1n8Y5WBdNG6jK9CSEcOW9j3X8OmsHrdLwKCf6H2/GQJEDiB007wm4Aabpn9ZV4ZwrzWxL0h7w1hPWLlG01rpKWgCTIQD1TGT5BlYU6dymsU1DCDMz2+mi/ArQ5bTL3plBVYtbSeeS7oCLZG813md3UeJoucpTGdIN3CRP66ClUQDDZtClc5s9qwZ/GvAJq1V9GR4AnrQAAAAASUVORK5CYII=" /></a>
+                <a @click="agregarListaDeDeseos(prod.nombre_p)"><img class="ml-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABUElEQVRIS8VV0VXDMAw8TUBHKBMAExAmATZgA182YIOWSSgbhAnoCHQC8eSn5DmNnbgfofmKI+vOOp8UwcqPrIyP6xCQfAHwDKDxCg8isg8hfNh6KZ6qMqqA5AbAJ4D7gnSdf5+LP5H87fNHBCGETkTuVPUkIm8ADr6xUdV3EbmxdRIfCJN4R/JhQuBl7zx5m57CZdmoaiQUkaYQP/ohXknu496eiaQlPwIYgpc6rD8kgC+S8f5SAnXAW5LHS8G9yi2AH3+P2P9KsLpE5v0dALOYyTRYrUYut7jJY1afXrKB9DYFYPYb+XmOJO0fVf1u23bok0mjmRWtF2pJzsHPLTyZRZZQS7IEPnJRKkENSQ14kSDt3JxcteCzBCUSrzQORLvQ3NgoTtOcUzJy2bYq8MUKkjmVXrxN08WTZ8f1ktfnpmkp9zq/zJrRULtn9Qr+ABuK+Rku42C5AAAAAElFTkSuQmCC" /></a></span></h2>
+            <strong class="item-price">${{prod.precio_p}}</strong>
             <div class="star-rating">
               <span :class="['icon-star2' , prod.ranking < 1 ? 'text-gray' : 'text-warning']"></span>
               <span :class="['icon-star2' , prod.ranking < 2 ? 'text-gray' : 'text-warning']"></span>
@@ -73,7 +73,6 @@ template::header('Home Safe', 1);
             </div>
           </div>
         </div>
-
       </div>
 
     </div>
@@ -85,56 +84,32 @@ template::header('Home Safe', 1);
             <h2 class="text-uppercase">Categorias</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 block-3">
-            <div class="nonloop-block-3 owl-carousel">
+        <div>
 
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
-                </div>
-              </div>
 
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="item-entry">
-                  <a href="#" class="product-item md-height bg-gray d-block">
-                    <img src="https://opel.navigation.com/static/WFS/Shop-OpelEMEA-Site/-/Shop/en_US/Product%20Not%20Found.png" alt="Image" class="img-fluid">
-                  </a>
-                  <h2 class="item-title"><a href="#">Titulo de la categoria</a></h2>
-                </div>
-              </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 item-entry mb-4" v-for="asd in allCategory">
+              <a href="" class="product-item md-height bg-gray d-block">
+                <img src="https://img.freepik.com/free-vector/404-found-vector-flat-concept-illustration_97231-125.jpg?size=338&ext=jpg" alt="Image" class="img-fluid">
+              </a>
+              <h2 class="item-title"><a href="">a</a><span class="float-right mr-4">
+                  <a ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABOklEQVRIS92UzVHDMBBGv60AUgFQAZMKoANIBcAVDoQK9FQB4QDXQAWEDqADdwBUgDsQI8bOCOLYMhPPMOiolfbtfvtjGvjYwP71jwBA2KBcBTCO/pYSbRIQQnj33u9+A9TRAzNJl5IegNM+WTnnpmZ2nf5dKTIQya+SSmDUBwA8SzqQNAEWjRnES+dcYWb7ks6A+xwIsC3po3o7Aso2QJ3qE3CcCYjvHiW9AIf1n8Y5WBdNG6jK9CSEcOW9j3X8OmsHrdLwKCf6H2/GQJEDiB007wm4Aabpn9ZV4ZwrzWxL0h7w1hPWLlG01rpKWgCTIQD1TGT5BlYU6dymsU1DCDMz2+mi/ArQ5bTL3plBVYtbSeeS7oCLZG813md3UeJoucpTGdIN3CRP66ClUQDDZtClc5s9qwZ/GvAJq1V9GR4AnrQAAAAASUVORK5CYII=" /></a>
+                  <a ><img class="ml-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABUElEQVRIS8VV0VXDMAw8TUBHKBMAExAmATZgA182YIOWSSgbhAnoCHQC8eSn5DmNnbgfofmKI+vOOp8UwcqPrIyP6xCQfAHwDKDxCg8isg8hfNh6KZ6qMqqA5AbAJ4D7gnSdf5+LP5H87fNHBCGETkTuVPUkIm8ADr6xUdV3EbmxdRIfCJN4R/JhQuBl7zx5m57CZdmoaiQUkaYQP/ohXknu496eiaQlPwIYgpc6rD8kgC+S8f5SAnXAW5LHS8G9yi2AH3+P2P9KsLpE5v0dALOYyTRYrUYut7jJY1afXrKB9DYFYPYb+XmOJO0fVf1u23bok0mjmRWtF2pJzsHPLTyZRZZQS7IEPnJRKkENSQ14kSDt3JxcteCzBCUSrzQORLvQ3NgoTtOcUzJy2bYq8MUKkjmVXrxN08WTZ8f1ktfnpmkp9zq/zJrRULtn9Qr+ABuK+Rku42C5AAAAAElFTkSuQmCC" /></a></span></h2>
+              <strong class="item-price">$</strong>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<script src="../../../public/js/vue.js"></script>
-<script src="../../../public/js/axios.min.js"></script>
-<script src="../../core/controllers/products.js"></script>
+
+
+
+
 <?php
 require_once('../../templates/template.php');
 template::footer();

@@ -5,7 +5,7 @@ template::header('Home Safe', 0);
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br>
 
-<div class="site-section">
+<div class="site-section" id="cart">
     <div class="container">
         <div class="row mb-5">
             <div class="title-section mb-5 col-12">
@@ -16,73 +16,49 @@ template::header('Home Safe', 0);
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th class="product-thumbnail">Image</th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">Quantity</th>
+                                <th class="product-thumbnail">Imagen</th>
+                                <th class="product-name">Producto</th>
+                                <th class="product-price">Precio</th>
+                                <th class="product-quantity">Cantidad</th>
                                 <th class="product-total">Total</th>
                                 <th class="product-remove">Acción</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="../../../public/images/cloth_1.jpg" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black">Google Home</h2>
-                                </td>
-                                <td>$49.00</td>
-                                <td class="">
-                                    <div class="row center">
-                                        <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
-                                        <div class="input-group mb-3" style="max-width: 120px;">
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                                            </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+
+                            <div>
+                                <tr>
+                                    <td class="product-thumbnail">
+                                        <img src="https://vignette.wikia.nocookie.net/la-bitacora-del-capitan/images/6/67/Not_found.png/revision/latest?cb=20190509042801&path-prefix=es" alt="Image" class="img-fluid">
+                                    </td>
+                                    <td class="product-name">
+                                        <h2 class="h5 text-black">adaw</h2>
+                                    </td>
+                                    <td>$49.00</td>
+                                    <td class="">
+                                        <div class="row center">
+                                            <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
+                                            <div class="input-group mb-3" style="max-width: 120px;">
+                                                <div class="input-group-prepend">
+                                                    <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                                                </div>
+                                                <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>$49.00</td>
-                                <td>
-                                    <a href="" class="colora">Remove</a>
-                                    <!--<a href="#" class="btn btn-primary height-auto btn-sm">X</a>-->
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>$49.00</td>
+                                    <td>
+                                        <a href="" class="colora">Remove</a>
+                                        <!--<a href="#" class="btn btn-primary height-auto btn-sm">X</a>-->
+                                    </td>
+                                </tr>
+                            </div>
 
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="../../../public/images/cloth_2.jpg" alt="Image" class="img-fluid">
-                                </td>
-                                <td class="product-name">
-                                    <h2 class="h5 text-black">Google Nest Wifi</h2>
-                                </td>
-                                <td>$49.00</td>
-                                <td>
-                                    <div class="row center">
-                                        <span>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</span>
-                                        <div class="input-group mb-3" style="max-width: 120px;">
-                                            <div class="input-group-prepend">
-                                                <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                                            </div>
-                                            <input type="text" class="form-control text-center" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                </td>
-                                <td>$49.00</td>
-                                <td>
-                                    <a href="" class="colora">Remove</a>
-                                    <!--<a href="#" class="btn btn-primary height-auto btn-sm">X</a>-->
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -150,8 +126,13 @@ template::header('Home Safe', 0);
         </div>
     </div>
 </div>
+</div>
+</div>
+
+
 <script src="../../../public/js/vue.js"></script>
 <script src="../../../public/js/axios.min.js"></script>
+<script src="../../core/controllers/products.js"></script>
 <?php
 require_once('../../templates/template.php');
 template::footer();

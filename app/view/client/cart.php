@@ -4,6 +4,40 @@ $title = 'Iniciar sesión';
 $header = template::header($title);
 ?>
 
+<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+    <div class="container">
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="main_nav" style="">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explorar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Noticias</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Xiaomi</a>
+                        <a class="dropdown-item" href="#">Samsumg</a>
+                        <a class="dropdown-item" href="#">Philips</a>
+                        <a class="dropdown-item" href="#">LG</a>
+                        <a class="dropdown-item" href="#">Google</a>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- collapse .// -->
+    </div> <!-- container .// -->
+</nav>
+
 <section class="section-pagetop bg">
     <div class="container">
         <h2 class="title-page">Carrito de compras</h2>
@@ -104,7 +138,7 @@ $header = template::header($title);
                         </dl>
                         <hr>
                         <p class="text-center mb-3">
-                            <img src="images/misc/payments.png" height="26">
+                            <!--<img src="images/misc/payments.png" height="26">-->
                         </p>
 
                     </div> <!-- card-body.// -->

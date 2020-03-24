@@ -133,9 +133,9 @@ $header = template::header($title);
                             <option>Lo mas barato</option>
                         </select>
                         <div class="btn-group">
-                            <a href="categorieslist.php" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
+                            <a href="categorieslist.php" class="btn btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="List view">
                                 <i class='bx bx-menu'></i>
-                                <a href="categories.php" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
+                                <a href="categories.php" class="btn  btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="Grid view">
                                     <i class='bx bxs-grid-alt'></i></a>
                         </div>
                     </div>
@@ -143,77 +143,47 @@ $header = template::header($title);
 
                 <div class="row">
 
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <img src="../../../public/images/Products/84850.jpg">
-                                <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
 
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <img src="../../../public/images/Products/84850.jpg">
-                                <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
+                    <!--Articulo para iterar-->
+                    <article class="card card-product-list">
+                        <div class="row no-gutters">
+                            <aside class="col-md-3">
+                                <a href="#" class="img-wrap"><img src="../../../public/images/Products/84850.jpg"></a>
+                            </aside> <!-- col.// -->
+                            <div class="col-md-6">
+                                <div class="info-main">
+                                    <a href="#" class="h5 title"> Google Home </a>
+                                    <div class="rating-wrap mb-3">
+                                        <ul class="rating-stars">
+                                            <li class="">
+                                                <i class='bx bxs-star text-warning'></i>
+                                                <i class='bx bxs-star text-warning'></i>
+                                                <i class='bx bxs-star text-warning'></i>
+                                                <i class='bx bxs-star text-warning'></i>
+                                                <i class='bx bxs-star text-warning'></i>
+                                            </li>
+                                        </ul>
+                                        <div class="label-rating">5/5</div>
+                                    </div> <!-- rating-wrap.// -->
 
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <img src="../../../public/images/Products/84850.jpg">
-                                <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
-
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <img src="../../../public/images/Products/84850.jpg">
-                                <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
+                                    <p> Google Home, es un altavoz inteligente desarrollado por Google. ... Google Home permite a los usuarios utilizar comando de voz para interactuar con servicios del asistente personal de Google, llamado Google Assistant. </p>
+                                </div> <!-- info-main.// -->
+                            </div> <!-- col.// -->
+                            <aside class="col-sm-3">
+                                <div class="info-aside">
+                                    <div class="price-wrap">
+                                        <span class="price h5"> $1280 </span>
+                                    </div> <!-- info-price-detail // -->
+                                    <br>
+                                    <p>
+                                        <a href="product.php" class="btn btn-primary btn-block"> Detalle </a>
+                                        <a href="#" class="btn btn-light btn-block"><i class='bx bx-cart-alt' ></i>
+                                            <span class="text">Añadir al carrito</span></a>
+                                    </p>
+                                </div> <!-- info-aside.// -->
+                            </aside> <!-- col.// -->
+                        </div> <!-- row.// -->
+                    </article>
 
                 </div> <!-- row end.// -->
 

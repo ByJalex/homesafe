@@ -99,7 +99,7 @@ class template
                             <aside class="col-md col-6">
                                 <h6 class="title">Home Safe</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="#">Cerca de nosotros</a></li>
+                                    <li> <a href="aboutus.php">Cerca de nosotros</a></li>
                                     <li> <a href="#">Terminos y condiciones</a></li>
                                     <li> <a href="#">Desarrolladores</a></li>
                                     <li> <a href="#">Api</a></li>
@@ -114,10 +114,10 @@ class template
                             <aside class="col-md col-6">
                                 <h6 class="title">Cuenta</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="#"> Inicio de sesión de usuario </a></li>
-                                    <li> <a href="#"> Registro de usuario </a></li>
-                                    <li> <a href="#"> Configuración de cuenta </a></li>
-                                    <li> <a href="#"> Mis ordenes </a></li>
+                                    <li> <a href="login.php"> Inicio de sesión de usuario </a></li>
+                                    <li> <a href="register.php"> Registro de usuario </a></li>
+                                    <li> <a href="usersettings.php"> Configuración de cuenta </a></li>
+                                    <li> <a href="account.php"> Mis ordenes </a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md">
@@ -168,7 +168,7 @@ class template
                                             } ?>" href="wishlist.php"> Mi lista de deseos </a>
                 <a class="list-group-item <?php if ($active == 4) {
                                                 echo 'active';
-                                            } ?>" href="#">Configuración </a>
+                                            } ?>" href="usersettings.php"> Configuracion de usuario </a>
             </ul>
         </aside>
 <?php

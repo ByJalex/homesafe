@@ -4,6 +4,45 @@ $title = 'Nombre del producto';
 $header = template::header($title);
 ?>
 
+<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+    <div class="container">
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="main_nav" style="">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="index.php">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Explorar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="news.php">Noticias</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.php">Sobre nosotros</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Xiaomi</a>
+                        <a class="dropdown-item" href="#">Samsumg</a>
+                        <a class="dropdown-item" href="#">Philips</a>
+                        <a class="dropdown-item" href="#">LG</a>
+                        <a class="dropdown-item" href="#">Google</a>
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- collapse .// -->
+    </div> <!-- container .// -->
+</nav>
+
 <div class="card">
     <div class="row no-gutters">
         <aside class="col-md-6">
@@ -58,7 +97,7 @@ $header = template::header($title);
                 <hr>
                 <div class="form-row">
                     <div class="form-group col-md flex-grow-0">
-                        <label>Quantity</label>
+                        <label>Cantidad</label>
                         <div class="input-group mb-3 input-spinner">
                             <div class="input-group-prepend">
                                 <button class="btn btn-light" type="button" id="button-plus"> - </button>

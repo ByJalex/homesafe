@@ -206,18 +206,11 @@ class Page
             </div>
         
             <!-- Bootstrap core JavaScript-->
-            <script src="../../../public/jquery/jquery.min.js"></script>
-            <script src="../../../public/bootstrap/js/bootstrap.bundle.min.js"></script>
-        
-            <!-- Core plugin JavaScript-->
-            <script src="../../../jquery/jquery-easing/jquery.easing.min.js"></script>
+            <script src="../../../public/js/admin/jquery.min.js"></script>
+            <script src="../../../public/js/admin/bootstrap.bundle.min.js"></script>
         
             <!-- Custom scripts for all pages-->
             <script src="../../../public/js/admin/sb-admin-2.min.js"></script>
-        
-            <!-- Page level custom scripts -->
-            <script src="../../../js/admin/demo/chart-area-demo.js"></script>
-            <script src="../../../js/admin/demo/chart-pie-demo.js"></script>
         
         </body>
         
@@ -225,3 +218,6 @@ class Page
         ');
   }
 }
+
+// <!-- Core plugin JavaScript-->
+// <script src="../../../public/js/admin/jquery-easing/jquery.easing.min.js"></script>

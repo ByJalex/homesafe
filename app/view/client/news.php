@@ -90,6 +90,7 @@ $header = template::header($title);
         </div>
     </div>
 </section>
+
 <?php
 require_once('../../templates/templateClient.php');
 $footer = template::footer();

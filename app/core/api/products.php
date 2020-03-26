@@ -9,7 +9,7 @@ $respuesta = array('error' => false);
 $accion = 'lectura';
 
 if (!isset($_GET['accion'])) {
-    echo 'Lava variable no existe';
+    echo 'La variable no existe';
 } else {
     $accion = $_GET['accion'];
     switch ($accion) {

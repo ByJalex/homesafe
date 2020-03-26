@@ -10,7 +10,7 @@ $header = template::header($title);
     </div> <!-- container //  -->
 </section>
 
-<section class="section-content padding-y">
+<section class="section-content padding-y" id="account">
     <div class="container">
 
         <div class="row">
@@ -19,7 +19,7 @@ $header = template::header($title);
             ?>
             <main class="col-md-9">
 
-                <article class="card mb-3">
+                <article class="card mb-3" v-for="list in myInformation">
                     <div class="card-body">
 
                         <figure class="icontext">
@@ -27,8 +27,8 @@ $header = template::header($title);
                                 <img class="rounded-circle img-sm border" src="../../../public/images/person_4.jpg">
                             </div>
                             <div class="text">
-                                <strong> Josue Alfonso Ayala Martinez </strong> <br>
-                                ayalavalencia11@gmail.com <br>
+                                <strong>{{list.nombre_c}}</strong> <br>
+                                {{list.correo_c}} <br>
                                 <!--<a href="#">Edit</a>-->
                             </div>
                         </figure>
@@ -36,12 +36,12 @@ $header = template::header($title);
                         <p>
                             <i class='bx bx-current-location'></i> &nbsp; Mi dirección:
                             <br>
-                            San Salvador, 29 av norte colonia zacamil casa #36 &nbsp;
+                            {{list.direccion}} &nbsp;
                             <!--<a href="#" class="btn-link"> Edit</a>-->
                             <br>
                             <i class='bx bx-phone'></i> &nbsp;Mi telefono:
                             <br>
-                            7312-3241 &nbsp;
+                            {{list.telefono}} &nbsp;
                         </p>
 
                         <article class="card-group">
@@ -80,6 +80,9 @@ $header = template::header($title);
 
     </div> <!-- container .//  -->
 </section>
+
+
+<script src="../../core/controllers/myAccount.js"></script>
 
 <?php
 require_once('../../templates/templateClient.php');

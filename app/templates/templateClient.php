@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class template
 {
     public static function header($title)
@@ -13,25 +13,37 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
+            <script src="../../../public/js/axios.min.js"></script>
+            <script src="../../../public/js/vue.js"></script>
             <link rel="stylesheet" href="../../../public/css/client/all.min.css">
             <link rel="stylesheet" href="../../../public/css/client/bootstrap.css">
             <link rel="stylesheet" href="../../../public/css/client/responsive.css">
             <link rel="stylesheet" href="../../../public/css/client/ui.css">
+            <link rel="stylesheet" href="../../../public/css/client/sweetalert.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
         <body>
 
             <header class="section-header">
+                <?php
+                if (isset($_SESSION['id_usuario'])) {
+                    #echo 'La variable existe';
+                    #print_r($_SESSION['id_usuario']);
+                } else {
+                    #echo 'La variable no existe';
+                ?>
+                    <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
+                        <div class="container">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="login.php">Parece que no has iniciado sesión, click aqui para continuar comprando.</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                <?php
+                }
+                ?>
 
-                <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
-                    <div class="container">
-                        <ul class="navbar-nav d-none d-md-flex mr-auto">
-                            <li class="nav-item"><a class="nav-link" href="login.php">Parece que no has iniciado sesión, click aqui para continuar comprando.</a></li>
-                        </ul>
-                    </div> <!-- navbar-collapse .// -->
-                    <!-- container //  -->
-                </nav>
 
                 <section class="header-main border-bottom">
                     <div class="container">
@@ -54,21 +66,58 @@ class template
                                 </form> <!-- search-wrap .end// -->
                             </div> <!-- col.// -->
                             <div class="col-lg-4 col-sm-6 col-12">
+
                                 <div class="widgets-wrap float-md-right">
-                                    <div class="widget-header  mr-3">
+                                    <div class="widget-header  mr-1">
                                         <a href="cart.php" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
-                                        <span class="badge badge-pill badge-danger notify">0</span>
+                                        <span class="badge badge-pill bg-primary notify">0</span>
                                     </div>
-                                    <div class="widget-header icontext">
-                                        <a href="account.php" class="icon icon-sm rounded-circle border"><i class='bx bx-user'></i></a>
-                                        <div class="text">
-                                            <span class="text-muted">Bienvenido</span>
-                                            <div>
-                                                <a href="login.php">Iniciar sesión</a> |
-                                                <a href="register.php"> Registrarse</a>
+                                    <?php
+                                    if (isset($_SESSION['id_usuario'])) {
+                                    ?>
+                                        <div class="widget-header mr-4">
+                                            <a href="notifications.php" class="icon-sm rounded-circle border">
+                                                <i class='bx bx-bell'></i></a>
+                                            <span class="badge badge-pill bg-warning notify">1</span>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <!--Bav para mostrar Iniciar sesion y registrarse-->
+                                    <?php
+                                    if (!isset($_SESSION['id_usuario'])) {
+                                    ?>
+                                        <div class="widget-header icontext">
+                                            <a href="account.php" class="icon icon-sm rounded-circle border"><i class='bx bx-user'></i></a>
+                                            <div class="text">
+                                                <span class="text-muted">Bienvenido</span>
+                                                <div>
+                                                    <a href="login.php">Iniciar sesión</a> |
+                                                    <a href="register.php"> Registrarse</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <!--Mostrar informacion si el usuario ya esta logeado-->
+                                        <div class="dropdown d-inline-block" id="login">
+                                            <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <img class="icon icon-xs rounded-circle" src="../../../public/images/person_3.jpg">
+                                                <div class="text" v-for="name in myUsername">
+                                                    Hola, {{name.usu_c}}
+                                                </div>
+                                            </a> <!-- iconbox // -->
+                                            <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(150px, 32px, 0px);">
+                                                <a class="dropdown-item" href="account.php">Mi perfil</a>
+                                                <a class="dropdown-item" href="usersettings.php">Configuración</a>
+                                                <a class="dropdown-item" href="../../core/controllers/cerrarSesion.php">Cerrar sesión</a>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+
 
                                 </div> <!-- widgets-wrap.// -->
                             </div> <!-- col.// -->
@@ -145,7 +194,8 @@ class template
 
             <script src="../../../public/js/client/jquery-2.0.0.min.js"></script>
             <script src="../../../public/js/client/bootstrap.bundle.min.js"></script>
-
+            <script src="../../../public/js/client/sweetalert.min.js"></script>
+            <script src="../../core/controllers/client.js"></script>
         </body>
 
         </html>

@@ -27,7 +27,7 @@ $header = template::header($title);
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.php">Sobre nosotros</a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
                     <div class="dropdown-menu">
@@ -56,53 +56,55 @@ $header = template::header($title);
             <main class="col-md-9">
                 <div class="card">
 
-                    <table class="table table-borderless table-shopping-cart">
-                        <thead class="text-muted">
-                            <tr class="small text-uppercase">
-                                <th scope="col">Producto</th>
-                                <th scope="col" width="120">Cantidad</th>
-                                <th scope="col" width="120">Precio</th>
-                                <th scope="col" class="text-right" width="200"> </th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="table-responsive">
+                        <table class="table table-borderless table-shopping-cart">
+                            <thead class="text-muted">
+                                <tr class="small text-uppercase">
+                                    <th scope="col">Producto</th>
+                                    <th scope="col" width="120">Cantidad</th>
+                                    <th scope="col" width="120">Precio</th>
+                                    <th scope="col" class="text-right" width="200"> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                            <tr>
-                                <td>
-                                    <figure class="itemside">
-                                        <div class="aside"><img src="../../../public/images/Products/84850.jpg" class="img-sm"></div>
-                                        <figcaption class="info">
-                                            <a href="#" class="title text-dark">Google Home</a>
-                                            <p class="text-muted small"><strong>Marca:</strong> Google</p>
-                                        </figcaption>
-                                    </figure>
-                                </td>
-                                <td>
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <div class="price-wrap">
-                                        <var class="price">$1156.00</var>
-                                        <small class="text-muted"> $315.20 Unitario </small>
-                                    </div> <!-- price-wrap .// -->
-                                </td>
-                                <td class="text-right">
-                                    <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class='bx bxs-heart' ></i></a>
-                                    <a href="" class="btn btn-light"> Eliminar</a>
-                                </td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
+                                <tr>
+                                    <td>
+                                        <figure class="itemside">
+                                            <div class="aside"><img src="../../../public/images/Products/84850.jpg" class="img-sm"></div>
+                                            <figcaption class="info">
+                                                <a href="#" class="title text-dark">Google Home</a>
+                                                <p class="text-muted small"><strong>Marca:</strong> Google</p>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">$1156.00</var>
+                                            <small class="text-muted"> $315.20 Unitario </small>
+                                        </div> <!-- price-wrap .// -->
+                                    </td>
+                                    <td class="text-right">
+                                        <!--<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class='bx bxs-heart'></i></a>-->
+                                        <a href="" class="btn btn-light text-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
 
                     <div class="card-body border-top">
-                        <a href="#" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt' ></i> </a>
-                        <a href="index.php" class="btn btn-light"> <i class='bx bx-left-arrow-alt' ></i> Continuar comprando </a>
+                        <a href="#" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
+                        <a href="index.php" class="btn btn-light"> <i class='bx bx-left-arrow-alt'></i> Continuar comprando </a>
                     </div>
                 </div> <!-- card.// -->
 

@@ -21,7 +21,7 @@ const login = new Vue({
     },
     methods: {
         getNavinf: function () {
-            axios.get('../api/client.php?accion=GetNavInformation')
+            axios.get('../../core/api/client.php?accion=GetNavInformation')
                 .then(function (response) {
                     login.myUsername = response.data.navInf;
                 });
@@ -56,7 +56,7 @@ const login = new Vue({
         loginUser: function () {
             if (this.validateLogin() == true) {
                 var formData = login.toFormData(login.dataUser);
-                axios.post('../api/client.php?accion=login', formData, {
+                axios.post('../../core/api/client.php?accion=login', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -74,7 +74,7 @@ const login = new Vue({
             if (this.validateRegister() == true) {
                 if (this.validatePassword() == true) {
                     var formData = login.toFormData(login.dataRegister);
-                    axios.post('../api/client.php?accion=register', formData, {
+                    axios.post('../../core/api/client.php?accion=register', formData, {
                         headers: {
                             'Content-Type': 'multipart/form-data'
                         }

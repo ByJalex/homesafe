@@ -34,7 +34,7 @@ const cart = new Vue({
     },
     methods: {
         mostrarProductos: function () {
-            axios.post('../api/products.php?accion=viewAllProducts')
+            axios.post('../../core/api/products.php?accion=viewAllProducts')
                 .then(function (response) {
                     cart.produtos = response.data.popularProducts;
                 });

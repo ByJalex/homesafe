@@ -30,14 +30,14 @@ var app = new Vue({
     methods: {
         /*PETICIONES HTTP*/
         getPopularProducts: function () {
-            axios.get('../api/products.php?accion=popularProducts')
+            axios.get('../../core/api/products.php?accion=popularProducts')
                 .then(function (response) {
                     app.allProductsPopular = response.data.popularProducts;
                     $('#preloader').css('display', 'none');
                 });
         },
         getCategory: function () {
-            axios.get('../api/category.php?accion=allCategorys')
+            axios.get('../../core/api/category.php?accion=allCategorys')
                 .then(function (response) {
                     app.allCategory = response.data.allCategorys;
                 });

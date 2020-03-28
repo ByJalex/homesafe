@@ -13,7 +13,7 @@ var app = new Vue({
     },
     methods: {
         getReviews: function () {
-            axios.get('../api/review.php?accion=getReview&id_producto=' + this.getQueryVariable('id_prod') + '')
+            axios.get('../../core/api/review.php?accion=getReview&id_producto=' + this.getQueryVariable('id_prod') + '')
                 .then(function (response) {
                     app.allReviews = response.data.reviews;
                 });

@@ -17,7 +17,7 @@ var brand = new Vue({
     },
     methods: {
         getBrands: function () {
-            axios.get('http://localhost/homesafe/app/core/api/brand.php?accion=allBrands')
+            axios.get('../api/brand.php?accion=allBrands')
                 .then(function (response) {
                     brand.allBrands = response.data.allBrands;
                 });

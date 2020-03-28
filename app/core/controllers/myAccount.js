@@ -8,7 +8,7 @@ const account = new Vue({
     },
     methods: {
         getMyInformation: function () {
-            axios.get('http://localhost/homesafe/app/core/api/account.php?accion=myAccount')
+            axios.get('../api/account.php?accion=myAccount')
                 .then(function (response) {
                     account.myInformation = response.data.myAcount;
                 });

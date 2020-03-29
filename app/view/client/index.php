@@ -1,5 +1,6 @@
 <?php
-require_once('../../templates/templateClient.php');
+
+require_once(RUTA_APP.'templates/templateClient.php');
 $title = 'Home Safe - inicio';
 $header = template::header($title);
 ?>
@@ -150,6 +151,6 @@ $header = template::header($title);
 </section>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP.'templates/templateClient.php');
 $footer = template::footer();
 ?>

@@ -13,13 +13,13 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
-            <script src="../../../public/js/axios.min.js"></script>
-            <script src="../../../public/js/vue.js"></script>
-            <link rel="stylesheet" href="../../../public/css/client/all.min.css">
-            <link rel="stylesheet" href="../../../public/css/client/bootstrap.css">
-            <link rel="stylesheet" href="../../../public/css/client/responsive.css">
-            <link rel="stylesheet" href="../../../public/css/client/ui.css">
-            <link rel="stylesheet" href="../../../public/css/client/sweetalert.css">
+            <script src="<?php echo RUTA_URL?>public/js/axios.min.js"></script>
+            <script src="<?php echo RUTA_URL?>public/js/vue.js"></script>
+            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/all.min.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/bootstrap.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/responsive.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/ui.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/sweetalert.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
@@ -192,10 +192,10 @@ class template
                 </div><!-- //container -->
             </footer>
 
-            <script src="../../../public/js/client/jquery-2.0.0.min.js"></script>
-            <script src="../../../public/js/client/bootstrap.bundle.min.js"></script>
-            <script src="../../../public/js/client/sweetalert.min.js"></script>
-            <script src="../../core/controllers/client.js"></script>
+            <script src="<?php echo RUTA_URL?>public/js/client/jquery-2.0.0.min.js"></script>
+            <script src="<?php echo RUTA_URL?>public/js/client/bootstrap.bundle.min.js"></script>
+            <script src="<?php echo RUTA_URL?>public/js/client/sweetalert.min.js"></script>
+            <script src="<?php echo RUTA_URL?>Home/files?js=core/controllers/client.js"></script>
         </body>
 
         </html>

@@ -32,5 +32,5 @@ define('DB_DRIVER', DB_CONFIG['detalles']['db_driver']); //Dependiendo de su ges
 
 define('URI', $_SERVER['REQUEST_URI']);
 define('PATH_CONTROLLERS', 'app/core/controllers/');
-define('PATH_VIEWS', 'homesafe/app/view/client');
+define('PATH_VIEWS', 'homesafe-sv/app/view/client');
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);

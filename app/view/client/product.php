@@ -25,7 +25,7 @@ $header = template::header($title);
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="About">Sobre nostros</a>
+                    <a class="nav-link" href="About">Sobre nosotros</a>
                 </li>
 
                 <li class="nav-item dropdown">

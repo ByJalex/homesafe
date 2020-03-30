@@ -14,18 +14,18 @@ $header = template::header($title);
         <div class="navbar-collapse collapse" id="main_nav" style="">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="Home">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Explorar</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="news.php">Noticias</a>
+                    <a class="nav-link" href="News">Noticias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.php">Sobre nosotros</a>
+                    <a class="nav-link" href="About">Sobre nosotros</a>
                 </li>
 
                 <li class="nav-item dropdown">

@@ -7,7 +7,9 @@ define('APP_VERSION', '1');
 //Rutas de apliación
 define('RUTA_APP', dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 //Ruta Url
-define('RUTA_URL', 'http://localhost/shop/');
+
+#Dev: http://localhost/homesafe/
+define('RUTA_URL', 'http://homesafe-sv.herokuapp.com/');
 //Zona horaria
 define('TIME_ZONE', 'America/El_Salvador');
 
@@ -27,3 +29,8 @@ define('DB_PASS', DB_CONFIG['detalles']['db_pass']);
 define('DB_NAME', DB_CONFIG['detalles']['db_name']); //fr
 //Driver o motor de base de datos
 define('DB_DRIVER', DB_CONFIG['detalles']['db_driver']); //Dependiendo de su gestor de base de datos use:
+
+define('URI', $_SERVER['REQUEST_URI']);
+define('PATH_CONTROLLERS', 'app/core/controllers/');
+define('PATH_VIEWS', 'homesafe/app/view/client');
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);

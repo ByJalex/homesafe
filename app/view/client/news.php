@@ -1,5 +1,5 @@
 <?php
-require_once(RUTA_APP .'templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $title = 'Home Safe - inicio';
 $header = template::header($title);
 ?>
@@ -25,7 +25,7 @@ $header = template::header($title);
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="About">Sobre nostros</a>
+                    <a class="nav-link" href="About">Sobre nosotros</a>
                 </li>
 
                 <li class="nav-item dropdown">

@@ -13,7 +13,7 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
-            <script src="<?php echo RUTA_URL?>.public/js/axios.min.js"></script>
+            <script src="<?php echo RUTA_URL?>public/js/axios.min.js"></script>
             <script src="<?php echo RUTA_URL?>public/js/vue.js"></script>
             <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/all.min.css">
             <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/bootstrap.css">

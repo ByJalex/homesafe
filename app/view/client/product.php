@@ -1,5 +1,5 @@
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $title = 'Nombre del producto';
 $header = template::header($title);
 ?>
@@ -14,20 +14,20 @@ $header = template::header($title);
         <div class="navbar-collapse collapse" id="main_nav" style="">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="Home">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Explorar</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="news.php">Noticias</a>
+                    <a class="nav-link" href="News">Noticias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.php">Sobre nosotros</a>
+                    <a class="nav-link" href="About">Sobre nostros</a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
                     <div class="dropdown-menu">
@@ -48,12 +48,12 @@ $header = template::header($title);
         <aside class="col-md-6">
             <article class="gallery-wrap">
                 <div class="img-big-wrap">
-                    <div> <a href="#"><img src="../../../public/images/Products/84850.jpg"></a></div>
+                    <div> <a href="#"><img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a></div>
                 </div> <!-- slider-product.// -->
                 <div class="thumbs-wrap">
-                    <a href="#" class="item-thumb"> <img src="../../../public/images/Products/84850.jpg"></a>
-                    <a href="#" class="item-thumb"> <img src="../../../public/images/Products/84850.jpg"></a>
-                    <a href="#" class="item-thumb"> <img src="../../../public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
                 </div> <!-- slider-nav.// -->
             </article> <!-- gallery-wrap .end// -->
         </aside>
@@ -118,6 +118,6 @@ $header = template::header($title);
 </div> <!-- card.// -->
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

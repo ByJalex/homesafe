@@ -1,5 +1,5 @@
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $title = 'Iniciar sesión';
 $header = template::header($title);
 ?>
@@ -71,7 +71,7 @@ $header = template::header($title);
                                 <tr>
                                     <td>
                                         <figure class="itemside">
-                                            <div class="aside"><img src="../../../public/images/Products/84850.jpg" class="img-sm"></div>
+                                            <div class="aside"><img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg" class="img-sm"></div>
                                             <figcaption class="info">
                                                 <a href="#" class="title text-dark">Google Home</a>
                                                 <p class="text-muted small"><strong>Marca:</strong> Google</p>
@@ -157,6 +157,6 @@ $header = template::header($title);
 </section>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

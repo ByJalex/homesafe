@@ -1,5 +1,5 @@
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $title = 'Home Safe - inicio';
 $header = template::header($title);
 ?>
@@ -14,20 +14,20 @@ $header = template::header($title);
         <div class="navbar-collapse collapse" id="main_nav" style="">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="index.php">Inicio</a>
+                    <a class="nav-link" href="Home">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Explorar</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="news.php">Noticias</a>
+                    <a class="nav-link" href="News">Noticias</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.php">Sobre nosotros</a>
+                    <a class="nav-link" href="About">Sobre nosotros</a>
                 </li>
-                
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
                     <div class="dropdown-menu">
@@ -50,17 +50,17 @@ $header = template::header($title);
             <aside class="col-md-3">
                 <nav class="card">
                     <ul class="menu-category">
-                        <li><a href="categories.php">Sala</a></li>
-                        <li><a href="categories.php">Habitación</a></li>
-                        <li><a href="categories.php">Baño</a></li>
-                        <li><a href="categories.php">Cocina</a></li>
-                        <li><a href="categories.php">Iluminación interior</a></li>
-                        <li><a href="categories.php">Iluminación interior</a></li>
+                        <li><a href="Categories">Sala</a></li>
+                        <li><a href="Categories">Habitación</a></li>
+                        <li><a href="Categories">Baño</a></li>
+                        <li><a href="Categories">Cocina</a></li>
+                        <li><a href="Categories">Iluminación interior</a></li>
+                        <li><a href="Categories">Iluminación interior</a></li>
                         <li class="has-submenu"><a href="#"><strong>Más categorias</strong></a>
                             <ul class="submenu">
-                                <li><a href="categories.php">Ventanas</a></li>
-                                <li><a href="categories.php">Seguridad</a></li>
-                                <li><a href="categories.php">Patio</a></li>
+                                <li><a href="Categories">Ventanas</a></li>
+                                <li><a href="Categories">Seguridad</a></li>
+                                <li><a href="Categories">Patio</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -68,7 +68,7 @@ $header = template::header($title);
             </aside> <!-- col.// -->
             <div class="col-md-9">
                 <article class="banner-wrap">
-                    <img src="../../../public/images/site/banner.jpg" class="w-100 rounded">
+                    <img src="<?php echo RUTA_URL?>public/images/site/banner.jpg" class="w-100 rounded">
                 </article>
             </div> <!-- col.// -->
         </div> <!-- row.// -->
@@ -88,40 +88,40 @@ $header = template::header($title);
 
             <!--Este producto se ira iterando-->
             <div class="col-md-3">
-                <div href="product.php" class="card card-product-grid">
-                    <a href="product.php" class="img-wrap"> <img src="../../../public/images/Products/84850.jpg"> </a>
+                <div href="Product" class="card card-product-grid">
+                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product.php" class="title">Google Home</a>
+                        <a href="Product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="product.php" class="card card-product-grid">
-                    <a href="product.php" class="img-wrap"> <img src="../../../public/images/Products/84850.jpg"> </a>
+                <div href="Product" class="card card-product-grid">
+                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product.php" class="title">Google Home</a>
+                        <a href="Product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="product.php" class="card card-product-grid">
-                    <a href="product.php" class="img-wrap"> <img src="../../../public/images/Products/84850.jpg"> </a>
+                <div href="Product" class="card card-product-grid">
+                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product.php" class="title">Google Home</a>
+                        <a href="Product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="product.php" class="card card-product-grid">
-                    <a href="product.php" class="img-wrap"> <img src="../../../public/images/Products/84850.jpg"> </a>
+                <div href="Product" class="card card-product-grid">
+                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product.php" class="title">Google Home</a>
+                        <a href="Product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
@@ -142,14 +142,14 @@ $header = template::header($title);
                 <p>Nuestro equipo esta trabajando arduamente para que tu puedas descargar nuestra app.</p>
             </div>
             <div class="col-md-6 text-md-right">
-                <a href="#"><img src="../../../public/images/site/appstore.png" height="40"></a>
-                <a href="#"><img src="../../../public/images/site/appstore.png" height="40"></a>
+                <a href="#"><img src="<?php echo RUTA_URL?>public/images/site/appstore.png" height="40"></a>
+                <a href="#"><img src="<?php echo RUTA_URL?>public/images/site/appstore.png" height="40"></a>
             </div>
         </div> <!-- row.// -->
     </div><!-- container // -->
 </section>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

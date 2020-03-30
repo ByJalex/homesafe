@@ -26,7 +26,7 @@ class View
     {
         #Aqui se va a guardar una vista con el mismo nombre de la carpeta Ej:
         #Carpeta: Home, Archivo php (Vista): Home.php
-        $file_path = ROOT . '/' . PATH_VIEWS . '/' . $file_name . '.php';
+        $file_path = '../'.PATH_VIEWS . '/' . $file_name . '.php';
         if (is_file($file_path)) {
             extract($this->params);
             ob_start();

@@ -1,9 +1,0 @@
-#Permite reescribir las peticiones de URL 
-RewriteEngine On
-
-#Si el archivo y la carpeta no existen hacer la siguiente 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-#Redireccionar todas las peticiones a index
-RewriteRule ^ index.php [QSA,L]

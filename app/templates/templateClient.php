@@ -13,13 +13,13 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
-            <script src="<?php echo RUTA_URL?>public/js/axios.min.js"></script>
-            <script src="<?php echo RUTA_URL?>public/js/vue.js"></script>
-            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/all.min.css">
-            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/bootstrap.css">
-            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/responsive.css">
-            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/ui.css">
-            <link rel="stylesheet" href="<?php echo RUTA_URL?>public/css/client/sweetalert.css">
+            <script src="<?php echo RUTA_URL ?>public/js/axios.min.js"></script>
+            <script src="<?php echo RUTA_URL ?>public/js/vue.js"></script>
+            <link rel="stylesheet" href="<?php echo RUTA_URL ?>public/css/client/all.min.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL ?>public/css/client/bootstrap.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL ?>public/css/client/responsive.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL ?>public/css/client/ui.css">
+            <link rel="stylesheet" href="<?php echo RUTA_URL ?>public/css/client/sweetalert.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
@@ -49,8 +49,8 @@ class template
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-2 col-4">
-                                <a href="Home" class="brand-wrap">
-                                    <img class="logo" src="<?php echo RUTA_URL?>public/images/logo.png">
+                                <a href="home" class="brand-wrap">
+                                    <img class="logo" src="<?php echo RUTA_URL ?>public/images/logo.png">
                                 </a> <!-- brand-wrap.// -->
                             </div>
                             <div class="col-lg-6 col-sm-12">
@@ -103,7 +103,7 @@ class template
                                         <!--Mostrar informacion si el usuario ya esta logeado-->
                                         <div class="dropdown d-inline-block" id="login">
                                             <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_URL?>public/images/person_3.jpg">
+                                                <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_URL ?>public/images/person_3.jpg">
                                                 <div class="text" v-for="name in myUsername">
                                                     Hola, {{name.usu_c}}
                                                 </div>
@@ -192,9 +192,9 @@ class template
                 </div><!-- //container -->
             </footer>
 
-            <script src="<?php echo RUTA_URL?>public/js/client/jquery-2.0.0.min.js"></script>
-            <script src="<?php echo RUTA_URL?>public/js/client/bootstrap.bundle.min.js"></script>
-            <script src="<?php echo RUTA_URL?>public/js/client/sweetalert.min.js"></script>
+            <script src="<?php echo RUTA_URL ?>public/js/client/jquery-2.0.0.min.js"></script>
+            <script src="<?php echo RUTA_URL ?>public/js/client/bootstrap.bundle.min.js"></script>
+            <script src="<?php echo RUTA_URL ?>public/js/client/sweetalert.min.js"></script>
             <script src="../../core/controllers/client.js"></script>
         </body>
 

@@ -34,3 +34,4 @@ define('URI', $_SERVER['REQUEST_URI']);
 define('PATH_CONTROLLERS', 'app/core/controllers/');
 define('PATH_VIEWS', 'app/view/client');
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('CORE', 'system/core/');

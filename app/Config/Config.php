@@ -7,9 +7,11 @@ define('APP_VERSION', '1');
 //Rutas de apliación
 define('RUTA_APP', dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 //Ruta Url
+define('RUTA_PADRE', 'https://homesafe-sv.herokuapp.com');
+define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'].'/homesafe');
 
 #Dev: http://localhost/homesafe/
-define('RUTA_URL', 'http://homesafe-sv.herokuapp.com/');
+define('RUTA_URL', 'https://homesafe-sv.herokuapp.com/');
 //Zona horaria
 define('TIME_ZONE', 'America/El_Salvador');
 

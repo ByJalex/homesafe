@@ -138,9 +138,9 @@ $header = template::header($title);
                             <option>Lo mas barato</option>
                         </select>
                         <div class="btn-group">
-                            <a href="categorieslist.php" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
+                            <a href="categorieslist" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
                                 <i class='bx bx-menu'></i>
-                                <a href="categories.php" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
+                                <a href="categories" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
                                     <i class='bx bxs-grid-alt'></i></a>
                         </div>
                     </div>

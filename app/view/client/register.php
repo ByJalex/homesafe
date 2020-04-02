@@ -1,6 +1,6 @@
 <?php
-require_once('../../templates/templateClient.php');
-$title = 'Registrarse';
+require_once(RUTA_APP . 'templates/templateClient.php');
+$title = 'Nombre del producto';
 $header = template::header($title);
 ?>
 
@@ -55,6 +55,6 @@ $header = template::header($title);
 </section>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

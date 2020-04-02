@@ -50,17 +50,17 @@ $header = template::header($title);
             <aside class="col-md-3">
                 <nav class="card">
                     <ul class="menu-category">
-                        <li><a href="Categories">Sala</a></li>
-                        <li><a href="Categories">Habitación</a></li>
-                        <li><a href="Categories">Baño</a></li>
-                        <li><a href="Categories">Cocina</a></li>
-                        <li><a href="Categories">Iluminación interior</a></li>
-                        <li><a href="Categories">Iluminación interior</a></li>
+                        <li><a href="categories">Sala</a></li>
+                        <li><a href="categories">Habitación</a></li>
+                        <li><a href="categories">Baño</a></li>
+                        <li><a href="categories">Cocina</a></li>
+                        <li><a href="categories">Iluminación interior</a></li>
+                        <li><a href="categories">Iluminación interior</a></li>
                         <li class="has-submenu"><a href="#"><strong>Más categorias</strong></a>
                             <ul class="submenu">
-                                <li><a href="Categories">Ventanas</a></li>
-                                <li><a href="Categories">Seguridad</a></li>
-                                <li><a href="Categories">Patio</a></li>
+                                <li><a href="categories">Ventanas</a></li>
+                                <li><a href="categories">Seguridad</a></li>
+                                <li><a href="categories">Patio</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -88,40 +88,40 @@ $header = template::header($title);
 
             <!--Este producto se ira iterando-->
             <div class="col-md-3">
-                <div href="Product" class="card card-product-grid">
-                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
+                <div href="product" class="card card-product-grid">
+                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="Product" class="title">Google Home</a>
+                        <a href="product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="Product" class="card card-product-grid">
-                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
+                <div href="product" class="card card-product-grid">
+                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="Product" class="title">Google Home</a>
+                        <a href="product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="Product" class="card card-product-grid">
-                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
+                <div href="product" class="card card-product-grid">
+                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="Product" class="title">Google Home</a>
+                        <a href="product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
 
             <div class="col-md-3">
-                <div href="Product" class="card card-product-grid">
-                    <a href="Product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
+                <div href="product" class="card card-product-grid">
+                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="Product" class="title">Google Home</a>
+                        <a href="product" class="title">Google Home</a>
                         <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
                     </figcaption>
                 </div>

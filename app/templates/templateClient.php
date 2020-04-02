@@ -13,9 +13,6 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
-            <?php
-            print_r(RUTA_PADRE);
-            ?>
             <script src="<?php echo RUTA_PADRE?>/public/js/axios.min.js"></script>
             <script src="<?php echo RUTA_PADRE?>/public/js/vue.js"></script>
             <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/all.min.css">
@@ -72,7 +69,7 @@ class template
 
                                 <div class="widgets-wrap float-md-right">
                                     <div class="widget-header  mr-1">
-                                        <a href="Cart" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
+                                        <a href="cart" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
                                         <span class="badge badge-pill bg-primary notify">0</span>
                                     </div>
                                     <?php
@@ -95,8 +92,8 @@ class template
                                             <div class="text">
                                                 <span class="text-muted">Bienvenido</span>
                                                 <div>
-                                                    <a href="Login">Iniciar sesión</a> |
-                                                    <a href="Register"> Registrarse</a>
+                                                    <a href="login">Iniciar sesión</a> |
+                                                    <a href="register"> Registrarse</a>
                                                 </div>
                                             </div>
                                         </div>

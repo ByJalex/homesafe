@@ -1,10 +1,10 @@
 <?php
 
-class home extends Controller
+class product extends Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->view->render('home');
+        $this->view->render('product');
     }
 }

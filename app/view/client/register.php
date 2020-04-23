@@ -1,7 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Nombre del producto';
-$header = template::header($title);
+$header = template::header('Registro de '.APP_NAME);
 ?>
 
 <section class="section-content padding-y">
@@ -42,7 +41,7 @@ $header = template::header($title);
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">
-                        <div class="custom-control-label"> Estoy de acuerdo con <a href="#">los terminos y condiciones.</a> </div>
+                        <div class="custom-control-label"> Estoy de acuerdo con <a href="#">los términos y condiciones.</a> </div>
                     </label>
                 </div> <!-- form-group end.// -->
         </article><!-- card-body.// -->

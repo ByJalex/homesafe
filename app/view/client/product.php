@@ -1,7 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Nombre del producto';
-$header = template::header($title);
+$header = template::header(APP_NAME.': Nombre del producto');
 ?>
 
 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
@@ -72,7 +71,7 @@ $header = template::header($title);
                             <i class='bx bxs-star text-warning'></i>
                         </li>
                     </ul>
-                    <small class="label-rating text-muted">132 comentarios</small>
+                    <small class="label-rating text-muted"><a href="reviews">132 comentarios</a></small>
                     <small class="label-rating text-success"> <i class='bx bxs-cart-download' ></i> 154 ordenes </small>
                 </div> <!-- rating-wrap.// -->
 

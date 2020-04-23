@@ -52,7 +52,7 @@ $header = template::header($title);
             </div>
             <div class="col-lg-6 text-center mt-3">
                 <h3 class="section-title">Visión</h3>
-                <p>En un periodo de 10 años lograr que nuestros productos y servicios estén presente en el 50% de la población haciendo de El Salvador el mejor país de centro américa en tener casa inteligente y seguridad.</p>
+                <p>En un periodo de 10 años lograr que nuestros productos y servicios estén presente en el 50% de la población haciendo de El Salvador el mejor país de centro América en tener casa inteligente y seguridad.</p>
             </div>
             <div class="col-lg-6 text-center mt-3">
                 <h3 class="section-title">Misión</h3>

@@ -2,33 +2,105 @@
 
 class App
 {
-    var $url;
+    //var $url;
     function __construct()
     {
-        App::getUrl();
+        //App::getUrl();
         App::getTemplate();
     }
 
+    protected $controladorActual = "home";
+
     private function getUrl()
     {
-        $this->url = $_GET['url'];
-        $this->url = rtrim($this->url, '/');
-        $this->url = explode('/', $this->url);
+        if (isset($_GET['url'])) :
+            //limpiamos los espacios que estan a la derecha de la url
+            #Se definio "url" en el .htaccess
+            $url = rtrim($_GET['url'], '/');
+            //Sanitizar url
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            /**
+             * $url array
+             * [0] = Controller
+             * [1] = Método
+             * [2] = Parametro
+             */
+            $url = explode('/', $url);
+            #print_r($url);
+            return $url;
+        endif;
     }
 
+    #funcion para verificar si el controlador actual existe...
     private function getTemplate()
     {
-        $archivoController = RUTA_APP.'core/controllers/' . $this->url[0] . '.php';
+        $url = $this->getUrl();
+        
+        #Si el controlador esta vacio redireccionar al home
+        if (empty($url[0])) {
+            $url[0] = 'home';
+        }
+
+        #Verificar si el controlador existe
+        $archivoController = RUTA_APP . 'core/controllers/' . $url[0] . '.php';
         if (file_exists($archivoController)) {
+            #Llamar el controlador para mostar la vista
             require_once $archivoController;
-            $controller = new $this->url[0];
+            $controller = new $url[0];
             if (isset($this->url[1])) {
-                $controller->{$this->url[1]}();
+                $controller->{$url[1]}();
             }
         } else {
-            $bug = RUTA_APP.'core/controllers/bug.php';
-            require_once $bug;
+            #print_r($archivoController);
+            $bug = RUTA_APP . 'core/controllers/bug.php';           
+            require_once $bug;      
             $bug = new bug();
+        }
+    }
+
+    public function modelo($modelo)
+    {
+        try {
+            //validar si el modelo solicitado existe
+            if (file_exists('../app/Models/' . $modelo . '.php')) {
+
+                //Si existe la incluimos
+                require_once '../app/Models/' . $modelo . '.php';
+                return new $modelo;
+            } else {
+                throw new Exception("El modelo " . $modelo . " no existe, por favor intente con uno existente");
+            }
+        } catch (Exception $e) {
+            $datos = [
+                'titulo'    => 'Upps!',
+                'mensaje'   => 'Ha ocurrido un error con la instancia del modelo',
+                'problema'  => $e->getMessage()
+            ];
+            ob_start('comprimir_pagina');
+            require_once '../app/view/bug.php';
+            ob_end_flush();
+        }
+    }
+
+    public function filesManager($ruta, $nombre = false, $type, $assets = false)
+    {
+        switch ($type) {
+            case 'img':
+                # code...
+                break;
+            case 'js':
+                if ($assets != false) {
+                    header('Content-Type: application/javascript');
+                    readfile(RUTA_APP . $ruta);
+                } else {
+                }
+                break;
+            case 'css':
+                # code...
+                break;
+            case 'json':
+                # code...
+                break;
         }
     }
 }

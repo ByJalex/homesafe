@@ -13,13 +13,13 @@ class template
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
-            <script src="<?php echo RUTA_PADRE?>/public/js/axios.min.js"></script>
-            <script src="<?php echo RUTA_PADRE?>/public/js/vue.js"></script>
-            <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/all.min.css">
-            <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/bootstrap.css">
-            <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/responsive.css">
-            <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/ui.css">
-            <link rel="stylesheet" href="<?php echo RUTA_PADRE?>/public/css/client/sweetalert.css">
+            <script src="public/js/axios.min.js"></script>
+            <script src="public/js/vue.js"></script>
+            <link rel="stylesheet" href="public/css/client/all.min.css">
+            <link rel="stylesheet" href="public/css/client/bootstrap.css">
+            <link rel="stylesheet" href="public/css/client/responsive.css">
+            <link rel="stylesheet" href="public/css/client/ui.css">
+            <link rel="stylesheet" href="public/css/client/sweetalert.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
@@ -36,7 +36,7 @@ class template
                     <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
                         <div class="container">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href="login.php">Parece que no has iniciado sesión, click aqui para continuar comprando.</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login">Parece que no has iniciado sesión, click aquí para continuar comprando.</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -50,13 +50,13 @@ class template
                         <div class="row align-items-center">
                             <div class="col-lg-2 col-4">
                                 <a href="home" class="brand-wrap">
-                                    <img class="logo" src="<?php echo RUTA_URL ?>public/images/logo.png">
+                                    <img class="logo" src="public/images/logo.png">
                                 </a> <!-- brand-wrap.// -->
                             </div>
                             <div class="col-lg-6 col-sm-12">
                                 <form action="#" class="search">
                                     <div class="input-group w-100">
-                                        <input type="text" class="form-control" placeholder="Buscar (ej: lampara, bocina)">
+                                        <input type="text" class="form-control" placeholder="Buscar (ej: lámpara, bocina)">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="submit">
                                                 <i class='bx bx-search'></i>
@@ -103,7 +103,7 @@ class template
                                         <!--Mostrar informacion si el usuario ya esta logeado-->
                                         <div class="dropdown d-inline-block" id="login">
                                             <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_URL ?>public/images/person_3.jpg">
+                                                <img class="icon icon-xs rounded-circle" src="public/images/person_3.jpg">
                                                 <div class="text" v-for="name in myUsername">
                                                     Hola, {{name.usu_c}}
                                                 </div>
@@ -149,7 +149,7 @@ class template
                                 <h6 class="title">Home Safe</h6>
                                 <ul class="list-unstyled">
                                     <li> <a href="About">Acerca de nosotros</a></li>
-                                    <li> <a href="#">Terminos y condiciones</a></li>
+                                    <li> <a href="#">Términos y condiciones</a></li>
                                     <li> <a href="#">Desarrolladores</a></li>
                                     <li> <a href="#">Api</a></li>
                                 </ul>
@@ -157,7 +157,7 @@ class template
                             <aside class="col-md col-6">
                                 <h6 class="title">Ayuda</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="#">Contactanos</a></li>
+                                    <li> <a href="#">Contáctanos</a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md col-6">
@@ -166,7 +166,7 @@ class template
                                     <li> <a href="Login"> Inicio de sesión de usuario </a></li>
                                     <li> <a href="Register"> Registro de usuario </a></li>
                                     <li> <a href="Usersettings"> Configuración de cuenta </a></li>
-                                    <li> <a href="Account"> Mis ordenes </a></li>
+                                    <li> <a href="Account"> Mis órdenes </a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md">
@@ -181,7 +181,11 @@ class template
 
                     <section class="footer-bottom border-top row">
                         <div class="col-md-2">
-                            <p class="text-muted"> © 2020 Home Safe </p>
+                            <?php
+                            #Detectar el idiomo en que se esta ejecutando la pagina
+                            $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+                            ?>
+                            <p class="text-muted"> © <?php echo date("Y"); ?> Home Safe - <?php echo $lang ?></p>
                         </div>
                         <div class="col-md-8 text-md-center">
                             <span class="px-2">homesafesv@gmail.com</span>
@@ -192,9 +196,9 @@ class template
                 </div><!-- //container -->
             </footer>
 
-            <script src="<?php echo RUTA_URL ?>public/js/client/jquery-2.0.0.min.js"></script>
-            <script src="<?php echo RUTA_URL ?>public/js/client/bootstrap.bundle.min.js"></script>
-            <script src="<?php echo RUTA_URL ?>public/js/client/sweetalert.min.js"></script>
+            <script src="public/js/client/jquery-2.0.0.min.js"></script>
+            <script src="public/js/client/bootstrap.bundle.min.js"></script>
+            <script src="public/js/client/sweetalert.min.js"></script>
             <script src="../../core/controllers/client.js"></script>
         </body>
 

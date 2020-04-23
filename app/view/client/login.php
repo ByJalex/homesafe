@@ -1,7 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Nombre del producto';
-$header = template::header($title);
+$header = template::header(APP_NAME.' inicia sesión');
 ?>
 
 <section class="section-conten padding-y" style="min-height:84vh" id="">

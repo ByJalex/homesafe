@@ -4,7 +4,7 @@ class View
 {
     function __construct()
     {
-        #echo '<p>Vista base</p>';
+        #Vista base <3
     }
 
     function render($nombre){

@@ -1,7 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Home Safe - inicio';
-$header = template::header($title);
+$header = template::header(APP_NAME.': compra en línea de productos tecnológicos y más');
 ?>
 
 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
@@ -56,7 +55,7 @@ $header = template::header($title);
                         <li><a href="categories">Cocina</a></li>
                         <li><a href="categories">Iluminación interior</a></li>
                         <li><a href="categories">Iluminación interior</a></li>
-                        <li class="has-submenu"><a href="#"><strong>Más categorias</strong></a>
+                        <li class="has-submenu"><a href="#"><strong>Más categorías</strong></a>
                             <ul class="submenu">
                                 <li><a href="categories">Ventanas</a></li>
                                 <li><a href="categories">Seguridad</a></li>
@@ -138,8 +137,8 @@ $header = template::header($title);
 
         <div class="row">
             <div class="col-md-6">
-                <h3>Proximamente Home Safe app</h3>
-                <p>Nuestro equipo esta trabajando arduamente para que tu puedas descargar nuestra app.</p>
+                <h3>Próximamente Home Safe app</h3>
+                <p>Nuestro equipo está trabajando arduamente para que tú puedas descargar nuestra app.</p>
             </div>
             <div class="col-md-6 text-md-right">
                 <a href="#"><img src="<?php echo RUTA_URL?>public/images/site/appstore.png" height="40"></a>

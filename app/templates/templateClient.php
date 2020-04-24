@@ -14,7 +14,7 @@ class template
             <title><?php echo $title ?></title>
             <!--Importando todos los estilos-->
             <script src="public/js/axios.min.js"></script>
-            <script src="public/js/vue.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
             <link rel="stylesheet" href="public/css/client/all.min.css">
             <link rel="stylesheet" href="public/css/client/bootstrap.css">
             <link rel="stylesheet" href="public/css/client/responsive.css">
@@ -199,7 +199,6 @@ class template
             <script src="public/js/client/jquery-2.0.0.min.js"></script>
             <script src="public/js/client/bootstrap.bundle.min.js"></script>
             <script src="public/js/client/sweetalert.min.js"></script>
-            <script src="../../core/controllers/client.js"></script>
         </body>
 
         </html>

@@ -6,5 +6,11 @@ class product extends Controller
     {
         parent::__construct();
         $this->view->render('product');
+        #product::saludo();
+    }
+
+    function saludo()
+    {
+        print_r('Hola este es un saludo');
     }
 }

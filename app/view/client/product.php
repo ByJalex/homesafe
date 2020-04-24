@@ -1,6 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$header = template::header(APP_NAME.': Nombre del producto');
+$header = template::header(APP_NAME . ': Nombre del producto');
 ?>
 
 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
@@ -47,12 +47,12 @@ $header = template::header(APP_NAME.': Nombre del producto');
         <aside class="col-md-6">
             <article class="gallery-wrap">
                 <div class="img-big-wrap">
-                    <div> <a href="#"><img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a></div>
+                    <div> <a href="#"><img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"></a></div>
                 </div> <!-- slider-product.// -->
                 <div class="thumbs-wrap">
-                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
-                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
-                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"></a>
+                    <a href="#" class="item-thumb"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"></a>
                 </div> <!-- slider-nav.// -->
             </article> <!-- gallery-wrap .end// -->
         </aside>
@@ -72,7 +72,7 @@ $header = template::header(APP_NAME.': Nombre del producto');
                         </li>
                     </ul>
                     <small class="label-rating text-muted"><a href="reviews">132 comentarios</a></small>
-                    <small class="label-rating text-success"> <i class='bx bxs-cart-download' ></i> 154 ordenes </small>
+                    <small class="label-rating text-success"> <i class='bx bxs-cart-download'></i> 154 ordenes </small>
                 </div> <!-- rating-wrap.// -->
 
                 <div class="mb-3">
@@ -110,7 +110,7 @@ $header = template::header(APP_NAME.': Nombre del producto');
                 </div> <!-- row.// -->
 
                 <a href="#" class="btn  btn-primary"> Comprar ahora </a>
-                <a href="#" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt' ></i> </a>
+                <a href="#" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt'></i> </a>
             </article> <!-- product-info-aside .// -->
         </main> <!-- col.// -->
     </div> <!-- row.// -->

@@ -1,6 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$header = template::header(APP_NAME.': compra en línea de productos tecnológicos y más');
+$header = template::header(APP_NAME . ': compra en línea de productos tecnológicos y más');
 ?>
 
 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
@@ -55,19 +55,13 @@ $header = template::header(APP_NAME.': compra en línea de productos tecnológic
                         <li><a href="categories">Cocina</a></li>
                         <li><a href="categories">Iluminación interior</a></li>
                         <li><a href="categories">Iluminación interior</a></li>
-                        <li class="has-submenu"><a href="#"><strong>Más categorías</strong></a>
-                            <ul class="submenu">
-                                <li><a href="categories">Ventanas</a></li>
-                                <li><a href="categories">Seguridad</a></li>
-                                <li><a href="categories">Patio</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="categories"><strong>Más categorías</strong></a></li>
                     </ul>
                 </nav>
             </aside> <!-- col.// -->
             <div class="col-md-9">
                 <article class="banner-wrap">
-                    <img src="<?php echo RUTA_URL?>public/images/site/banner.jpg" class="w-100 rounded">
+                    <img src="<?php echo RUTA_URL ?>public/images/site/banner.jpg" class="w-100 rounded">
                 </article>
             </div> <!-- col.// -->
         </div> <!-- row.// -->
@@ -82,50 +76,26 @@ $header = template::header(APP_NAME.': compra en línea de productos tecnológic
             <h3 class="section-title">Productos populares</h3>
         </header><!-- sect-heading -->
 
-
-        <div class="row">
-
+        <div class="row" id="prods">
             <!--Este producto se ira iterando-->
-            <div class="col-md-3">
+            <div class="col-md-3" v-for="item in popularProducts">
                 <div href="product" class="card card-product-grid">
-                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
+                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product" class="title">Google Home</a>
-                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
+                        <a href="product" class="title">{{item.nombre_p}}</a>
+                        <div class="price mt-1">${{item.precio_p}}</div> <!-- price-wrap.// -->
+                        <ul class="rating-stars">
+                            <li class="">
+                                <i :class="['bx bxs-star' , item.ranking < 1 ? 'text-gray' : 'text-warning']"></i>
+                                <i :class="['bx bxs-star' , item.ranking < 2 ? 'text-gray' : 'text-warning']"></i>
+                                <i :class="['bx bxs-star' , item.ranking < 3 ? 'text-gray' : 'text-warning']"></i>
+                                <i :class="['bx bxs-star' , item.ranking < 4 ? 'text-gray' : 'text-warning']"></i>
+                                <i :class="['bx bxs-star' , item.ranking < 5 ? 'text-gray' : 'text-warning']"></i>
+                            </li>
+                        </ul>
                     </figcaption>
                 </div>
             </div> <!-- col.// -->
-
-            <div class="col-md-3">
-                <div href="product" class="card card-product-grid">
-                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
-                    <figcaption class="info-wrap">
-                        <a href="product" class="title">Google Home</a>
-                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                    </figcaption>
-                </div>
-            </div> <!-- col.// -->
-
-            <div class="col-md-3">
-                <div href="product" class="card card-product-grid">
-                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
-                    <figcaption class="info-wrap">
-                        <a href="product" class="title">Google Home</a>
-                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                    </figcaption>
-                </div>
-            </div> <!-- col.// -->
-
-            <div class="col-md-3">
-                <div href="product" class="card card-product-grid">
-                    <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg"> </a>
-                    <figcaption class="info-wrap">
-                        <a href="product" class="title">Google Home</a>
-                        <div class="price mt-1">$179.00</div> <!-- price-wrap.// -->
-                    </figcaption>
-                </div>
-            </div> <!-- col.// -->
-
 
         </div> <!-- row.// -->
 
@@ -141,12 +111,14 @@ $header = template::header(APP_NAME.': compra en línea de productos tecnológic
                 <p>Nuestro equipo está trabajando arduamente para que tú puedas descargar nuestra app.</p>
             </div>
             <div class="col-md-6 text-md-right">
-                <a href="#"><img src="<?php echo RUTA_URL?>public/images/site/appstore.png" height="40"></a>
-                <a href="#"><img src="<?php echo RUTA_URL?>public/images/site/appstore.png" height="40"></a>
+                <a href="#"><img src="<?php echo RUTA_URL ?>public/images/site/appstore.png" height="40"></a>
+                <a href="#"><img src="<?php echo RUTA_URL ?>public/images/site/appstore.png" height="40"></a>
             </div>
         </div> <!-- row.// -->
     </div><!-- container // -->
 </section>
+
+<script src="app/core/vue/products.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

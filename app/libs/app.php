@@ -35,7 +35,7 @@ class App
     private function getTemplate()
     {
         $url = $this->getUrl();
-        
+
         #Si el controlador esta vacio redireccionar al home
         if (empty($url[0])) {
             $url[0] = 'home';
@@ -52,35 +52,12 @@ class App
             }
         } else {
             #print_r($archivoController);
-            $bug = RUTA_APP . 'core/controllers/bug.php';           
-            require_once $bug;      
+            $bug = RUTA_APP . 'core/controllers/bug.php';
+            require_once $bug;
             $bug = new bug();
         }
     }
 
-    public function modelo($modelo)
-    {
-        try {
-            //validar si el modelo solicitado existe
-            if (file_exists('../app/Models/' . $modelo . '.php')) {
-
-                //Si existe la incluimos
-                require_once '../app/Models/' . $modelo . '.php';
-                return new $modelo;
-            } else {
-                throw new Exception("El modelo " . $modelo . " no existe, por favor intente con uno existente");
-            }
-        } catch (Exception $e) {
-            $datos = [
-                'titulo'    => 'Upps!',
-                'mensaje'   => 'Ha ocurrido un error con la instancia del modelo',
-                'problema'  => $e->getMessage()
-            ];
-            ob_start('comprimir_pagina');
-            require_once '../app/view/bug.php';
-            ob_end_flush();
-        }
-    }
 
     public function filesManager($ruta, $nombre = false, $type, $assets = false)
     {

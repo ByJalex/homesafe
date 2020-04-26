@@ -4,10 +4,14 @@ class View
 {
     function __construct()
     {
-        #Vista base <3
+        #echo '<p>Vista base <3</p>';
     }
 
-    function render($nombre){
-        require RUTA_APP.'view/client/'.$nombre.'.php';
+    #Metodo para renderizar vista
+    function render(/*Nombre de la vista que se renderizara*/$nombre)
+    {
+        #Manda a requerir la vista para renderizarla, se toma en cuenta que nuestro enrutamiento corre desde
+        #El index
+        require_once 'app/view/client/' . $nombre . '.php';
     }
 }

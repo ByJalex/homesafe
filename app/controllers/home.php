@@ -5,10 +5,10 @@ class home
 
     function __construct()
     {
-        home::feed();
+       # home::feed();
     }
 
-    function feed()
+    function home()
     {
         $instancia = new View();
         $instancia::render('home');

@@ -10,7 +10,7 @@ $header = template::header($title);
             <h1>Oops!</h1>
             <h2>404 - La página no se puede encontrar</h2>
         </div>
-        <a href="home" class="btn btn-lg btn-primary">Ir a la pagina principal</a>    
+        <a href="<?php echo RUTA_PADRE ?>home" class="btn btn-lg btn-primary">Ir a la pagina principal</a>    
     </div>
 </div>
 

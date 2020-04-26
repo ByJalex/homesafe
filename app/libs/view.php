@@ -8,7 +8,7 @@ class View
     }
 
     #Metodo para renderizar vista
-    function render(/*Nombre de la vista que se renderizara*/$nombre)
+    static function render(/*Nombre de la vista que se renderizara*/$nombre)
     {
         #Manda a requerir la vista para renderizarla, se toma en cuenta que nuestro enrutamiento corre desde
         #El index

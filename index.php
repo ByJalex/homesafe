@@ -13,7 +13,6 @@ if (DEBUG_MODE) {
 } else {
     define('RUTA_PADRE', 'http://localhost/homesafe/');
 }
-
 //Se configura la ruta para la API
 $url = $_GET['url'];
 $url = rtrim($url . '/');

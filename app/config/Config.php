@@ -10,7 +10,7 @@ define('RUTA_APP', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 #Esta ruta se cambiara dependiendo de el servidor (Siempre terminara con un /)
 #Para vos MEMO seria: http://localhost/homesafe/
 #Para Josue seria: http://homesafe.test/
-define('RUTA_PADRE', 'http://homesafe.test/');
+// define('RUTA_PADRE', 'https://homesafe-sv.herokuapp.com/');
 define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/homesafe');
 
 #Dev: http://localhost/homesafe/
@@ -19,7 +19,7 @@ define('RUTA_URL', 'https://homesafe-sv.herokuapp.com/');
 define('TIME_ZONE', 'America/El_Salvador');
 
 //Modo de errores/ Debug Mode
-define('DEBUG_MODE', false); //True para desarrollo y false para producción
+define('DEBUG_MODE', true); //True para desarrollo y false para producción
 //Configuración del contenedor
 define('PATCH_OS', explode(DIRECTORY_SEPARATOR, RUTA_APP));
 

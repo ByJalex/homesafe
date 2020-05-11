@@ -10,7 +10,7 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse" id="main_nav" style="">
+        <div class="navbar-collapse collapse" id="main_nav">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="home">Inicio</a>
@@ -76,14 +76,14 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
             <h3 class="section-title">Productos populares</h3>
         </header><!-- sect-heading -->
 
-        <div class="row" id="prods">
+        <div class="row" id="prod">
             <!--Este producto se ira iterando-->
             <div class="col-md-3" v-for="item in popularProducts">
                 <div href="product" class="card card-product-grid">
                     <a href="product" class="img-wrap"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a href="product" class="title">{{item.nombre_p}}</a>
-                        <div class="price mt-1">${{item.precio_p}}</div> <!-- price-wrap.// -->
+                        <a href="product" class="title">{{item.Producto}}</a>
+                        <div class="price mt-1">${{item.Precio}}</div> <!-- price-wrap.// -->
                         <ul class="rating-stars">
                             <li class="">
                                 <i :class="['bx bxs-star' , item.ranking < 1 ? 'text-gray' : 'text-warning']"></i>
@@ -104,7 +104,6 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
 
 <section class="section-name padding-y bg">
     <div class="container">
-
         <div class="row">
             <div class="col-md-6">
                 <h3>Próximamente Home Safe app</h3>

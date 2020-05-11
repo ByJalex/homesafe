@@ -8,7 +8,6 @@ class App
         App::foo();
         #Si la url esta vacia redireccionar a la pagina de inicio
         if (empty($_GET['url'])) {
-
             $_GET['url'] = 'home';
         }
         #La variable url la mandamos a travez del htacces y  la guardamos en una variable llamada: $url

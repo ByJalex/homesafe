@@ -5,8 +5,12 @@ class template
     public static function header($title)
     {
 ?>
+        <?php
+        #Detectar el idiomo en que se esta ejecutando la pagina
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        ?>
         <!DOCTYPE html>
-        <html lang="es">
+        <html lang="<?php echo $lang?>">
 
         <head>
             <meta charset="UTF-8">
@@ -36,7 +40,7 @@ class template
                     <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
                         <div class="container">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a class="nav-link" href="login">Parece que no has iniciado sesión, click aquí para continuar comprando.</a></li>
+                                <li class="nav-item"><a class="nav-link" href="<?php echo RUTA_PADRE ?>login">Parece que no has iniciado sesión, click aquí para continuar comprando.</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -49,7 +53,7 @@ class template
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-2 col-4">
-                                <a href="home" class="brand-wrap">
+                                <a href="<?php echo RUTA_PADRE ?>home" class="brand-wrap">
                                     <img class="logo" src="<?php echo RUTA_PADRE ?>public/images/logo.png">
                                 </a> <!-- brand-wrap.// -->
                             </div>
@@ -69,14 +73,14 @@ class template
 
                                 <div class="widgets-wrap float-md-right">
                                     <div class="widget-header  mr-1">
-                                        <a href="cart" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
+                                        <a href="<?php echo RUTA_PADRE ?>cart" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
                                         <span class="badge badge-pill bg-primary notify">0</span>
                                     </div>
                                     <?php
                                     if (isset($_SESSION['id_usuario'])) {
                                     ?>
                                         <div class="widget-header mr-4">
-                                            <a href="notifications.php" class="icon-sm rounded-circle border">
+                                            <a href="<?php echo RUTA_PADRE ?>notifications" class="icon-sm rounded-circle border">
                                                 <i class='bx bx-bell'></i></a>
                                             <span class="badge badge-pill bg-warning notify">1</span>
                                         </div>
@@ -88,12 +92,12 @@ class template
                                     if (!isset($_SESSION['id_usuario'])) {
                                     ?>
                                         <div class="widget-header icontext">
-                                            <a href="account.php" class="icon icon-sm rounded-circle border"><i class='bx bx-user'></i></a>
+                                            <a href="<?php echo RUTA_PADRE ?>account" class="icon icon-sm rounded-circle border"><i class='bx bx-user'></i></a>
                                             <div class="text">
                                                 <span class="text-muted">Bienvenido</span>
                                                 <div>
-                                                    <a href="login">Iniciar sesión</a> |
-                                                    <a href="register"> Registrarse</a>
+                                                    <a href="<?php echo RUTA_PADRE ?>login">Iniciar sesión</a> |
+                                                    <a href="<?php echo RUTA_PADRE ?>register"> Registrarse</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,16 +106,16 @@ class template
                                     ?>
                                         <!--Mostrar informacion si el usuario ya esta logeado-->
                                         <div class="dropdown d-inline-block" id="login">
-                                            <a href="#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <a href="<?php echo RUTA_PADRE ?>#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_PADRE ?>public/images/person_3.jpg">
                                                 <div class="text" v-for="name in myUsername">
                                                     Hola, {{name.usu_c}}
                                                 </div>
                                             </a> <!-- iconbox // -->
                                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(150px, 32px, 0px);">
-                                                <a class="dropdown-item" href="account.php">Mi perfil</a>
-                                                <a class="dropdown-item" href="usersettings.php">Configuración</a>
-                                                <a class="dropdown-item" href="../../core/controllers/cerrarSesion.php">Cerrar sesión</a>
+                                                <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>account">Mi perfil</a>
+                                                <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>usersettings">Configuración</a>
+                                                <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>../../core/controllers/cerrarSesion.php">Cerrar sesión</a>
                                             </div>
                                         </div>
                                     <?php
@@ -139,34 +143,34 @@ class template
                             <aside class="col-md col-6">
                                 <h6 class="title">Marcas</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="#">Xiaomi</a></li>
-                                    <li> <a href="#">Samsumg</a></li>
-                                    <li> <a href="#">Philips</a></li>
-                                    <li> <a href="#">LG</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Xiaomi</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Samsumg</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Philips</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">LG</a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md col-6">
                                 <h6 class="title">Home Safe</h6>
                                 <ul class="list-unstyled">
                                     <li> <a href="About">Acerca de nosotros</a></li>
-                                    <li> <a href="#">Términos y condiciones</a></li>
-                                    <li> <a href="#">Desarrolladores</a></li>
-                                    <li> <a href="#">Api</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Términos y condiciones</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Desarrolladores</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>help/api">Api</a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md col-6">
                                 <h6 class="title">Ayuda</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="#">Contáctanos</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Contáctanos</a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md col-6">
                                 <h6 class="title">Cuenta</h6>
                                 <ul class="list-unstyled">
-                                    <li> <a href="Login"> Inicio de sesión de usuario </a></li>
-                                    <li> <a href="Register"> Registro de usuario </a></li>
-                                    <li> <a href="Usersettings"> Configuración de cuenta </a></li>
-                                    <li> <a href="Account"> Mis órdenes </a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>Login"> Inicio de sesión de usuario </a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>Register"> Registro de usuario </a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>Usersettings"> Configuración de cuenta </a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>Account"> Mis órdenes </a></li>
                                 </ul>
                             </aside>
                             <aside class="col-md">
@@ -181,10 +185,7 @@ class template
 
                     <section class="footer-bottom border-top row">
                         <div class="col-md-2">
-                            <?php
-                            #Detectar el idiomo en que se esta ejecutando la pagina
-                            $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-                            ?>
+
                             <p class="text-muted"> © <?php echo date("Y"); ?> Home Safe - <?php echo $lang ?></p>
                         </div>
                         <div class="col-md-8 text-md-center">

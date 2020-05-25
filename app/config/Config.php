@@ -17,7 +17,7 @@ define('RUTA_URL', 'https://homesafe-sv.herokuapp.com/');
 define('TIME_ZONE', 'America/El_Salvador');
 
 //Modo de errores/ Debug Mode
-define('DEBUG_MODE', false); //True para desarrollo y false para producción
+define('DEBUG_MODE', true); //True para desarrollo y false para producción
 //Configuración del contenedor
 define('PATCH_OS', explode(DIRECTORY_SEPARATOR, RUTA_APP));
 

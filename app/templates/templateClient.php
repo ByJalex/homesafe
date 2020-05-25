@@ -10,7 +10,7 @@ class template
         $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
         ?>
         <!DOCTYPE html>
-        <html lang="<?php echo $lang?>">
+        <html lang="<?php echo $lang ?>">
 
         <head>
             <meta charset="UTF-8">
@@ -153,7 +153,7 @@ class template
                                 <h6 class="title">Home Safe</h6>
                                 <ul class="list-unstyled">
                                     <li> <a href="About">Acerca de nosotros</a></li>
-                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Términos y condiciones</a></li>
+                                    <li> <a href="<?php echo RUTA_PADRE ?>about/termsandconditions">Términos y condiciones</a></li>
                                     <li> <a href="<?php echo RUTA_PADRE ?>#">Desarrolladores</a></li>
                                     <li> <a href="<?php echo RUTA_PADRE ?>help/api">Api</a></li>
                                 </ul>
@@ -185,7 +185,10 @@ class template
 
                     <section class="footer-bottom border-top row">
                         <div class="col-md-2">
-
+                            <?php
+                            #Detectar el idiomo en que se esta ejecutando la pagina
+                            $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+                            ?>
                             <p class="text-muted"> © <?php echo date("Y"); ?> Home Safe - <?php echo $lang ?></p>
                         </div>
                         <div class="col-md-8 text-md-center">

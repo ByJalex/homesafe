@@ -82,7 +82,7 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
                 <div :href="'product/'+ item.Producto" class="card card-product-grid">
                     <a :href="'product/'+ item.Producto" class="img-wrap"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a :href="'product/'+ item.Producto" class="title">{{item.Producto}}</a>
+                        <a :href="'product/'+ item.Producto" @click="" class="title">{{item.Producto}}</a>
                         <div class="price mt-1">${{item.Precio}}</div> <!-- price-wrap.// -->
                         <ul class="rating-stars">
                             <li class="">

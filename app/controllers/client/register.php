@@ -1,6 +1,6 @@
 <?php
 
-class home
+class register
 {
 
     function __construct()
@@ -8,12 +8,13 @@ class home
        # home::feed();
     }
 
-    function home()
+    function register()
     {
         $instancia = new View();
-        $instancia::render('home');
+        #Aqui siempre vas a llamar el archivo el html
+        $instancia::render('register');
     }
-
+    
     function individualProduct()
     {
         $url = $_GET['url'];

@@ -1,5 +1,5 @@
 <?php
-require_once('../../templates/template.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 template::header('Home Safe', 0);
 ?>
 

@@ -57,12 +57,12 @@ class App
 
     function admin()
     {
-        if (empty($_GET['url'])) {
-            $_GET['url'] = 'home';
-        }
         $url = $_GET['url'];
         $url = rtrim($url . '/');
         $url = explode('/', $url);
+        if (empty($url[1])) {
+            $url[1] = 'login';
+        }
         $archivoController = 'app/controllers/admin/' . $url[1] . '.php';
         if (file_exists($archivoController)) {
             require_once $archivoController;

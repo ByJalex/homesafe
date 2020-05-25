@@ -1,226 +1,126 @@
 <?php
-require_once(RUTA_APP .'templates/templateAdmin.php');
+require_once(RUTA_APP . 'templates/templateAdmin.php');
 Page::headerTemplate('Principal');
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Cupones</h1>
-    </div>
-    <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Listado de cupones</h6>
-            </div>
-            <div class="card-body">
-
-            <div class="row">
-                        <div class="col-lg-2">
-                            <div class="dropdown mb-4">
-                            <button class="btn btn-primary dropdown-toggle mb-4" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ordenar por
-                            </button>
-                            <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Cantidad</a>
-                            <a class="dropdown-item" href="#">Descuento</a>
-                            <a class="dropdown-item" href="#">Validez</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                            <form class="form-inline mb-3">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar cupones..." aria-label="Search">
-                            <a href="#" class="btn btn-success btn-circle" data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fas fa-check"></i>
-                            </a>
-                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                  <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalCenterTitle">Agregar cupon</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body container-fluid col-md-6">
-                                      <form>
-                                          <div class="form-group mb-3">
-                                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Codigo del cupon">
-                                          </div>
-                                          <div class="form-group mb-3">
-                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Descuento">
-                                          </div>
-                                          <div class="form-group mb-3">
-                                            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Cantidad">
-                                          </div>
-                                          <div class="form-group">
-                                          <label for="exampleFormControlSelect1" class="mr-3">Validez</label>
-                                          <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Disponible</option>
-                                            <option>Agotado</option>
-                                          </select>
-                                        </div>
-                                        </form>
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Agregar</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                            </form>
-                    </div>
-
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
-                    <tr>
-                      <th>Nombre</th>
-                      <th>Descuento</th>
-                      <th>Cantidad</th>
-                      <th>Validez</th>
-                      <th>Editar</th>
-                      <th>Eliminar</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>AKBHDW</td>
-                      <td>23%</td>
-                      <td>61</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle ">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                      <td>DWBUW</td>
-                      <td>12%</td>
-                      <td>63</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>D#YUHDW</td>
-                      <td>13%</td>
-                      <td>66</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle ">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>#EDQFGFW</td>
-                      <td>6%</td>
-                      <td>22</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>DKASWu</td>
-                      <td>21%</td>
-                      <td>33</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>HJFWUWF</td>
-                      <td>45%</td>
-                      <td>61</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>BYJALEX</td>
-                      <td>1%</td>
-                      <td>59</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle ">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                    <tr>
-                      <td>DWFW$%#</td>
-                      <td>31%</td>
-                      <td>55</td>
-                      <td>Activo</td>
-                      <td> 
-                        <a href="#" class="btn btn-warning btn-circle">
-                        <i class="fas fa-edit"></i>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-circle">
-                        <i class="fas fa-trash"></i>
-                        </a></td>
-                        </tr>
-                    <tr>
-                    </tr>
-                  </tbody>
-                </table>
-                <nav aria-label="Page navigation example" class="mt-5">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                    <a class="page-link" href="#">Seguiente</a>
-                    </li>
-                </ul>
-            </nav>
-              </div>
-            </div>
-          </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="container mb-5">
+                <table id="tbCupones" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Cupon</th>
+                            <th>Descuento</th>
+                            <th>Cantidad</th>
+                            <th>Validez</th>
+                            <th>Aciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tiger</td>
+                            <td>Nixon</td>
+                            <td>Winters</td>
+                            <td>Winters</td>
+                            <td>
+                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Winters</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Ashton</td>
+                            <td>Cox</td>
+                            <td>Winters</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Cedric</td>
+                            <td>Kelly</td>
+                            <td>Winters</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Airi</td>
+                            <td>Winters</td>
+                            <td>Satou</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Brielle</td>
+                            <td>Winters</td>
+                            <td>Williamson</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Herrod</td>
+                            <td>Winters</td>
+                            <td>Chandler</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+
+                        </tr>
+                        <tr>
+                            <td>Rhona</td>
+                            <td>Winters</td>
+                            <td>Davidson</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+
+                        </tr>
+                        <tr>
+                            <td>Colleen</td>
+                            <td>Winters</td>
+                            <td>Hurst</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Sonya</td>
+                            <td>Winters</td>
+                            <td>Frost</td>
+                            <td>Garrett</td>
+                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
+                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>  
+            </div>
+        </div>
+
 <?php
 Page::footerTemplate();
 ?>
+

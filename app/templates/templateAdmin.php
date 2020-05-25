@@ -23,7 +23,10 @@ class Page
         
           <!-- Custom styles for this template-->
           <link href="<?php echo RUTA_PADRE ?>public/css/admin/sb-admin-2.css" rel="stylesheet">
-        
+          <!-- datatables-->
+          <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet"  type="text/css" />
+          <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
         </head>
         
         <body id="page-top">
@@ -197,10 +200,16 @@ class Page
             <!-- Bootstrap core JavaScript-->
             <script src="<?php echo RUTA_PADRE ?>public/js/admin/jquery.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/admin/bootstrap.bundle.min.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>public/js/initialisation.js"></script>
         
             <!-- Custom scripts for all pages-->
             <script src="<?php echo RUTA_PADRE ?>public/js/admin/sb-admin-2.min.js"></script>
-        
+            <!-- datatables-->
+            <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.bootstrap4.min.js"></script>
+            <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.responsive.min.js"></script>
+            <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/responsive.bootstrap4.min.js"></script>
+
         </body>
         
         </html>

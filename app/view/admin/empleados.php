@@ -1,10 +1,10 @@
 <?php
-require_once('../../templates/templateAdmin.php');
+require_once(RUTA_APP . 'templates/templateAdmin.php');
 Page::headerTemplate('Principal');
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
+        <h1 class="h3 mb-0 text-gray-800">Empleados</h1>
     </div>
     <div class="row">
         <div class="col-lg-6">

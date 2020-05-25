@@ -3,8 +3,8 @@ class Page
 {
   public static function headerTemplate($title)
   {
-    print('
-        <!DOCTYPE html>
+    ?>
+    <!DOCTYPE html>
         <html lang="es">
         
         <head>
@@ -18,11 +18,11 @@ class Page
           <title>Home safe - Dashboard</title>
         
           <!-- Custom fonts for this template-->
-          <link href="../../../public/css/admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+          <link href="<?php echo RUTA_PADRE ?>public/css/admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
           <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         
           <!-- Custom styles for this template-->
-          <link href="../../../public/css/admin/sb-admin-2.css" rel="stylesheet">
+          <link href="<?php echo RUTA_PADRE ?>public/css/admin/sb-admin-2.css" rel="stylesheet">
         
         </head>
         
@@ -35,10 +35,10 @@ class Page
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         
               <!-- Sidebar - Brand -->
-              <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+              <a class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
                 </div>
-                <div class="sidebar-brand-text mx-3"><img src="../../../public/images/logo.png" alt="google" width="200px" class="img-fluid"></div>
+                <div class="sidebar-brand-text mx-3"><img src="<?php echo RUTA_PADRE ?>public/images/logo.png" alt="google" width="200px" class="img-fluid"></div>
               </a>
         
               <!-- Divider -->
@@ -46,7 +46,7 @@ class Page
         
               <!-- Nav Item - Dashboard -->
               <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="<?php echo RUTA_PADRE ?>privatesite/home">
                    <i class="fas fa-fw fa-tachometer-alt"></i>
                   <span>Tablero</span></a>
               </li>
@@ -69,12 +69,12 @@ class Page
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Administracion</h6>
-                    <a class="collapse-item" href="stock.php">Stock</a>
-                    <a class="collapse-item" href="productos.php">Productos</a>
-                    <a class="collapse-item" href="categorias.php">Categorias</a>
-                    <a class="collapse-item" href="marcas.php">Marcas</a>
-                    <a class="collapse-item" href="cupones.php">Cupones</a>
-                    <a class="collapse-item" href="noticias.php">Noticias</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/stock">Stock</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/productos">Productos</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/categorias">Categorias</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/marcas">Marcas</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/cupones">Cupones</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/noticias">Noticias</a>
                   </div>
                 </div>
               </li>
@@ -89,8 +89,8 @@ class Page
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Administracion</h6>
-                    <a class="collapse-item" href="clientes.php">Clientes</a>
-                    <a class="collapse-item" href="empleados.php">Empleados</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/clientes">Clientes</a>
+                    <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/empleados">Empleados</a>
                   </div>
                 </div>
               </li>
@@ -120,17 +120,7 @@ class Page
                   </button>
         
                   <!-- Topbar Search -->
-                  <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                      <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar..."
-                        aria-label="Search" aria-describedby="basic-addon2">
-                      <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                          <i class="fas fa-search fa-sm"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+                  
                   <!-- Topbar Navbar -->
                   <ul class="navbar-nav ml-auto">
                     <!-- Nav Item - User Information -->
@@ -138,7 +128,7 @@ class Page
                       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cartagena</span>
-                        <img class="img-profile rounded-circle" src="../../../public/images/img_profile.jpg">
+                        <img class="img-profile rounded-circle" src="<?php echo RUTA_PADRE ?>public/images/img_profile.jpg">
                       </a>
                       <!-- Dropdown - User Information -->
                       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -164,14 +154,13 @@ class Page
                 <!-- End of Topbar -->
               </div>
               <!-- End of Main Content -->
-        
-        ');
+    <?php
   }
   public function footerTemplate()
   {
-    print('
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
+    ?>
+     <!-- Footer -->
+     <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                     <span>Copyright &copy;Home safe 2019</span>
@@ -199,23 +188,23 @@ class Page
                 <div class="modal-body">Seleciona "Cerrar Sesión" si desea salir de la aplicación.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="login.php">Cerrar Sesión</a>
+                    <a class="btn btn-primary" href="<?php echo RUTA_PADRE ?>privatesite/login">Cerrar Sesión</a>
                 </div>
                 </div>
             </div>
             </div>
         
             <!-- Bootstrap core JavaScript-->
-            <script src="../../../public/js/admin/jquery.min.js"></script>
-            <script src="../../../public/js/admin/bootstrap.bundle.min.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>public/js/admin/jquery.min.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>public/js/admin/bootstrap.bundle.min.js"></script>
         
             <!-- Custom scripts for all pages-->
-            <script src="../../../public/js/admin/sb-admin-2.min.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>public/js/admin/sb-admin-2.min.js"></script>
         
         </body>
         
         </html>
-        ');
+    <?php
   }
 }
 

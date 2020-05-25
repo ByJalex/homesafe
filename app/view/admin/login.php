@@ -48,7 +48,7 @@
                         <label class="custom-control-label" for="customCheck">Recordar</label>
                       </div>
                     </div>
-                    <a href="<?php echo RUTA_PADRE . 'privatesite/index' ?>" class="btn btn-primary btn-user btn-block">
+                    <a href="<?php echo RUTA_PADRE . 'privatesite/home' ?>" class="btn btn-primary btn-user btn-block">
                       Inciar sesión
                     </a>
                     <hr>

@@ -1,5 +1,5 @@
 <?php
-require_once('../../templates/templateAdmin.php');
+require_once(RUTA_APP .'templates/templateAdmin.php');
 Page::headerTemplate('Principal');
 ?>
 <div class="container-fluid">

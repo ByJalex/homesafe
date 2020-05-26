@@ -118,7 +118,39 @@ Page::headerTemplate('Principal');
                     </tbody>
                 </table>  
             </div>
+
+<!-- modal editar -->
+<div class="modal fade" id="editarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Editar cliente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Estado del cliente</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Activo</option>
+                    <option>Desactivado</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Editar Marca</button>
+            </div>
+            </div>
         </div>
+</div>
+            
+</div>
+</div>
 
 <?php
 Page::footerTemplate();

@@ -81,6 +81,7 @@ class Page
                 <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/marcas">Marcas</a>
                 <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/cupones">Cupones</a>
                 <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/noticias">Noticias</a>
+                <a class="collapse-item" href="<?php echo RUTA_PADRE ?>privatesite/resenia">Reseñas</a>
               </div>
             </div>
           </li>

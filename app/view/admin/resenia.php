@@ -4,14 +4,7 @@ Page::headerTemplate('Principal');
 ?>
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Categorias</h1>
-</div>
-
-<div class="container mb-4">
-    <div class="row container d-flex justify-content-end">
-    <p class="">Agregar nueva categoria</p>
-    <a href="#" class="btn btn-info ml-4" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a> 
-    </div>
+        <h1 class="h3 mb-0 text-gray-800">Reseñas</h1>
 </div>
 
 <div class="container">
@@ -21,15 +14,21 @@ Page::headerTemplate('Principal');
                 <table id="tbCategorias" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Nombre de la categoria</th>
-                            <th>Imagen</th>
-                            <th>Aciones</th>
+                            <th>Producto</th>
+                            <th>Cliente</th>
+                            <th>Estrellas</th>
+                            <th>Comentario</th>
+                            <th>Fecha de reseña</th>
+                            <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Tiger</td>
                             <td>Nixon</td>
+                            <td>Nixon</td>
+                            <td>Nixon</td>
+                            <td>Winters</td>
                             <td>
                                 
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
@@ -38,6 +37,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Garrett</td>
                             <td>Winters</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -45,6 +47,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Ashton</td>
                             <td>Cox</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -52,6 +57,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Cedric</td>
                             <td>Kelly</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -59,6 +67,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Airi</td>
                             <td>Satou</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -66,6 +77,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Brielle</td>
                             <td>Williamson</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -73,6 +87,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Herrod</td>
                             <td>Chandler</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -81,6 +98,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Rhona</td>
                             <td>Davidson</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -89,6 +109,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Colleen</td>
                             <td>Hurst</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -96,6 +119,9 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Sonya</td>
                             <td>Frost</td>
+                            <td>Garrett</td>
+                            <td>Winters</td>
+                            <td>Nixon</td>
                             <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
@@ -203,4 +229,3 @@ Page::headerTemplate('Principal');
 <?php
 Page::footerTemplate();
 ?>
-

@@ -8,6 +8,13 @@ Page::headerTemplate('Principal');
         <h1 class="h3 mb-0 text-gray-800">Stock</h1>
 </div>
 
+<div class="container mb-4">
+    <div class="row container d-flex justify-content-end">
+    <p class="">Agregar nuevo stock</p>
+    <a href="#" class="btn btn-info ml-4" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a> 
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -24,49 +31,49 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Tiger</td>
                             <td>Nixon</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Garrett</td>
                             <td>Winters</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Ashton</td>
                             <td>Cox</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Cedric</td>
                             <td>Kelly</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Airi</td>
                             <td>Satou</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Brielle</td>
                             <td>Williamson</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>  
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Herrod</td>
                             <td>Chandler</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
 
@@ -74,7 +81,7 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Rhona</td>
                             <td>Davidson</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
 
@@ -82,14 +89,14 @@ Page::headerTemplate('Principal');
                         <tr>
                             <td>Colleen</td>
                             <td>Hurst</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <tr>
                             <td>Sonya</td>
                             <td>Frost</td>                        
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>

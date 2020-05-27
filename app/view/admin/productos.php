@@ -6,7 +6,14 @@ Page::headerTemplate('Principal');
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Productos</h1>
     </div>
-    
+ 
+<div class="container mb-4">
+    <div class="row container d-flex justify-content-end">
+    <p class="">Agregar nuevo producto</p>
+    <a href="#" class="btn btn-info ml-4" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a> 
+    </div>
+</div>    
+
     <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -33,8 +40,7 @@ Page::headerTemplate('Principal');
                             <td>Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
-                            <td>
-                            <a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>  
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -46,7 +52,7 @@ Page::headerTemplate('Principal');
                             <td>Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -58,7 +64,7 @@ Page::headerTemplate('Principal');
                             <td>Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -70,7 +76,7 @@ Page::headerTemplate('Principal');
                             <td>System Architect</td>
                             <td>Edinburgh</td>
                             <td>Edinburgh</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -82,7 +88,7 @@ Page::headerTemplate('Principal');
                             <td>System Architect</td>
                             <td>Edinburgh</td>
                             <td>Tokyo</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td> 
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -94,7 +100,7 @@ Page::headerTemplate('Principal');
                             <td>Edinburgh</td>
                             <td>Integration Specialist</td>
                             <td>New York</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>   
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -106,7 +112,7 @@ Page::headerTemplate('Principal');
                             <td>Chandler</td>
                             <td>Sales Assistant</td>
                             <td>San Francisco</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
 
@@ -119,7 +125,7 @@ Page::headerTemplate('Principal');
                             <td>Edinburgh</td>
                             <td>Integration Specialist</td>
                             <td>Tokyo</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
 
@@ -132,7 +138,7 @@ Page::headerTemplate('Principal');
                             <td>Edinburgh</td>
                             <td>Javascript Developer</td>
                             <td>San Francisco</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>  
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
@@ -144,7 +150,7 @@ Page::headerTemplate('Principal');
                             <td>Frost</td>
                             <td>Software Engineer</td>
                             <td>Edinburgh</td>
-                            <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>    
+                            <td>    
                             <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#eliminarmodal"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>

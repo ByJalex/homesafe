@@ -73,7 +73,7 @@ Page::headerTemplate('Principal');
     <div class="card-body">
       <div class="mb-1 small">Meta de ventas (40 al dia)</div>
       <div class="progress mb-4">
-        <div class="progress-bar bg-danger" role="progressbar" style="width: 7.5%" aria-valuemax="400"><small>{{salePorcent}}%</small></div>
+        <div class="progress-bar bg-danger" role="progressbar" v-bind:style="{ width: salePorcent + '%' }" aria-valuemax="400"><small>{{salePorcent}}%</small></div>
       </div>
     </div>
   </div>

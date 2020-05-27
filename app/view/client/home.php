@@ -117,7 +117,7 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
     </div><!-- container // -->
 </section>
 
-<script src="app/core/vue/products.js"></script>
+<script src="app/core/vue/client/products.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

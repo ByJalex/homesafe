@@ -73,13 +73,13 @@ class App
                 if (method_exists($controller, $url[2])) :
                     $controller->{$url[2]}();
                 else :
-                    require_once 'app/controllers/error.php';
-                    new errorPage();
+                    // require_once RUTA_PADRE . 'app/controllers/error.php';
+                    // new errorPage();
                 endif;
             }
         } else {
-            require_once 'app/controllers/error.php';
-            new errorPage();
+            // require_once RUTA_PADRE . 'app/controllers/error.php';
+            // new errorPage();
         }
     }
 }

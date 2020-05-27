@@ -1,3 +1,12 @@
+<?php
+
+if (!isset($_SESSION['newsession'])) {
+} else {
+    header('Location: '.RUTA_PADRE.'privatesite/home');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +19,14 @@
   <meta name="author" content="">
 
   <title>Login administrador</title>
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- Custom fonts for this template-->
   <link href="<?php echo RUTA_PADRE ?>public/css/admin/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link  href="<?php echo RUTA_PADRE ?>public/css/admin/sb-admin-2.css" rel="stylesheet">
+  <link href="<?php echo RUTA_PADRE ?>public/css/admin/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -35,24 +45,28 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Bienvenido administrador</h1>
                   </div>
-                  <form class="user">
+
+                  <!-- ------------------------------------------------- -->
+                  <div class="user" id="authadmin">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su usuario">
+                      <input type="email" class="form-control form-control-user" placeholder="Ingrese su usuario" v-model="authData.user">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Contraseña">
+                      <input type="password" class="form-control form-control-user" placeholder="Contraseña" v-model="authData.password">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <input type="checkbox" class="custom-control-input">
                         <label class="custom-control-label" for="customCheck">Recordar</label>
                       </div>
                     </div>
-                    <a href="<?php echo RUTA_PADRE . 'privatesite/home' ?>" class="btn btn-primary btn-user btn-block">
+                    <button @click="login()" class="btn btn-primary btn-user btn-block">
                       Inciar sesión
-                    </a>
+                    </button>
                     <hr>
-                  </form>
+                  </div>
+                  <!-- ------------------------------------------------- -->
+
                   <div class="text-center">
                     <a class="small" href="forgot-password.php">¿Has olvidado tu contraseña?</a>
                   </div>
@@ -65,6 +79,7 @@
     </div>
   </div>
 
+  <script src="../app/core/vue/admin/auth.js?m=dev" type="text/javascript"></script>
 </body>
 
 </html>

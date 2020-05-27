@@ -17,6 +17,7 @@ class api
         $url = explode('/', $url);
         $archivoApi = 'app/api/' . $url[1] . '.php';
         if ($url[0] === 'api') {
+            // echo $archivoApi;
             if (file_exists($archivoApi)) {
                 require_once $archivoApi;
                 $api = new $url[1];

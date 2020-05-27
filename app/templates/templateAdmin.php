@@ -1,8 +1,10 @@
 <?php
+session_start();
 class Page
 {
   public static function headerTemplate($title)
   {
+
 ?>
     <!DOCTYPE html>
     <html lang="es">
@@ -17,6 +19,8 @@ class Page
 
       <title>Home safe - Dashboard</title>
 
+      <script src="<?php echo RUTA_PADRE ?>public/js/axios.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
       <!-- Custom fonts for this template-->
       <link href="<?php echo RUTA_PADRE ?>public/css/admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -120,14 +124,12 @@ class Page
                 <i class="fa fa-bars"></i>
               </button>
 
-              <!-- Topbar Search -->
-
               <!-- Topbar Navbar -->
-              <ul class="navbar-nav ml-auto">
+              <ul class="navbar-nav ml-auto" id="userloggedin">
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Cartagena</span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{userInformation.usuario}}</span>
                     <img class="img-profile rounded-circle" src="<?php echo RUTA_PADRE ?>public/images/img_profile.jpg">
                   </a>
                   <!-- Dropdown - User Information -->
@@ -149,6 +151,7 @@ class Page
                 </li>
 
               </ul>
+              <!--End Topbar Navbar -->
 
             </nav>
             <!-- End of Topbar -->
@@ -192,6 +195,9 @@ class Page
           </div>
         </div>
       </div>
+
+      <!-- vue core JavaScript-->
+      <script src="../app/core/vue/admin/userloggedin.js"></script>
 
       <!-- Bootstrap core JavaScript-->
       <script src="<?php echo RUTA_PADRE ?>public/js/admin/jquery.min.js"></script>

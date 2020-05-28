@@ -44,7 +44,7 @@ Page::headerTemplate('Principal');
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="(item, index) in filteredCoupon" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
+                                <tr :class="[item.id_validez_c == 3 ? 'text-danger' : 'bg-light']" v-for="(item, index) in filteredCoupon" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
                                     <td>{{item.cupon}}</td>
                                     <td>{{item.descuento}}</td>
                                     <td>{{item.cantidad}}</td>

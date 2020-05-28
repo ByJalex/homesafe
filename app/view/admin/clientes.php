@@ -42,15 +42,15 @@ Page::headerTemplate('Principal');
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="(item, index) in filteredClient" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
+                                <tr :class="[item.id_estado_user == 1 ? 'bg-light' : 'text-danger']" v-for="(item, index) in filteredClient" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
                                     <td>{{item.correo_c}}</td>
                                     <td>{{item.nombre_c}}</td>
                                     <td>{{item.usu_c}}</td>
                                     <!-- <td>{{item.direccion_c}}</td> -->
                                     <td>{{item.telefono_c}}</td>
                                     <td>
-                                        <button data-toggle="modal" data-target="#viewClients" @click="editClient(item.cupon, item.descuento, item.cantidad, item.id_validez_c, item.id_cupon)" class="btn btn-success mr-2 btn-sm"><i class="fas fa-eye"></i></button>
-                                        <button data-toggle="modal" data-target="#updateClients" @click="editClient(item.cupon, item.descuento, item.cantidad, item.id_validez_c, item.id_cupon)" class="btn btn-warning mr-2 btn-sm"><i class="fas fa-edit"></i></button>
+                                        <button data-toggle="modal" data-target="#saleDetail" @click="getSaleDetail(item.id_cliente)" class="btn btn-success mr-2 btn-sm"><i class="fas fa-eye"></i></button>
+                                        <button data-toggle="modal" data-target="#updateClients" @click="editClient(item.correo_c, item.nombre_c, item.id_cliente , item.usu_c, item.direccion_c, item.telefono_c, item.imagen_c, item.id_estado_user, item.estado_user)" class="btn btn-warning mr-2 btn-sm"><i class="fas fa-edit"></i></button>
                                 </tr>
                             </tbody>
                         </table>
@@ -77,23 +77,68 @@ Page::headerTemplate('Principal');
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Actualizar cupon</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Visualizar cliente</h5>
                     <input type="text" v-model="editMyClient.id" class="d-none">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="updateClients">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Cupon</label>
-                            <input type="text" class="form-control" v-model="editMyClient.cupon">
-                        </div>
-                    </div>
+                    <p><strong>Nombre: </strong>{{editMyClient.nombre_c}}</p>
+                    <p><strong>Correo: </strong>{{editMyClient.correo_c}}</p>
+                    <p><strong>Direccion: </strong>{{editMyClient.direccion_c}}</p>
+                    <p><strong>Usuario: </strong>{{editMyClient.usu_c}}</p>
+                    <p><strong>Telefono: </strong>{{editMyClient.telefono_c}}</p>
+                    <p><strong>Estado: </strong>{{editMyClient.id_estado_user}}</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-success" @click="updateClient">Guardar cambios</button>
+                    <!-- <button type="button" class="btn btn-success" @click="updateClient">Guardar cambios</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de viewDetailSale -->
+    <div class="modal fade" id="saleDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Pedidos realizados</h5>
+                    <input type="text" v-model="editMyClient.id" class="d-none">
+                    <button @click="clearArray" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Detalle de pedidos
+                    <div>
+                        <input type="text" class="form-control" placeholder="filtrar por fecha" v-model="searchDetail">
+                    </div>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Precio unitario</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in filteredDetail">
+                                <td>{{item.nombre_p}}</td>
+                                <td>{{item.cantidad}}</td>
+                                <td>{{item.precio_unitario}}</td>
+                                <td>{{item.fecha}}</td>
+                                <td>${{item.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" @click="clearArray">Cerrar</button>
+                    <!-- <button type="button" class="btn btn-success" @click="updateClient">Guardar cambios</button> -->
                 </div>
             </div>
         </div>

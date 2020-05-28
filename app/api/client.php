@@ -16,7 +16,7 @@ class client{
     public function allclient()
     {
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM cliente ORDER BY id_cliente DESC');
+        $sql = $con->prepare('SELECT cl.id_estado_user, cl.id_cliente, cl.correo_c, cl.nombre_c, cl.usu_c, cl.clave_c, cl.direccion_C, cl.telefono_c, cl.imagen_c, es.estado_user FROM cliente cl, estado_user es WHERE cl.id_estado_user = es.id_estado_user ORDER BY cl.id_cliente ASC');
         $sql->execute();
         $getClient = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'allclients' => $getClient));

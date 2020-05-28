@@ -10,7 +10,7 @@ const client = new Vue({
         getIdClient: {
             id: 0
         },
-
+        searchDetail: '',
         searchClient: '',
         allClients: [],
         NUM_RESULTS: 10,
@@ -21,12 +21,25 @@ const client = new Vue({
             cantidad: 0
         },
         editMyClient: {
-            cupon: '',
-            descuento: 0,
-            cantidad: 0,
-            idDropdownEstate: 1,
-            id: 0
+            id_cliente: '',
+            correo_c: 0,
+            nombre_c: 0,
+            usu_c: 1,
+            direccion_c: 0,
+            telefono_c: '',
+            imagen_c: 0,
+            id_estado_user: 0,
         },
+        clientInformation: {
+            name: 'Josue Alfonso',
+            correo: 'ayalavalencia11@gmail.com',
+            usuario: 'josue_ayala27',
+            direccion: '29 av norte colonia zacamil pasaje valencia #36',
+            telefono: '2531-2362',
+            imagen: '',
+            estado: 'Activo'
+        },
+        saleDetail: []
     },
     mounted() {
         this.getAllClients();
@@ -37,9 +50,24 @@ const client = new Vue({
             return this.allClients.filter((a) => {
                 return a.correo_c.match(this.searchClient.toLowerCase());
             });
+        },
+        filteredDetail: function () {
+            return this.saleDetail.filter((a) => {
+                return a.fecha.match(this.searchDetail.toLowerCase());
+            });
         }
     },
     methods: {
+        clearArray: function () {
+            console.log('xd');
+            this.saleDetail = [];
+        },
+        getSaleDetail: function (id) {
+            axios.get('http://localhost/homesafe/api/sale/detail?i=' + id)
+                .then(function (response) {
+                    client.saleDetail = response.data.detailSale;
+                })
+        },
         getAllClients: function () {
             axios.get('http://localhost/homesafe/api/client/allclient')
                 .then(function (response) {
@@ -62,12 +90,15 @@ const client = new Vue({
                     $('#addClient').modal('hide');
                 });
         },
-        editClient: async function (cupon, desc, cantidad, validez, id) {
-            client.editMyClient.cupon = cupon;
-            client.editMyClient.descuento = desc;
-            client.editMyClient.cantidad = cantidad;
-            client.editMyClient.idDropdownEstate = validez;
-            client.editMyClient.id = id;
+        editClient: function (correo_c, nombre_c, id_cliente, usu_c, direccion_c, telefono_c, imagen_c, id_estado_user, estado_user) {
+            client.editMyClient.id_cliente = id_cliente;
+            client.editMyClient.correo_c = correo_c;
+            client.editMyClient.nombre_c = nombre_c;
+            client.editMyClient.usu_c = usu_c;
+            client.editMyClient.direccion_c = direccion_c;
+            client.editMyClient.telefono_c = telefono_c;
+            client.editMyClient.imagen_c = imagen_c;
+            client.editMyClient.id_estado_user = estado_user;
         },
         toFormData: function (obj) {
             var form_data = new FormData();

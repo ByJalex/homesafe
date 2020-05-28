@@ -10,13 +10,13 @@ class review{
 
     public function review()
     {
-        echo 'Hola como estas en reviwe siuuu';
+        echo 'Parece que hace falta un parametro.';
     }
     
-    public function allReview()
+    public function allreview()
     {
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM resenia  ORDER BY id_resenia DESC');
+        $sql = $con->prepare('SELECT cliente.nombre_c, productos.nombre_p, resenia.estrellas, resenia.comentarios, resenia.fecha_comentario, estado_resenia.estado FROM resenia INNER JOIN productos ON resenia.id_producto = productos.id_producto INNER JOIN cliente ON resenia.id_cliente = cliente.id_cliente INNER JOIN estado_resenia ON resenia.id_estado_r = estado_resenia.id_estado_r GROUP BY cliente.nombre_c, productos.nombre_p, resenia.estrellas, resenia.comentarios, resenia.fecha_comentario, estado_resenia.estado');
         $sql->execute();
         $getReview = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'allreview' => $getReview));
@@ -44,4 +44,3 @@ class review{
         $sql->execute();
     }
 }
-?>

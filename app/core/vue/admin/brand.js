@@ -15,7 +15,6 @@ const brand = new Vue({
 
         // Para buscar algun elemento de la tabla
         searchBrand: '',
-        
         allBrands: [],
         NUM_RESULTS: 10,
         pag: 1,
@@ -28,12 +27,15 @@ const brand = new Vue({
             marca: '',
             imagen: null,
             desc: '',
-            id: 0
+            id: 0,
+            desc: ''
         }
     },
+    //este metodo se ejecuta al inciar la pagina
     mounted() {
         this.getAllBrands();
     },
+
     computed: {
         //Aqui se filtran los datos segun las busquedas realizadas.
         filteredBrand: function () {
@@ -43,12 +45,14 @@ const brand = new Vue({
         }
     },
     methods: {
+        //El que obtiene todo los datos de la tabla
         getAllBrands: function () {
             axios.get('http://localhost/homesafe/api/brand/allbrands')
                 .then(function (response) {
                     brand.allBrands = response.data.allbrands;
                 })
         },
+        //Para agregar una nueva marca
         addbrand: function () {
             var formData = brand.toFormData(brand.addBrand);
             axios.post('http://localhost/homesafe/api/brand/addbrand', formData, {
@@ -64,6 +68,7 @@ const brand = new Vue({
                     $('#addBrand').modal('hide');
                 });
         },
+        //para editar una nueva marca
         editbrand: async function (nombre, imagen, desc, id) {
             // console.log(id);
             brand.editMyBrand.marca = nombre;
@@ -71,6 +76,7 @@ const brand = new Vue({
             brand.editMyBrand.desc = desc;
             brand.editMyBrand.id = id;
         },
+        //para peticion ajax
         toFormData: function (obj) {
             var form_data = new FormData();
             for (var key in obj) {
@@ -78,9 +84,7 @@ const brand = new Vue({
             }
             return form_data;
         },
-        deleteBrand: function () {
-            swal("Eliminar", "Aun no podes eliminar", "error");
-        },
+        //para actualizar una marca
         updateBrand: function () {
             var formData = brand.toFormData(brand.editMyBrand);
             axios.post('http://localhost/homesafe/api/brand/updatebrand', formData, {
@@ -98,10 +102,13 @@ const brand = new Vue({
                     $('#updateBrand').modal('hide');
                 });
         },
+
+        // para obtener el id a la hora ded eliminar
         dBrand: function(id){
             brand.getIdBrand.id = id;
             console.log(id);
         },
+        //Elimina
         deleteBrand: function () {
             var formData = brand.toFormData(brand.getIdBrand);
             axios.post('http://localhost/homesafe/api/brand/deletebrand', formData, {
@@ -115,6 +122,7 @@ const brand = new Vue({
                     $('#deleteBrand').modal('hide');
                 });
         },
+        //para la paginacion
         getPagination: function(number){
             brand.NUM_RESULTS = number;
             // console.log(number);

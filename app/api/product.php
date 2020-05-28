@@ -33,4 +33,68 @@ class product
         $getProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'popularProducts' => $getProducts));
     }
+
+    public function addProduct()
+    {
+        $con = bd::connection();
+        $nombre = $_POST['nombre_p'];
+        $descripcion = $_POST['descripcion_p'];
+        $precio = $_POST['precio_p'];
+        $modelo = $_POST['modelo'];
+        $id_categoria = $_POST['id_categoria_p'];
+        $id_estado = $_POST['id_est_p'];
+        $id_marca = $_POST['id_marca'];
+        // $identificador = $_POST['identificador'];
+        // $serial = $_POST['serial_url'];
+
+        $sql = $con->prepare('INSERT INTO productos(nombre_p, descripcion_p, precio_p, modelo, id_categoria_p, id_est_p, id_marca) VALUES (:nombreProduct, :descripcionProduct, :precioProduct, :modeloProduct, :id_categoriaProduct, :id_estProduct, :id_marcaProduct);');
+        $sql->bindParam(':nombreProduct', $nombre);
+        $sql->bindParam(':descripcionProduct', $descripcion);
+        $sql->bindParam(':precioProduct', $precio);
+        $sql->bindParam(':modeloProduct', $modelo);
+        $sql->bindParam(':id_categoriaProduct', $id_categoria);
+        $sql->bindParam(':id_estProduct', $id_estado);
+        $sql->bindParam(':id_marcaProduct', $id_marca);
+        // $sql->bindParam(':identificadorProduct', $identificador);
+        // $sql->bindParam(':serialProduct', $serial);
+        $sql->execute();
+    }
+
+    public function updateProduct()
+    {
+        $con = bd::connection();
+        $nombre = $_POST['nombre_p'];
+        $descripcion = $_POST['descripcion_p'];
+        $precio = $_POST['precio_p'];
+        $modelo = $_POST['modelo'];
+        $id_categoria = $_POST['id_categoria_p'];
+        $id_estado = $_POST['id_est_p'];
+        $id_marca = $_POST['id_marca'];
+        $id = $_POST['id'];
+        // $identificador = $_POST['identificador'];
+        // $serial = $_POST['serial_url'];
+
+        $sql = $con->prepare('UPDATE productos SET nombre_p = :nombreProduct, descripcion_p = :descripcionProduct, precio_p = :precioProduct, modelo = :modeloProduct, id_categoria_p = :id_categoriaProduct, id_est_p = :id_estProduct, id_marca = :id_marcaProduct WHERE id_producto = :idProducto');
+        $sql->bindParam(':nombreProduct', $nombre);
+        $sql->bindParam(':descripcionProduct', $descripcion);
+        $sql->bindParam(':precioProduct', $precio);
+        $sql->bindParam(':modeloProduct', $modelo);
+        $sql->bindParam(':id_categoriaProduct', $id_categoria);
+        $sql->bindParam(':id_estProduct', $id_estado);
+        $sql->bindParam(':id_marcaProduct', $id_marca);
+        $sql->bindParam(':idProducto', $id);
+        // $sql->bindParam(':identificadorProduct', $identificador);
+        // $sql->bindParam(':serialProduct', $serial);
+        $sql->execute();
+    }
+
+    public function deletebrand()
+    {
+        $con = bd::connection();
+        $id = $_POST['id'];
+
+        $sql = $con->prepare('DELETE FROM productos WHERE id_producto = :idProducto');
+        $sql->bindParam(':idProducto', $id);
+        $sql->execute();
+    }
 }

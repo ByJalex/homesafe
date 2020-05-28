@@ -10,7 +10,7 @@ class stock
 
     public function stock()
     {
-        echo 'Hola como estas';
+        echo 'Parace que hace falta un parametro.';
     }
 
     public function all()

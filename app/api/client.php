@@ -13,16 +13,16 @@ class client{
         echo 'Hola como estas en client SIU';
     }
 
-    public function allClient()
+    public function allclient()
     {
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM clientes  ORDER BY id_cliente DESC');
+        $sql = $con->prepare('SELECT * FROM cliente ORDER BY id_cliente DESC');
         $sql->execute();
         $getClient = $sql->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode(array('error' => false, 'allbrands' => $getClient));
+        echo json_encode(array('error' => false, 'allclients' => $getClient));
     }
 
-    public function updateClient()
+    public function updateclient()
     {
         $con = bd::connection();
         $estado = $_POST['estado'];
@@ -34,4 +34,3 @@ class client{
         $sql->execute();
     }
 }
-?>

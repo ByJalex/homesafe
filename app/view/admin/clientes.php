@@ -2,157 +2,105 @@
 require_once(RUTA_APP . 'templates/templateAdmin.php');
 Page::headerTemplate('Principal');
 ?>
-<div class="container-fluid">
+<div class="container-fluid" id="client">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
-</div>
+    </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="container mb-5">
-                <table id="tbClientes" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th>Correo</th>
-                            <th>Nombre</th>
-                            <th>Usuario</th>
-                            <th>Direccion</th>
-                            <th>Telefono</th>
-                            <th>Aciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tiger</td>
-                            <td>Nixon</td>
-                            <td>Winters</td>
-                            <td>Winters</td>
-                            <td>Nixon</td>
-                            <td>  
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Garrett</td>
-                            <td>Winters</td>
-                            <td>Winters</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>    
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Ashton</td>
-                            <td>Cox</td>
-                            <td>Winters</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>    
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Cedric</td>
-                            <td>Kelly</td>
-                            <td>Winters</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>   
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Airi</td>
-                            <td>Winters</td>
-                            <td>Satou</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>    
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Brielle</td>
-                            <td>Winters</td>
-                            <td>Williamson</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>   
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Herrod</td>
-                            <td>Winters</td>
-                            <td>Chandler</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>   
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Rhona</td>
-                            <td>Winters</td>
-                            <td>Davidson</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>    
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-
-                        </tr>
-                        <tr>
-                            <td>Colleen</td>
-                            <td>Winters</td>
-                            <td>Hurst</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>    
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Sonya</td>
-                            <td>Winters</td>
-                            <td>Frost</td>
-                            <td>Garrett</td>
-                            <td>Nixon</td>
-                            <td>   
-                            <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#editarmodal"><i class="fas fa-edit"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>  
-            </div>
-
-<!-- modal editar -->
-<div class="modal fade" id="editarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Editar cliente</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+    <div class="container mb-4 row">
+        <div class="col-lg-6">
+            <div class="dropdown no-arrow mb-4">
+                <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Paginación
                 </button>
-            </div>
-            <div class="modal-body">
-                <div class="container text-center">
-                <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Estado del cliente</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Activo</option>
-                    <option>Desactivado</option>
-                    </select>
-                  </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                    <button v-for="item in paginationNumer" @click="getPagination(item.number)" class="dropdown-item" href="#">{{item.number}}</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Editar Marca</button>
-            </div>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" placeholder="Buscar" v-model="searchClient" class="btn-block">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mb-5 ">
+                    <ul class="list-group">
+                    </ul>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Usuario</th>
+                                    <!-- <th scope="col">Dirección</th> -->
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in filteredClient" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
+                                    <td>{{item.correo_c}}</td>
+                                    <td>{{item.nombre_c}}</td>
+                                    <td>{{item.usu_c}}</td>
+                                    <!-- <td>{{item.direccion_c}}</td> -->
+                                    <td>{{item.telefono_c}}</td>
+                                    <td>
+                                        <button data-toggle="modal" data-target="#viewClients" @click="editClient(item.cupon, item.descuento, item.cantidad, item.id_validez_c, item.id_cupon)" class="btn btn-success mr-2 btn-sm"><i class="fas fa-eye"></i></button>
+                                        <button data-toggle="modal" data-target="#updateClients" @click="editClient(item.cupon, item.descuento, item.cantidad, item.id_validez_c, item.id_cupon)" class="btn btn-warning mr-2 btn-sm"><i class="fas fa-edit"></i></button>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>pagina: {{pag}}</h4>
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item" v-show="pag != 1" @click.prevent="pag -= 1">
+                                <a class="page-link" href="#">Atras</a>
+                            </li>
+
+                            <li class="page-item" v-show="pag * NUM_RESULTS / allClients.length < 1" @click.prevent="pag += 1">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-</div>
-            
-</div>
+    </div>
+
+    <!-- Modal de update -->
+    <div class="modal fade" id="updateClients" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Actualizar cupon</h5>
+                    <input type="text" v-model="editMyClient.id" class="d-none">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="updateClients">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Cupon</label>
+                            <input type="text" class="form-control" v-model="editMyClient.cupon">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success" @click="updateClient">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+<script src="../app/core/vue/admin/client.js" type="text/javascript"></script>
 <?php
 Page::footerTemplate();
 ?>
-

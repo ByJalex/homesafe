@@ -171,7 +171,6 @@ Page::headerTemplate('Principal');
         </div>
     </div>
 
-
 </div>
 <script src="../app/core/vue/admin/brand.js" type="text/javascript"></script>
 

@@ -10,19 +10,19 @@ class category{
 
     public function category()
     {
-        echo 'Hola como estas brouu';
+        echo 'Parace que hace falta un parametro.';
     }
 
     public function allCategory()
     {
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM categoria_p  ORDER BY id_cateogira_p DESC');
+        $sql = $con->prepare('SELECT * FROM categoria_p  ORDER BY id_categoria_p DESC');
         $sql->execute();
         $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'allcategory' => $getCategory));
     }
 
-    public function addCateogry()
+    public function addcategory()
     {
         $con = bd::connection();
         $categoria = $_POST['categoria'];
@@ -34,7 +34,7 @@ class category{
         $sql->execute();
     }
 
-    public function updateCateogry()
+    public function updatecategory()
     {
         $con = bd::connection();
         $categoria = $_POST['categoria'];
@@ -48,7 +48,7 @@ class category{
         $sql->execute();
     }
 
-    public function deleteCategory()
+    public function deletecategory()
     {
         $con = bd::connection();
         $id = $_POST['id'];
@@ -58,5 +58,3 @@ class category{
         $sql->execute();
     }
 }
-
-?>

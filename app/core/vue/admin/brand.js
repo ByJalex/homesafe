@@ -104,7 +104,7 @@ const brand = new Vue({
         },
         deleteBrand: function () {
             var formData = brand.toFormData(brand.getIdBrand);
-            axios.post('https://localhost/homesafe/api/brand/deletebrand', formData, {
+            axios.post('http://localhost/homesafe/api/brand/deletebrand', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

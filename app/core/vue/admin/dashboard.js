@@ -18,13 +18,13 @@ const dashboard = new Vue({
     },
     methods: {
         getParametersDashboard: function () {
-            axios.get('https://localhost/homesafe/api/dashboard/countcustomers')
+            axios.get('http://localhost/homesafe/api/dashboard/countcustomers')
                 .then(function (response) {
                     dashboard.customers = response.data.customers;
                 });
         },
         salesNow: function () {
-            axios.get('https://localhost/homesafe/api/dashboard/countsalesnow')
+            axios.get('http://localhost/homesafe/api/dashboard/countsalesnow')
                 .then(function (response) {
                     dashboard.sales = response.data.salesnow;
                     var numeroUno = parseInt(dashboard.sales.count, 10);
@@ -33,13 +33,13 @@ const dashboard = new Vue({
                 });
         },
         revieNow: function () {
-            axios.get('https://localhost/homesafe/api/dashboard/countreviewnow')
+            axios.get('http://localhost/homesafe/api/dashboard/countreviewnow')
                 .then(function (response) {
                     dashboard.review = response.data.reviewnow;
                 });
         },
         soldoutProduct: function () {
-            axios.get('https://localhost/homesafe/api/dashboard/productsoldout')
+            axios.get('http://localhost/homesafe/api/dashboard/productsoldout')
                 .then(function (response) {
                     dashboard.productsSoulOut = response.data.productsoldout;
                 });

@@ -30,6 +30,7 @@ class Page
       <!-- datatables-->
       <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
       <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+      <link href="<?php echo RUTA_PADRE ?>public/css/sweetalert.css" rel="stylesheet" type="text/css" />
 
     </head>
 
@@ -212,6 +213,7 @@ class Page
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.bootstrap4.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.responsive.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/responsive.bootstrap4.min.js"></script>
+      <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/sweetalert.min.js"></script>
 
     </body>
 

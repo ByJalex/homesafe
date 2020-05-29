@@ -16,7 +16,9 @@ class news{
     public function allNews()
     {
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM noticias  ORDER BY id_noticia DESC');
+        $sql = $con->prepare('SELECT noticias.titulo_noticia, noticias.noticia, noticias.imagen_n, estado_noticia.estado_noticia
+        FROM noticias INNER JOIN estado_noticia ON noticias.id_est_noticia = estado_noticia.id_est_noticia
+        GROUP BY noticias.titulo_noticia, noticias.noticia, noticias.imagen_n, estado_noticia.estado_noticia');
         $sql->execute();
         $getNews = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'allnews' => $getNews));

@@ -22,6 +22,17 @@ class stock
         echo json_encode(array('error' => false, 'popularProducts' => $getCategory));
     }
 
+    public function allStock()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT stock.cantidad, productos.nombre_p
+        FROM stock INNER JOIN productos ON stock.id_producto = productos.id_producto
+        GROUP BY stock.cantidad, productos.nombre_p');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'stock' => $getStock));
+    }
+
     public function addStock()
     {
         $con = bd::connection();

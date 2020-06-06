@@ -9,8 +9,8 @@ class login
 
     function login()
     {
-            $instancia = new View();
-            $instancia::renderAdmin('login');
+        $instancia = new View();
+        $instancia::renderAdmin('login');
     }
 }
 

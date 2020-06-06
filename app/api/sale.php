@@ -25,4 +25,15 @@ class sale
         $getDetail = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'detailSale' => $getDetail));
     }
+
+    public function countorders()
+    {
+        $con = bd::connection();
+        $id = $_POST['secondaryId'];
+        $sql = $con->prepare('SELECT COUNT(*) FROM detalle_venta WHERE id_producto = :idO');
+        $sql->bindParam(':idO', $id);
+        $sql->execute();
+        $getDetail = $sql->fetch(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'ordersDetail' => $getDetail));
+    }
 }

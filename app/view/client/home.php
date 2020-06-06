@@ -79,10 +79,10 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
         <div class="row" id="prod">
             <!--Este producto se ira iterando-->
             <div class="col-md-3" v-for="item in popularProducts">
-                <div :href="'product/'+ item.identificador" class="card card-product-grid">
-                    <a :href="'product/'+ item.identificador" class="img-wrap"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"> </a>
+                <div :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="card card-product-grid">
+                    <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="img-wrap"> <img src="<?php echo RUTA_URL ?>public/images/Products/84850.jpg"> </a>
                     <figcaption class="info-wrap">
-                        <a :href="'product/'+ item.identificador" @click="" class="title">{{item.Producto}}</a>
+                        <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" @click="" class="title">{{item.Producto}}</a>
                         <div class="price mt-1">${{item.Precio}}</div> <!-- price-wrap.// -->
                         <ul class="rating-stars">
                             <li class="">

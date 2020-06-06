@@ -2,10 +2,8 @@
 
 class clientes
 {
-
     function __construct()
     {
-        
     }
 
     function clientes()
@@ -13,5 +11,4 @@ class clientes
         $instancia = new View();
         $instancia::renderAdmin('clientes');
     }
-
 }

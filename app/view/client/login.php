@@ -3,27 +3,27 @@ require_once(RUTA_APP . 'templates/templateClient.php');
 $header = template::header(APP_NAME.' inicia sesión');
 ?>
 
-<section class="section-conten padding-y" style="min-height:84vh" id="">
+<div id="authclient">
+    <section class="section-conten padding-y" style="min-height:84vh" id="">
 
     <!-- ============================ COMPONENT LOGIN   ================================= -->
     <div class="card mx-auto" style="max-width: 380px; margin-top:100px;" id="login">
         <div class="card-body">
             <h4 class="card-title mb-4">Iniciar sesión</h4>
             <div class="form-group">
-                <input class="form-control" placeholder="Correo" v-model="dataUser.correo" type="email">
+                <input class="form-control" placeholder="Correo" v-model="authData.user" type="email">
             </div> <!-- form-group// -->
             <div class="form-group">
-                <input class="form-control" placeholder="Contraseña" v-model="dataUser.clave" type="password">
+                <input class="form-control" placeholder="Contraseña" v-model="authData.password" type="password">
             </div> <!-- form-group// -->
 
             <div class="form-group">
                 <a href="#" class="float-right">¿Olvidaste tu contraseña?</a>
                 <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="">
-
                 </label>
             </div> <!-- form-group form-check .// -->
             <div class="form-group">
-                <button @click="loginUser" type="submit" class="btn btn-primary btn-block"> Iniciar sesión </button>
+                <button @click="test" type="submit" class="btn btn-primary btn-block"> Iniciar sesión </button>
             </div> <!-- form-group// -->
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->
@@ -34,8 +34,9 @@ $header = template::header(APP_NAME.' inicia sesión');
 
 
 </section>
+</div>
 
-
+<script src="app/core/vue/client/auth.js"></script>
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();

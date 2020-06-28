@@ -34,8 +34,36 @@ class auth
         endif;
     }
 
+    public function getclients()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM cliente');
+        $sql->execute();
+        $validacion = $sql->fetchAll(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            echo json_encode(array('error' => false, 'usuario' => $validacion), JSON_PRETTY_PRINT);
+        else :
+            echo json_encode(array('error' => true, 'usuario' => $validacion), JSON_PRETTY_PRINT);
+        endif;
+    }
+
     public function authclient()
     {
+        $con = bd::connection();
+        $usuario = $_POST['user'];
+        $clave = $_POST['password'];
+        $sql = $con->prepare('SELECT id_cliente from cliente where usu_c = :usu and clave_c = :cl');
+        $sql->bindParam(':usu', $usuario);
+        $sql->bindParam(':cl', $clave);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            session_start(array(true));
+            $_SESSION['id_usuario'] = $validacion['id_cliente'];
+            echo json_encode(array('error' => false, 'usuario' => $validacion));
+        else :
+            echo json_encode(array('error' => true, 'usuario' => $validacion));
+        endif;
     }
 
     public function userloggedin()
@@ -43,6 +71,20 @@ class auth
         session_start();
         $con = bd::connection();
         $sql = $con->prepare('SELECT u.id_user, u.correo, u.nombre_completo, u.usuario, u.telefono, u.imagen_user, ti.tipo_user FROM usuario u, tipo_user ti WHERE ti.id_tipo_user = u.id_tipo_user AND id_user = '.$_SESSION['newsession']);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            echo json_encode(array('error' => false, 'userloggedin' => $validacion));
+        else :
+            echo json_encode(array('error' => true, 'userloggedin' => $validacion));
+        endif;
+    }
+
+    public function loggedinclient()
+    {
+        session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM cliente WHERE id_cliente = '. $_SESSION['id_usuario']);
         $sql->execute();
         $validacion = $sql->fetch(PDO::FETCH_ASSOC);
         if ($validacion) :

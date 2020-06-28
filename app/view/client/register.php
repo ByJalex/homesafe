@@ -14,30 +14,30 @@ $header = template::header('Registro de '.APP_NAME);
                 <div class="form-row">
                     <div class="col form-group">
                         <label>Nombre</label>
-                        <input v-model="dataRegister.nombre" type="text" class="form-control">
+                        <input  type="text" class="form-control">
                     </div> <!-- form-group end.// -->
                 </div> <!-- form-row end.// -->
                 <div class="form-group">
                     <label>Correo</label>
-                    <input v-model="dataRegister.correo" type="email" class="form-control">
+                    <input  type="email" class="form-control">
                     <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                 </div> <!-- form-group end.// -->
                 <div class="form-group">
                     <label>Usuario</label>
-                    <input v-model="dataRegister.usuario" type="text" class="form-control">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Contraseña</label>
-                        <input v-model="dataRegister.clave" class="form-control" type="password">
+                        <input  class="form-control" type="password">
                     </div> <!-- form-group end.// -->
                     <div class="form-group col-md-6">
                         <label>Repetir contraseña</label>
-                        <input v-model="dataRegister.repetirClave" class="form-control" type="password">
+                        <input  class="form-control" type="password">
                     </div> <!-- form-group end.// -->
                 </div>
                 <div class="form-group">
-                    <button @click="registerUser" type="submit" class="btn btn-primary btn-block"> Registrarse </button>
+                    <button type="submit" class="btn btn-primary btn-block"> Registrarse </button>
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input">

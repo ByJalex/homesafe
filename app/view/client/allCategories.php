@@ -16,17 +16,25 @@ $header = template::header($title);
     </div> <!-- container //  -->
 </section>
 
-<div class="container">
+<div class="container" id="category_home">
     <div class="row">
-        <div id="category_home">
-            <div class="card ml-4 mb-4" style="width: 18rem;" v-for = "item in allCategory">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.categoria_p}}</h5>
-                    <a href="#" class="btn btn-primary">Ver productos</a>
-                </div>
-            </div>
-        </div>
+        
+        <!--Inicio de la tarjeta-->
+            <div class="col-md-4" v-for="item in categories">
+                        <figure class="card card-product-grid">
+                            <div class="img-wrap">
+                                <a href="product.php" class="img-wrap"> <img :src="item.imagen_c">
+                                    <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
+                            </div> <!-- img-wrap.// -->
+                            <figcaption class="text-center">
+                                <div class="p-3">
+                                    <h5 class="">{{item.categoria_p}}</h5>
+                                </div>
+                                <a :href="'categories?c='+ item.categoria_p" class="btn btn-block btn-primary">Ver categoria</a>
+                            </figcaption>
+                        </figure>
+                    </div> <!-- col.// -->
+        <!--Fin de la tarjeta-->
 
     </div>
 </div>

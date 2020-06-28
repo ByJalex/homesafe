@@ -9,9 +9,11 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
             <aside class="col-md-3">
                 <nav class="card">
                     <div id="category_home">
-                        <ul class="menu-category" >
-                            <li v-for = "item in allCategory"><a href="categories">{{item.categoria_p}}</a></li>
-                            <li><a href="allCategories"><b>Ver mas categorias</b></a></li>
+                        <ul class="menu-category">
+                            <li v-for = "item in allCategory"><a 
+                            :href="'categories?c='+ item.categoria_p"
+                                >{{item.categoria_p}}</a></li>
+                            <li><a href="<?php echo RUTA_PADRE ?>allCategories"><b>Ver más categorias</b></a></li>
                         </ul>
                     </div>
                 </nav>

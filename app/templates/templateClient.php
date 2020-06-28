@@ -31,6 +31,7 @@ class template
 
             <header class="section-header">
                 <?php
+                #$_SESSION['id_usuario'] = "Josue";
                 if (isset($_SESSION['id_usuario'])) {
                     #echo 'La variable existe';
                     #print_r($_SESSION['id_usuario']);
@@ -138,18 +139,18 @@ class template
                         <div class="navbar-collapse collapse" id="main_nav">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="home">Inicio</a>
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>home">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Explorar</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="news">Noticias</a>
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>explore">Explorar</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about">Sobre nosotros</a>
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>news">Noticias</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>about">Sobre nosotros</a>
                                 </li>
 
                                 <li class="nav-item dropdown">

@@ -1,16 +1,17 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Iniciar sesión';
+$title = 'Categorias';
 $header = template::header($title);
 ?>
 
-<section class="section-pagetop bg">
+<div id="category">
+    <section class="section-pagetop bg">
     <div class="container">
         <h2 class="title-page">Categorias</h2>
         <nav>
             <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Nombre de la categoria</li>
+                <li class="breadcrumb-item"><a href="<?php echo RUTA_PADRE ?>home">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{urlParameter}}</li>
             </ol>
         </nav>
     </div> <!-- container //  -->
@@ -20,87 +21,18 @@ $header = template::header($title);
     <div class="container">
 
         <div class="row">
-            <aside class="col-md-3">
-
-                <div class="card">
-                    <article class="filter-group">
-                        <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
-                                <i class='icon-control bx bxs-down-arrow'></i>
-                                <h6 class="title">Marcas </h6>
-                            </a>
-                        </header>
-                        <div class="filter-content collapse show" id="collapse_2" style="">
-
-                            <div class="card-body">
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" checked="" class="custom-control-input">
-                                    <div class="custom-control-label">Xiaomi
-                                        <b class="badge badge-pill badge-light float-right">120</b> </div>
-                                </label>
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" checked="" class="custom-control-input">
-                                    <div class="custom-control-label">Samsumg
-                                        <b class="badge badge-pill badge-light float-right">15</b> </div>
-                                </label>
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" checked="" class="custom-control-input">
-                                    <div class="custom-control-label">Philips
-                                        <b class="badge badge-pill badge-light float-right">35</b> </div>
-                                </label>
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" checked="" class="custom-control-input">
-                                    <div class="custom-control-label">LG
-                                        <b class="badge badge-pill badge-light float-right">89</b> </div>
-                                </label>
-                                <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input">
-                                    <div class="custom-control-label">Google
-                                        <b class="badge badge-pill badge-light float-right">30</b> </div>
-                                </label>
-                            </div> <!-- card-body.// -->
-                        </div>
-                    </article> <!-- filter-group .// -->
-                    <article class="filter-group">
-                        <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
-                                <i class='icon-control bx bxs-down-arrow'></i>
-                                <h6 class="title">Rango de precios </h6>
-                            </a>
-                        </header>
-                        <div class="filter-content collapse show" id="collapse_3" style="">
-                            <div class="card-body">
-                                <input type="range" class="custom-range" min="0" max="100" name="">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label>Min</label>
-                                        <input class="form-control" placeholder="$0" type="number">
-                                    </div>
-                                    <div class="form-group text-right col-md-6">
-                                        <label>Max</label>
-                                        <input class="form-control" placeholder="$1,0000" type="number">
-                                    </div>
-                                </div> <!-- form-row.// -->
-                                <button class="btn btn-block btn-primary">Apply</button>
-                            </div><!-- card-body.// -->
-                        </div>
-                    </article> <!-- filter-group .// -->
-                </div> <!-- card.// -->
-
-            </aside> <!-- col.// -->
-            <main class="col-md-9">
+           
+            <main class="col-md-12">
 
                 <header class="border-bottom mb-4 pb-3">
                     <div class="form-inline">
-                        <span class="mr-md-auto">32 artículos encontrados </span>
+                        <span class="mr-md-auto">{{counter}} artículos encontrados </span>
                         <select class="mr-2 form-control">
+                            <option>Todos</option>
                             <option>Últimos artículos</option>
-                            <option>Tendencias</option>
                             <option>Lo mas barato</option>
                         </select>
                         <div class="btn-group">
-                            <a href="categorieslist" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view">
-                                <i class='bx bx-menu'></i>
                                 <a href="categories" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view">
                                     <i class='bx bxs-grid-alt'></i></a>
                         </div>
@@ -108,78 +40,26 @@ $header = template::header($title);
                 </header><!-- sect-heading -->
 
                 <div class="row">
-
-                    <div class="col-md-4">
+                    <!-- inicio de la card// -->
+                    <div class="col-md-4" v-for="item in allCategory">
                         <figure class="card card-product-grid">
                             <div class="img-wrap">
-                                <a href="product.php" class="img-wrap"> <img src="../../../public/images/Products/84850.jpg">
+                                <a href="product.php" class="img-wrap"> <img :src="item.imagen">
                                     <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
                             </div> <!-- img-wrap.// -->
                             <figcaption class="info-wrap">
                                 <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
+                                    <a href="#" class="title">{{item.nombre_p}}</a>
+                                    <small>{{item.nombre_m}}</small>
                                     <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
+                                        <span class="price">${{item.precio_p}}</span>
                                     </div> <!-- price-wrap.// -->
                                 </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
+                                <a href="#" class="btn btn-block btn-light">Ver producto</a>
                             </figcaption>
                         </figure>
                     </div> <!-- col.// -->
-
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <a href="product.php" class="img-wrap"><img src="../../../public/images/Products/84850.jpg">
-                                    <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
-
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <a href="product.php" class="img-wrap"><img src="../../../public/images/Products/84850.jpg">
-                                    <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
-
-                    <div class="col-md-4">
-                        <figure class="card card-product-grid">
-                            <div class="img-wrap">
-                                <a href="product.php" class="img-wrap"><img src="../../../public/images/Products/84850.jpg">
-                                    <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
-                            </div> <!-- img-wrap.// -->
-                            <figcaption class="info-wrap">
-                                <div class="fix-height">
-                                    <a href="#" class="title">Google Home</a>
-                                    <div class="price-wrap mt-2">
-                                        <span class="price">$1280</span>
-                                    </div> <!-- price-wrap.// -->
-                                </div>
-                                <a href="#" class="btn btn-block btn-primary">Añadir al carro </a>
-                            </figcaption>
-                        </figure>
-                    </div> <!-- col.// -->
+                    <!-- Fin de la card -->
 
                 </div> <!-- row end.// -->
 
@@ -200,6 +80,9 @@ $header = template::header($title);
 
     </div> <!-- container .//  -->
 </section>
+</div>
+
+<script src="app/core/vue/client/category.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

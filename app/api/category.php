@@ -22,6 +22,20 @@ class category{
         echo json_encode(array('error' => false, 'allcategory' => $getCategory));
     }
 
+    public function allCategoryProducts()
+    {
+        $name = $_GET['name'];
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m, productos.imagen
+FROM productos INNER JOIN categoria_p ON productos.id_categoria_p = categoria_p.id_categoria_p INNER JOIN marca ON productos.id_marca = marca.id_marca 
+WHERE categoria_p.categoria_p = :name
+GROUP BY productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m');
+        $sql->bindParam(':name', $name);
+        $sql->execute();
+        $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'allcategory' => $getCategory));
+    }
+
     public function allCategoryLimit()
     {
         $con = bd::connection();
@@ -61,7 +75,6 @@ class category{
     {
         $con = bd::connection();
         $id = $_POST['id'];
-
         $sql = $con->prepare('DELETE FROM categoria_p WHERE id_categoria_p = :idCategoria   ');
         $sql->bindParam(':idCategoria', $id);
         $sql->execute();

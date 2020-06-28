@@ -12,7 +12,7 @@ const brand = new Vue({
         getAllBrands: function () {
             axios.get('http://localhost/homesafe/api/brand/allbrands')
              .then(response=>(
-                (this.allbrands=response.data.allbrands)
+                (this.allbrands = response.data.allbrands)
              ))
         },
     }

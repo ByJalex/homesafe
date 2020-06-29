@@ -109,14 +109,14 @@ class template
                                         <div class="dropdown d-inline-block" id="login">
                                             <a href="<?php echo RUTA_PADRE ?>#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_PADRE ?>public/images/person_3.jpg">
-                                                <div class="text">
-                                                    Hola, {{userInformation.usu_c}}
+                                                <div class="text" v-for="name in myUsername">
+                                                    Hola, {{name.usu_c}}
                                                 </div>
                                             </a> <!-- iconbox // -->
                                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(150px, 32px, 0px);">
                                                 <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>account">Mi perfil</a>
                                                 <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>usersettings">Configuración</a>
-                                                <a class="dropdown-item" href="destroysession">Cerrar sesión</a>
+                                                <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>../../core/controllers/cerrarSesion.php">Cerrar sesión</a>
                                             </div>
                                         </div>
                                     <?php
@@ -240,7 +240,6 @@ class template
 
 
             <script src="app/core/vue/client/brand_nav.js"></script>
-            <script src="app/core/vue/client/inf.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/jquery-2.0.0.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/bootstrap.bundle.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/sweetalert.min.js"></script>

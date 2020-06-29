@@ -45,25 +45,25 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
                         <article class="card-group">
                             <figure class="card bg">
                                 <div class="p-3">
-                                    <h5 class="card-title">38</h5>
+                                    <h5 class="card-title">{{orders.count}}</h5>
                                     <span>Ordenes</span>
                                 </div>
                             </figure>
                             <figure class="card bg">
                                 <div class="p-3">
-                                    <h5 class="card-title">5</h5>
+                                    <h5 class="card-title">{{wishList}}</h5>
                                     <span>Listas de deseos</span>
                                 </div>
                             </figure>
                             <figure class="card bg">
                                 <div class="p-3">
-                                    <h5 class="card-title">12</h5>
-                                    <span>A la espera de la entrega</span>
+                                    <h5 class="card-title">{{pendingorders.count}}</h5>
+                                    <span>Pendiente</span>
                                 </div>
                             </figure>
                             <figure class="card bg">
                                 <div class="p-3">
-                                    <h5 class="card-title">50</h5>
+                                    <h5 class="card-title">{{counter}}</h5>
                                     <span>Artículos comprados</span>
                                 </div>
                             </figure>

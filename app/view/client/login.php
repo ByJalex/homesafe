@@ -23,7 +23,7 @@ $header = template::header(APP_NAME.' inicia sesión');
                 </label>
             </div> <!-- form-group form-check .// -->
             <div class="form-group">
-                <button @click="test" type="submit" class="btn btn-primary btn-block"> Iniciar sesión </button>
+                <button @click="loginUser" type="submit" class="btn btn-primary btn-block"> Iniciar sesión </button>
             </div> <!-- form-group// -->
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->

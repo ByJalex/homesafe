@@ -6,69 +6,51 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
 <div id="search_s">
     <section class="section-content padding-y">
         <div class="container">
-
             <div class="row">
                 <main class="col-md-12">
+                    <h4>Buscaste: <?php echo $_GET['p'] ?></h3>
                     <header class="border-bottom mb-4 pb-3">
                         <div class="form-inline">
-                            <span class="mr-md-auto">32 artículos encontrados </span>
+                            <span class="mr-md-auto">{{counter}} artículos encontrados </span>
                             <div class="btn-group">
-
                                 <a href="categories" class="btn  btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="Grid view">
                                     <i class='bx bxs-grid-alt'></i></a>
                             </div>
                         </div>
                     </header><!-- sect-heading -->
-                    <div class="row">
-                        <!--Articulo para iterar-->
-                        <div v-for="item in products">
-                            <article class="card card-product-list">
-                                <div class="row no-gutters">
-                                    <aside class="col-md-3">
-                                        <a href="#" class="img-wrap"><img src="../../../public/images/Products/84850.jpg"></a>
-                                    </aside> <!-- col.// -->
-                                    <div class="col-md-6">
-                                        <div class="info-main">
-                                            <a href="#" class="h5 title">{{item.nombre_p}}</a>
-                                        </div> <!-- rating-wrap.// -->
-
-                                        <p> {{item.descripcion_p}} </p>
-                                    </div> <!-- info-main.// -->
-                                </div> <!-- col.// -->
-                                <aside class="col-sm-3">
-                                    <div class="info-aside">
-                                        <div class="price-wrap">
-                                            <span class="price h5"> ${{item.precio_p}} </span>
-                                        </div> <!-- info-price-detail // -->
-                                        <br>
-                                        <p>
-                                            <a href="product.php" class="btn btn-primary btn-block"> Ver producto </a>
-                                        </p>
-                                    </div> <!-- info-aside.// -->
-                                </aside> <!-- col.// -->
-                        </div> <!-- row.// -->
-                        </article>
-                    </div>
-
+                </main> <!-- col.// -->
             </div> <!-- row end.// -->
 
+            <!--Contenido-->
+            <article v-for="item in products" class="card card-product-list">
+                <div class="card-body">
+                    <div class="row">
+                        <aside class="col-sm-3">
+                            <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="img-wrap"><img :src="item.imagen"></a>
+                        </aside> <!-- col.// -->
+                        <article class="col-sm-6">
+                            <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="title mt-2 h5">{{item.nombre_p}}</a>
+                            <p>{{item.descripcion_p}}</p>
 
-            <nav class="mt-4" aria-label="Page navigation sample">
-                <ul class="pagination">
-                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+                        </article> <!-- col.// -->
+                        <aside class="col-sm-3">
+                            <div class="price-wrap mt-2">
+                                <span class="price h5"> ${{item.precio_p}} </span>
+                            </div> <!-- info-price-detail // -->
 
-            </main> <!-- col.// -->
+                            <p class="small text-success"> Envio gratis </p>
+                            <br>
+                            <p>
+                                <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="btn btn-primary"> Ver producto </a>
+                            </p>
+                        </aside> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- card-body .// -->
+            </article>
+            <!--Fin de contenido-->
 
-        </div>
-
-</div> <!-- container .//  -->
-</section>
+        </div> <!-- container .//  -->
+    </section>
 </div>
 
 <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/search.js"></script>

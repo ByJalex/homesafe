@@ -238,8 +238,7 @@ class template
                     </section>
                 </div><!-- //container -->
             </footer>
-
-
+            
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/brand_nav.js"></script>
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/inf.js"></script>
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/search_product.js"></script>

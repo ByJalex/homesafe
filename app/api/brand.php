@@ -13,6 +13,20 @@ class brand
         echo 'Hola como estas';
     }
 
+    public function allBrandProducts()
+    {
+        $name = $_GET['name'];
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m, productos.imagen
+        FROM productos INNER JOIN categoria_p ON productos.id_categoria_p = categoria_p.id_categoria_p INNER JOIN marca ON productos.id_marca = marca.id_marca 
+        WHERE  marca.nombre_m = :name
+        GROUP BY productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m');
+        $sql->bindParam(':name', $name);
+        $sql->execute();
+        $getBrand = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'allcategory' => $getBrand));
+    }
+
     public function allbrands()
     {
         $con = bd::connection();
@@ -21,6 +35,7 @@ class brand
         $getPopularProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'allbrands' => $getPopularProducts));
     }
+
 
     public function addbrand()
     {

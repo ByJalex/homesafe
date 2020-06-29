@@ -69,8 +69,15 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                         </div>
                     </div> <!-- col.// -->
                 </div> <!-- row.// -->
-
-                <a href="#" class="btn  btn-primary"> Comprar ahora </a>
+                <?php
+                $parameter = "pay";
+                if (isset($_SESSION['id_usuario'])) {
+                    $parameter = "pay";
+                } else {
+                    $parameter = "login";
+                }
+                ?>
+                <a href="<?php echo $parameter ?>" class="btn  btn-primary"> Comprar ahora </a>
                 <a href="#" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt'></i> </a>
             </article> <!-- product-info-aside .// -->
         </main> <!-- col.// -->

@@ -27,10 +27,12 @@ $header = template::header($title);
                                     <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
                             </div> <!-- img-wrap.// -->
                             <figcaption class="text-center">
-                                <div class="p-3">
+                                <div class="pt-3">
                                     <h5 class="">{{item.categoria_p}}</h5>
                                 </div>
-                                <a :href="'categories?c='+ item.categoria_p" class="btn btn-block btn-primary">Ver categoria</a>
+                                <div class="p-3">
+                                    <a :href="'categories?c='+ item.categoria_p" class="btn btn-block btn-primary">Ver categoria</a>
+                                </div>
                             </figcaption>
                         </figure>
                     </div> <!-- col.// -->

@@ -6,7 +6,8 @@ const authclient = new Vue({
             password: '',
         },
         respuesta: [],
-        error: []
+        error: [],
+        button: 'Iniciar sesión'
     },
     mounted() {
         this.test();
@@ -15,8 +16,8 @@ const authclient = new Vue({
         test: function(){
             console.log('asd');
         },
-        loginUser: function () {
-            console.log('click');
+        log: function () {
+            this.button = 'Cargando...';
             if (!authclient.authData.user == '' || !authclient.authData.password == '') {
                 var formData = authclient.toFormData(authclient.authData);
                 axios.post('http://localhost/homesafe/api/auth/authclient', formData, {
@@ -26,12 +27,14 @@ const authclient = new Vue({
                 })
                     .then(function (response) {
                         if (authclient.respuesta = response.data.usuario) {
-                            window.location.href ='http://localhost/homesafe/home';
+                            window.history.back();
                             //console.log("Credenciales correctas");
                         } else {
-                            // swal("Error", "Credenciales incorrectas mierda fea :)", "error");
-                            //alert('Credenciales incorrectas');
-                            console.log("Credenciales incorrectas");
+                            swal("Error", "Credenciales incorrectas", "error");
+                            //alert('Credenciales incorrectas');)
+                            authclient.button = 'Iniciar sesión';
+                            //console.log("Credenciales incorrectas");
+
                         }
                     });
             } else {

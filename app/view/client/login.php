@@ -3,11 +3,11 @@ require_once(RUTA_APP . 'templates/templateClient.php');
 $header = template::header(APP_NAME.' inicia sesión');
 ?>
 
-<div id="authclient">
-    <section class="section-conten padding-y" style="min-height:84vh" id="">
+<div id="">
+    <section class="section-conten padding-y" style="min-height:84vh" id="authclient">
 
     <!-- ============================ COMPONENT LOGIN   ================================= -->
-    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;" id="login">
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
         <div class="card-body">
             <h4 class="card-title mb-4">Iniciar sesión</h4>
             <div class="form-group">
@@ -23,7 +23,7 @@ $header = template::header(APP_NAME.' inicia sesión');
                 </label>
             </div> <!-- form-group form-check .// -->
             <div class="form-group">
-                <button @click="test" type="submit" class="btn btn-primary btn-block"> Iniciar sesión </button>
+                <button @click="log" type="submit" class="btn btn-primary btn-block">{{button}}</button>
             </div> <!-- form-group// -->
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->
@@ -31,9 +31,7 @@ $header = template::header(APP_NAME.' inicia sesión');
     <p class="text-center mt-4">¿Aún no tienes cuenta? <a href="register.php">Registrate.</a></p>
     <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
-
-
-</section>
+    </section>
 </div>
 
 <script src="app/core/vue/client/auth.js"></script>

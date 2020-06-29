@@ -1,9 +1,7 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-template::header('Home Safe', 0);
+$header = template::header(APP_NAME . ': Continuar pagando');
 ?>
-
-<link rel="stylesheet" href="../../../public/css/stripe.css">
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br>
 <div class="site-section">
@@ -138,9 +136,8 @@ template::header('Home Safe', 0);
         </div>
     </div>
 </div>
-<script src="https://js.stripe.com/v3/"></script>
-<script src="../../../public/js/stripe.js"></script>
+
 <?php
-require_once('../../templates/template.php');
-template::footer();
+require_once(RUTA_APP . 'templates/templateClient.php');
+$footer = template::footer();
 ?>

@@ -24,6 +24,7 @@ class template
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/responsive.css">
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/ui.css">
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/sweetalert.css">
+            <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/test.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
@@ -58,14 +59,14 @@ class template
                                     <img class="logo" src="<?php echo RUTA_PADRE ?>public/images/logo.png">
                                 </a> <!-- brand-wrap.// -->
                             </div>
-                            <div class="col-lg-6 col-sm-12">
+                            <div id="search" class="col-lg-6 col-sm-12">
                                 <form action="#" class="search">
                                     <div class="input-group w-100">
-                                        <input type="text" class="form-control" placeholder="Buscar (ej: lámpara, bocina)">
+                                        <input @keyup.enter="send" v-model="search" type="text" class="form-control" placeholder="Buscar (ej: lámpara, bocina)">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit">
-                                                <i class='bx bx-search'></i>
-                                            </button>
+                                            <a :href="'search?p='+ search" class="btn btn-primary" type="submit">
+                                                <i class='bx bx-search text-white'></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </form> <!-- search-wrap .end// -->
@@ -109,7 +110,7 @@ class template
                                         <div class="dropdown d-inline-block" id="login">
                                             <a href="<?php echo RUTA_PADRE ?>#" class="icontext mr-4 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <img class="icon icon-xs rounded-circle" src="<?php echo RUTA_PADRE ?>public/images/person_3.jpg">
-                                                <div class="text">
+                                                <div class="text" v-cloak>
                                                     Hola, {{userInformation.usu_c}}
                                                 </div>
                                             </a> <!-- iconbox // -->
@@ -239,8 +240,9 @@ class template
             </footer>
 
 
-            <script src="app/core/vue/client/brand_nav.js"></script>
-            <script src="app/core/vue/client/inf.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/brand_nav.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/inf.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/search_product.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/jquery-2.0.0.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/bootstrap.bundle.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/sweetalert.min.js"></script>

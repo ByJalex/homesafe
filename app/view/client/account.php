@@ -1,6 +1,6 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$header = template::header(APP_NAME . ': compra en línea de productos tecnológicos y más');
+$header = template::header(APP_NAME . ': Mi cuenta');
 ?>
 
 <section class="section-pagetop bg">

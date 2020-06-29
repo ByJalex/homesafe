@@ -259,16 +259,16 @@ class template
             <ul class="list-group">
                 <a class="list-group-item <?php if ($active == 1) {
                                                 echo 'active';
-                                            } ?>" href="account.php"> Descripción de mi cuenta </a>
+                                            } ?>" href="<?php echo RUTA_PADRE ?>account"> Descripción de mi cuenta </a>
                 <a class="list-group-item <?php if ($active == 2) {
                                                 echo 'active';
-                                            } ?>" href="orders.php"> Mis ordenes </a>
+                                            } ?>" href="<?php echo RUTA_PADRE ?>account/orders"> Mis ordenes </a>
                 <a class="list-group-item <?php if ($active == 3) {
                                                 echo 'active';
-                                            } ?>" href="wishlist.php"> Mi lista de deseos </a>
+                                            } ?>" href="<?php echo RUTA_PADRE ?>account/wishlist"> Mi lista de deseos </a>
                 <a class="list-group-item <?php if ($active == 4) {
                                                 echo 'active';
-                                            } ?>" href="usersettings.php"> Configuracion de usuario </a>
+                                            } ?>" href="<?php echo RUTA_PADRE ?>account/usersettings"> Configuracion de usuario </a>
             </ul>
         </aside>
 <?php

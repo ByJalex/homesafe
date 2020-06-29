@@ -1,7 +1,6 @@
 <?php
-require_once('../../templates/templateClient.php');
-$title = 'Mi cuenta';
-$header = template::header($title);
+require_once(RUTA_APP . 'templates/templateClient.php');
+$header = template::header(APP_NAME . ': Mis ordenes');
 ?>
 
 <section class="section-pagetop bg">
@@ -66,6 +65,6 @@ $header = template::header($title);
 </section>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

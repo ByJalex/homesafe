@@ -14,10 +14,22 @@ class account
         $instancia::render('account');
     }
     
-    function test()
+    function orders()
     {
         $instancia = new View();
-        $instancia::render('search');
+        $instancia::render('orders');
+    }
+
+    function wishlist()
+    {
+        $instancia = new View();
+        $instancia::render('wishlist');
+    }
+
+    function usersettings()
+    {
+        $instancia = new View();
+        $instancia::render('usersettings');
     }
 
 }

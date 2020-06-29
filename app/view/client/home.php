@@ -2,61 +2,18 @@
 require_once(RUTA_APP . 'templates/templateClient.php');
 $header = template::header(APP_NAME . ': compra en línea de productos tecnológicos y más');
 ?>
-
-<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-    <div class="container">
-
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse" id="main_nav">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Explorar</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="news">Noticias</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about">Sobre nosotros</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Xiaomi</a>
-                        <a class="dropdown-item" href="#">Samsumg</a>
-                        <a class="dropdown-item" href="#">Philips</a>
-                        <a class="dropdown-item" href="#">LG</a>
-                        <a class="dropdown-item" href="#">Google</a>
-                    </div>
-                </li>
-            </ul>
-        </div> <!-- collapse .// -->
-    </div> <!-- container .// -->
-</nav>
-
 <section class="section-main bg padding-y">
     <div class="container">
 
         <div class="row">
             <aside class="col-md-3">
                 <nav class="card">
-                    <ul class="menu-category">
-                        <li><a href="categories">Sala</a></li>
-                        <li><a href="categories">Habitación</a></li>
-                        <li><a href="categories">Baño</a></li>
-                        <li><a href="categories">Cocina</a></li>
-                        <li><a href="categories">Iluminación interior</a></li>
-                        <li><a href="categories">Iluminación interior</a></li>
-                        <li><a href="categories"><strong>Más categorías</strong></a></li>
-                    </ul>
+                    <div id="category_home">
+                        <ul class="menu-category" >
+                            <li v-for = "item in allCategory"><a href="categories">{{item.categoria_p}}</a></li>
+                            <li><a href="allCategories"><b>Ver mas categorias</b></a></li>
+                        </ul>
+                    </div>
                 </nav>
             </aside> <!-- col.// -->
             <div class="col-md-9">
@@ -118,6 +75,7 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
 </section>
 
 <script src="app/core/vue/client/products.js"></script>
+<script src="app/core/vue/client/category_home.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

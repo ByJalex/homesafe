@@ -3,45 +3,6 @@ require_once(RUTA_APP . 'templates/templateClient.php');
 $header = template::header(APP_NAME . ': Nombre del producto');
 ?>
 
-<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
-    <div class="container">
-
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse" id="main_nav" style="">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Explorar</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="news">Noticias</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="about">Sobre nosotros</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Xiaomi</a>
-                        <a class="dropdown-item" href="#">Samsumg</a>
-                        <a class="dropdown-item" href="#">Philips</a>
-                        <a class="dropdown-item" href="#">LG</a>
-                        <a class="dropdown-item" href="#">Google</a>
-                    </div>
-                </li>
-            </ul>
-        </div> <!-- collapse .// -->
-    </div> <!-- container .// -->
-</nav>
-
 <div class="card" id="singleProduct">
     <div class="row no-gutters">
         <aside class="col-md-6">

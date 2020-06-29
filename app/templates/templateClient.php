@@ -128,6 +128,44 @@ class template
                         </div> <!-- row.// -->
                     </div> <!-- container.// -->
                 </section> <!-- header-main .// -->
+                <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+                    <div class="container">
+
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="navbar-collapse collapse" id="main_nav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="home">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Explorar</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="news">Noticias</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about">Sobre nosotros</a>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
+                                    <div id="brand_nav">
+                                        <div class="dropdown-menu" >
+                                            <div v-for='item in allbrands'>
+                                                <a class="dropdown-item" href="#">{{item.nombre_m}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- collapse .// -->
+                    </div> <!-- container .// -->
+                </nav>
             </header>
 
         <?php
@@ -142,12 +180,11 @@ class template
                         <div class="row">
                             <aside class="col-md col-6">
                                 <h6 class="title">Marcas</h6>
-                                <ul class="list-unstyled">
-                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Xiaomi</a></li>
-                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Samsumg</a></li>
-                                    <li> <a href="<?php echo RUTA_PADRE ?>#">Philips</a></li>
-                                    <li> <a href="<?php echo RUTA_PADRE ?>#">LG</a></li>
-                                </ul>
+                                <div >
+                                    <ul class="list-unstyled" >
+                                        <li> <a href="<?php echo RUTA_PADRE ?>#"></a></li>
+                                    </ul>
+                                </div>
                             </aside>
                             <aside class="col-md col-6">
                                 <h6 class="title">Home Safe</h6>
@@ -200,6 +237,8 @@ class template
                 </div><!-- //container -->
             </footer>
 
+
+            <script src="app/core/vue/client/brand_nav.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/jquery-2.0.0.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/bootstrap.bundle.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/sweetalert.min.js"></script>

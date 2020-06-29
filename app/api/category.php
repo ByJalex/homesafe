@@ -22,6 +22,15 @@ class category{
         echo json_encode(array('error' => false, 'allcategory' => $getCategory));
     }
 
+    public function allCategoryLimit()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM categoria_p  ORDER BY id_categoria_p DESC LIMIT 6');
+        $sql->execute();
+        $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'allcategory' => $getCategory));
+    }
+
     public function addcategory()
     {
         $con = bd::connection();

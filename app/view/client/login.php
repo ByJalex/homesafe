@@ -22,7 +22,7 @@ $header = template::header(APP_NAME.' inicia sesión');
                 <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="">
                 </label>
             </div> <!-- form-group form-check .// -->
-            <div class="form-group">
+            <div class="form-group">    
                 <button @click="log" type="submit" class="btn btn-primary btn-block">{{button}}</button>
             </div> <!-- form-group// -->
         </div> <!-- card-body.// -->

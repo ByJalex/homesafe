@@ -1,7 +1,6 @@
 <?php
-require_once('../../templates/templateClient.php');
-$title = 'Mi cuenta';
-$header = template::header($title);
+require_once(RUTA_APP . 'templates/templateClient.php');
+$header = template::header(APP_NAME . ': compra en línea de productos tecnológicos y más');
 ?>
 
 <section class="section-pagetop bg">
@@ -10,7 +9,8 @@ $header = template::header($title);
     </div> <!-- container //  -->
 </section>
 
-<section class="section-content padding-y" id="account">
+<div id="personal_inf">
+    <section class="section-content padding-y" id="account">
     <div class="container">
 
         <div class="row">
@@ -18,17 +18,15 @@ $header = template::header($title);
             $account = template::profile(1);
             ?>
             <main class="col-md-9">
-
-                <article class="card mb-3" v-for="list in myInformation">
+                <article class="card mb-3">
                     <div class="card-body">
-
                         <figure class="icontext">
                             <div class="icon">
-                                <img class="rounded-circle img-sm border" src="../../../public/images/person_4.jpg">
+                                <img class="rounded-circle img-sm border" src="https://s3-us-west-2.amazonaws.com/usedphotosna/80919519_934.jpg">
                             </div>
                             <div class="text">
-                                <strong>{{list.nombre_c}}</strong> <br>
-                                {{list.correo_c}} <br>
+                                <strong>{{userInformation.nombre_c}}</strong> <br>
+                                {{userInformation.correo_c}} <br>
                                 <!--<a href="#">Edit</a>-->
                             </div>
                         </figure>
@@ -36,12 +34,12 @@ $header = template::header($title);
                         <p>
                             <i class='bx bx-current-location'></i> &nbsp; Mi dirección:
                             <br>
-                            {{list.direccion}} &nbsp;
+                            {{userInformation.direccion_c}} &nbsp;
                             <!--<a href="#" class="btn-link"> Edit</a>-->
                             <br>
                             <i class='bx bx-phone'></i> &nbsp;Mi telefono:
                             <br>
-                            {{list.telefono}} &nbsp;
+                            {{userInformation.telefono_c}} &nbsp;
                         </p>
 
                         <article class="card-group">
@@ -80,11 +78,11 @@ $header = template::header($title);
 
     </div> <!-- container .//  -->
 </section>
+</div>
 
-
-<script src="../../core/controllers/myAccount.js"></script>
+<script src="<?php echo RUTA_PADRE ?>app/core/vue/client/personal_inf.js"></script>
 
 <?php
-require_once('../../templates/templateClient.php');
+require_once(RUTA_APP . 'templates/templateClient.php');
 $footer = template::footer();
 ?>

@@ -22,6 +22,17 @@ class product
         echo json_encode(array('error' => false, 'popularProducts' => $getPopularProducts));
     }
 
+    public function search()
+    {
+        $con = bd::connection();
+        $param = $_GET['p'];
+        $sql = $con->prepare("SELECT productos.id_producto ,productos.nombre_p, productos.descripcion_p, productos.precio_p, productos.imagen, productos.identificador FROM productos WHERE productos.nombre_p ILIKE '%".$param."%' AND id_est_p = 1");
+        #$sql->bindParam(':p', $param);
+        $sql->execute();
+        $getPopularProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'search' => $getPopularProducts));
+    }
+
     public function all()
     {
         $con = bd::connection();

@@ -3,12 +3,12 @@ require_once(RUTA_APP . 'templates/templateClient.php');
 $header = template::header(APP_NAME . ': compra en línea de productos tecnológicos y más');
 ?>
 
-<section class="section-content padding-y">
+<div id="search_s">
+    <section class="section-content padding-y">
     <div class="container">
 
         <div class="row">
             <main class="col-md-12">
-
                 <header class="border-bottom mb-4 pb-3">
                     <div class="form-inline">
                         <span class="mr-md-auto">32 artículos encontrados </span>
@@ -19,49 +19,36 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
                         </div>
                     </div>
                 </header><!-- sect-heading -->
-
                 <div class="row">
-
-
                     <!--Articulo para iterar-->
-                    <article class="card card-product-list">
+                    <div v-for="item in products">
+                        <article class="card card-product-list">
                         <div class="row no-gutters">
                             <aside class="col-md-3">
                                 <a href="#" class="img-wrap"><img src="../../../public/images/Products/84850.jpg"></a>
                             </aside> <!-- col.// -->
                             <div class="col-md-6">
                                 <div class="info-main">
-                                    <a href="#" class="h5 title"> Google Home </a>
-                                    <div class="rating-wrap mb-3">
-                                        <ul class="rating-stars">
-                                            <li class="">
-                                                <i class='bx bxs-star text-warning'></i>
-                                                <i class='bx bxs-star text-warning'></i>
-                                                <i class='bx bxs-star text-warning'></i>
-                                                <i class='bx bxs-star text-warning'></i>
-                                                <i class='bx bxs-star text-warning'></i>
-                                            </li>
-                                        </ul>
-                                        <div class="label-rating">5/5</div>
-                                    </div> <!-- rating-wrap.// -->
+                                    <a href="#" class="h5 title">{{item.nombre_p}}</a>
+                                </div> <!-- rating-wrap.// -->
 
-                                    <p> Google Home, es un altavoz inteligente desarrollado por Google. ... Google Home permite a los usuarios utilizar comando de voz para interactuar con servicios del asistente personal de Google, llamado Google Assistant. </p>
+                                    <p> {{item.descripcion_p}} </p>
                                 </div> <!-- info-main.// -->
                             </div> <!-- col.// -->
                             <aside class="col-sm-3">
                                 <div class="info-aside">
                                     <div class="price-wrap">
-                                        <span class="price h5"> $1280 </span>
+                                        <span class="price h5"> ${{item.precio_p}} </span>
                                     </div> <!-- info-price-detail // -->
                                     <br>
                                     <p>
-                                        <a href="product.php" class="btn btn-primary btn-block"> Detalle </a>
-                                        
+                                        <a href="product.php" class="btn btn-primary btn-block"> Ver producto </a>
                                     </p>
                                 </div> <!-- info-aside.// -->
                             </aside> <!-- col.// -->
                         </div> <!-- row.// -->
                     </article>
+                    </div>
 
                 </div> <!-- row end.// -->
 
@@ -82,7 +69,9 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
 
     </div> <!-- container .//  -->
 </section>
+</div>
 
+<script src="<?php echo RUTA_PADRE ?>app/core/vue/client/search.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

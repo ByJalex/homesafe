@@ -17,9 +17,20 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                 </div> <!-- slider-nav.// -->
             </article> <!-- gallery-wrap .end// -->
         </aside>
-        <main class="col-md-6 border-left" v-for="item in productInformation">
-            <article class="content-body">
-                <h2 class="title">{{item.nombre_p}}</h2>
+        <main class="col-md-6 border-left" >
+            <!--Inicio del contenido para mostrar producto-->
+            <article v-if="loadDataProduct" class="content-body">
+                <div class="loader text-center" v-if="loaderProduct">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: 130px;background:#fff;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                    <path fill="none" stroke="#7d7c7c" stroke-width="8" stroke-dasharray="42.76482137044271 42.76482137044271" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform:scale(0.8);transform-origin:50px 50px">
+                        <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="3.125s" keyTimes="0;1" values="0;256.58892822265625"></animate>
+                    </path>
+                </svg>
+            </div>
+            </article> <!-- product-info-aside .// -->
+            <article v-if="products" class="content-body">
+                
+                <h2 class="title" v-cloak>{{productInformation.nombre_p}}</h2>
 
                 <div class="rating-wrap my-3">
                     <ul class="rating-stars">
@@ -31,26 +42,26 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                             <i class='bx bxs-star text-warning'></i>
                         </li>
                     </ul>
-                    <small class="label-rating text-muted"><a href="reviews">132 comentarios</a></small>
-                    <small class="label-rating text-success"> <i class='bx bxs-cart-download'></i> {{orders.count}} </small>
-                </div> <!-- rating-wrap.// -->
+                    <small class="label-rating text-muted"><a class="text-a text-primary" @click="changeToComments">Ver comentarios</a></small>
+                    <small v-cloak class="label-rating text-success"> <i v-cloak class='bx bxs-cart-download'></i> {{orders.count}} </small>
+                </div> 
 
                 <div class="mb-3">
-                    <var class="price h4">${{item.precio_p}}</var>
-                </div> <!-- price-detail-wrap .// -->
+                    <var class="price h4" v-cloak>${{productInformation.precio_p}}</var>
+                </div>
 
-                <p>{{item.descripcion_p}}</p>
+                <p>{{productInformation.descripcion_p}}</p>
 
 
                 <dl class="row">
                     <dt class="col-sm-3">Marca:</dt>
-                    <dd class="col-sm-9">{{item.nombre_m}}</dd>
+                    <dd class="col-sm-9" v-cloak>{{productInformation.nombre_m}}</dd>
 
                     <dt class="col-sm-3">Modelo:</dt>
-                    <dd class="col-sm-9">#{{item.modelo}}</dd>
+                    <dd class="col-sm-9" v-cloak>#{{productInformation.modelo}}</dd>
 
                     <dt class="col-sm-3">Categoria:</dt>
-                    <dd class="col-sm-9">Interiores </dd>
+                    <dd class="col-sm-9" v-cloak>{{productInformation.categoria_p}}</dd>
                 </dl>
 
                 <hr>
@@ -66,8 +77,8 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                                 <button class="btn btn-light" type="button" @click="sum++"> + </button>
                             </div>
                         </div>
-                    </div> <!-- col.// -->
-                </div> <!-- row.// -->
+                    </div> 
+                </div>
                 <?php
                 $parameter = "pay";
                 if (isset($_SESSION['id_usuario'])) {
@@ -79,11 +90,56 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                 <a href="<?php echo $parameter ?>" class="btn  btn-primary"> Comprar ahora </a>
                 <a href="#" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt'></i> </a>
             </article> <!-- product-info-aside .// -->
+
+            <!--Fin del contenido para mostrar producto-->
+
+            <!--Inicio del contenido para mostrar comentarios de producto-->
+            
+            <article v-if="comments" class="content-body">
+                <h2 class="title" v-cloak>{{productInformation.nombre_p}}</h2>
+                <div class="">
+                    <small class="label-rating text-muted"><a class="text-a text-primary" @click="changeToInf">Información de producto</a></small>
+                    <small v-cloak class="label-rating text-secondary"><i class='bx bxs-comment-dots' ></i> {{counterComments}} comentarios </small>
+                </div> <!-- rating-wrap.// -->
+                <div style="" class="comment-show mt-3">
+                    <div v-for="item in allComments" class="comment ">
+                        <div class="row">
+                            <div class="col-2">
+                                <img class="img-fluid rounded" src="https://cdn.dribbble.com/users/369615/screenshots/3485079/anonymus.jpg">
+                            </div>
+                            <div class="col-10">
+                                <b>{{item.usu_c}}</b> - {{item.fecha_comentario}}
+                                <div>
+                                    {{item.comentarios}}
+                                    <div>
+                                        <i class='bx bxs-star text-warning'></i> {{item.estrellas}}/5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="input-group mt-4" id="">
+  <input v-model="sendParams.com" type="text" class="form-control" placeholder="Escribe un comentario" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button @click="loadValidation" class="btn btn-outline-primary" type="button">
+        <i v-if="loaderComment" class='bx bxs-send'></i>
+        <i v-else="loaderComment" class='bx bx-loader-alt bx-spin'></i>
+    </button>
+  </div>
+</div>
+            </article> <!-- product-info-aside .// -->
+
+            <!--Fin del contenido para mostrar comentarios de producto-->
         </main> <!-- col.// -->
     </div> <!-- row.// -->
 </div> <!-- card.// -->
 
+
+
 <script src="app/core/vue/client/viewSingleProduct.js"></script>
+<script src="app/core/vue/client/comments.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

@@ -1,1 +1,29 @@
 [v-cloak] {display: none}
+
+.text-a{
+	cursor: pointer;
+}
+.comment-show{
+	height: 350px;
+	overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c2c2c2;
+}

@@ -49,8 +49,27 @@ class product
         $sql = $con->prepare('SELECT pr.id_producto, pr.nombre_p, pr.descripcion_p, pr.precio_P, pr.modelo, ca.categoria_p, ma.nombre_m, pr.identificador FROM productos pr, categoria_p ca, marca ma WHERE pr.id_categoria_P = ca.id_categoria_P AND pr.id_marca = ma.id_marca AND pr.identificador = :idP');
         $sql->bindParam(':idP', $id);
         $sql->execute();
-        $getProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
+        $getProducts = $sql->fetch(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'uniqueProduct' => $getProducts));
+    }
+    public function commentTest()
+    {
+        $con = bd::connection();
+        $id = $_GET['p'];
+        $sql = $con->prepare('SELECT cli.usu_c, cli.imagen_c, res.estrellas, res.comentarios, res.fecha_comentario FROM cliente cli, productos pr ,resenia res  WHERE pr.id_producto = res.id_producto AND cli.id_cliente = res.id_cliente AND res.id_estado_r = 1 AND pr.id_producto = :parameter ORDER BY res.fecha_comentario DESC');
+        $sql->bindParam(':parameter', $id);
+        #print_r($sql);
+        $sql->execute();
+        $getProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'comments' => $getProducts),JSON_PRETTY_PRINT);
+    }
+    public function clientesTest()
+    {   
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM resenia WHERE id_producto = 1');
+        $sql->execute();
+        $getProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'uniqueProduct' => $getProducts),JSON_PRETTY_PRINT);
     }
 
     public function addProduct()

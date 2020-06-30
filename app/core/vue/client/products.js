@@ -12,7 +12,7 @@ const product = new Vue({
     },
     methods: {
         getPopularProducts: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/api/product/popular')
+            axios.get('http://localhost/homesafe/api/product/popular')
                 .then(function (response) {
                     product.popularProducts = response.data.popularProducts;
                     product.loaderProduct = false;

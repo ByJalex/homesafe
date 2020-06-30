@@ -11,13 +11,13 @@ const category_home = new Vue({
     },
     methods: {
         getAllCategoryLimit: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategoryLimit')
+            axios.get('http://localhost/homesafe/api/category/allCategoryLimit')
              .then(response=>(
                 (this.allCategory=response.data.allcategory)
              ))
         },
         getAllCategory: function(){
-            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategory')
+            axios.get('http://localhost/homesafe/api/category/allCategory')
              .then(response=>(
                 (this.categories=response.data.allcategory),
                 (this.loaderProduct = false)

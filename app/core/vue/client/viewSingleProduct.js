@@ -5,17 +5,49 @@ const singleProduct = new Vue({
             id: '',
             secondaryId: ''
         },
+        params: {},
+        myParameter: 0,
         productInformation: {},
         orders: 'Cargando',
         sum: 1,
-        loaderProduct: true
+        loaderProduct: true,
+        products: false,
+        comments: false,
+        allComments: [],
+        counterComments: 0,
+        loadDataProduct: true,
+        commentary: '',
+        loaderComment: true,
+        sendParams: {
+            idp: 0,
+            estre: 3,
+            com: ''
+        }
     },
     mounted() {
         this.getUrlParam();
         this.getProductInformation();
         this.getOrders();
+        this.chargeComments();
     },
     methods: {
+        sendMessage: function(){
+            comments.sendComment(this.commentary);
+            comments.come = this.commentary;
+        },
+        chargeComments: function(){
+            axios.get('http://localhost/homesafe/api/product/commentTest?p='+this.urlParam.secondaryId)
+            .then(response=>(
+                (this.allComments = response.data.comments),
+                (this.counterComments = this.allComments.length)
+                ));
+        },
+        changeToInf: function(){
+            this.comments ? ((this.products = true), (this.comments = false)) : this.comments = true;
+        },
+        changeToComments: function(){
+            this.products ? ((this.comments = true), (this.products = false)) : this.products = true;
+        },
         getUrlParam: function () {
             let params = new URLSearchParams(location.search);
             this.urlParam.id = params.get('p');
@@ -23,7 +55,7 @@ const singleProduct = new Vue({
         },
         getOrders: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('https://homesafe-sv.herokuapp.com/api/sale/countorders', formData, {
+            axios.post('http://localhost/homesafe/api/sale/countorders', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -34,13 +66,15 @@ const singleProduct = new Vue({
         },
         getProductInformation: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('https://homesafe-sv.herokuapp.com/api/product/unique', formData, {
+            axios.post('http://localhost/homesafe/api/product/unique', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             })
                 .then(function (response) {
                     singleProduct.productInformation = response.data.uniqueProduct;
+                    singleProduct.loadDataProduct = false;
+                    singleProduct.products = true;
                 });
         },
         toFormData: function (obj) {
@@ -56,6 +90,46 @@ const singleProduct = new Vue({
             } else {
                 this.sum--;
             }
-        }
+        },
+        sendComment: function(parameter){
+            comments.come = parameter;
+            console.log(this.come);
+            this.loadValidation();
+        },
+        sendMessage: function(){
+            var formData = this.toFormData(this.sendParams);
+            axios.post('http://localhost/homesafe/api/review/sendreview', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+                .then(function (response) {
+                     swal("Exito", "Comentario enviado.", "success");
+                        singleProduct.chargeComments();
+                        singleProduct.sendParams.com = "";
+                });
+        },
+        val: function(){
+            this.params.test.id_cliente != this.myParameter ? swal("Error", "No puedes comentar un producto que aún no has comprado.", "error") : this.sendMessage();
+        },
+        loadValidation: function(){
+            let params = new URLSearchParams(location.search);
+            this.sendParams.idp = params.get('k');
+            singleProduct.loaderComment = false;
+            axios.get('http://localhost/homesafe/api/review/send?p='+ this.sendParams.idp)
+            .then(response=>(
+                (this.params = response.data),
+                (singleProduct.loaderComment = true),
+                (this.myParameter = response.data.myId),
+                (this.val())
+                ));
+        },
+        toFormData: function (obj) {
+            var form_data = new FormData();
+            for (var key in obj) {
+                form_data.append(key, obj[key]);
+            }
+            return form_data;
+        },
     },
 })

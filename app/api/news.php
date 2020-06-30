@@ -31,8 +31,7 @@ class news{
         $noticia = $_POST['noticia'];
         $imagen = $_POST['imagen'];
         $estado = $_POST['estado'];
-
-        $sql = $con->prepare('INSERT INTO noticias(titulo_noticia, noticia, imagen_n, id_est_noticia) VALUES (:tituloNoticia, :noticiaDescripcion, :imagenNoticia, estadoNoticia);');
+        $sql = $con->prepare('INSERT INTO noticias(titulo_noticia, noticia, imagen_n, id_est_noticia) VALUES (:tituloNoticia, :noticiaDescripcion, :imagenNoticia, estadoNoticia)');
         $sql->bindParam(':tituloNoticia', $titulo);
         $sql->bindParam(':noticiaDescripcion', $noticia);
         $sql->bindParam(':imagenNoticia', $imagen);
@@ -62,7 +61,6 @@ class news{
     {
         $con = bd::connection();
         $id = $_POST['id'];
-
         $sql = $con->prepare('DELETE FROM noticias WHERE id_noticia = :idnoticia');
         $sql->bindParam(':idnoticia', $id);
         $sql->execute();

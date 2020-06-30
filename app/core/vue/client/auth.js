@@ -20,7 +20,7 @@ const authclient = new Vue({
             this.button = 'Cargando...';
             if (!authclient.authData.user == '' || !authclient.authData.password == '') {
                 var formData = authclient.toFormData(authclient.authData);
-                axios.post('http://localhost/homesafe/api/auth/authclient', formData, {
+                axios.post('https://homesafe-sv.herokuapp.com/api/auth/authclient', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

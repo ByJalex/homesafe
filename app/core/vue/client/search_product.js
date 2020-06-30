@@ -11,7 +11,7 @@ const search = new Vue({
     },
     methods: {
         getAllBrands: function () {
-            axios.get('http://localhost/homesafe/api/brand/allbrands')
+            axios.get('https://homesafe-sv.herokuapp.com/api/brand/allbrands')
              .then(response=>(
                 (this.allbrands = response.data.allbrands)
              ))

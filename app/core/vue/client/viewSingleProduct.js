@@ -23,7 +23,7 @@ const singleProduct = new Vue({
         },
         getOrders: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('http://localhost/homesafe/api/sale/countorders', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/sale/countorders', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -34,7 +34,7 @@ const singleProduct = new Vue({
         },
         getProductInformation: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('http://localhost/homesafe/api/product/unique', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/product/unique', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

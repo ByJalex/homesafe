@@ -12,7 +12,7 @@ const news = new Vue({
   methods: {
     getnews: function () {
       axios
-        .get("http://localhost/homesafe/api/news/allNews")
+        .get("https://homesafe-sv.herokuapp.com/api/news/allNews")
         .then(function (response) {
           news.newsCard = response.data.allnews;
           news.shortArrays();

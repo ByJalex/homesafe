@@ -13,7 +13,7 @@ const category = new Vue({
     methods: {
         getAllCategoryIndividual: function () {
             let params = new URLSearchParams(location.search);
-            axios.get('http://localhost/homesafe/api/category/allCategoryProducts?name='+ params.get('c'))
+            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategoryProducts?name='+ params.get('c'))
              .then(response=>(
                 (this.allCategory=response.data.allcategory),
                 (this.counter = this.allCategory.length)

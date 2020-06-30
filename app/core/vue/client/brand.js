@@ -12,7 +12,7 @@ const brand_c = new Vue({
     methods: {
         getAllbrandIndividual: function () {
             let params = new URLSearchParams(location.search);
-            axios.get('http://localhost/homesafe/api/brand/allBrandProducts?name='+ params.get('c'))
+            axios.get('http://localhost/homesafe/api/brand/allBrandProducts?name='+ params.get('m'))
              .then(response=>(
                 (this.allbrand=response.data.allcategory),
                 (this.counter = this.allbrand.length)
@@ -20,7 +20,7 @@ const brand_c = new Vue({
         },
         getUrlParam: function () {
             let params = new URLSearchParams(location.search);
-            this.urlParameter = params.get('c');
+            this.urlParameter = params.get('m');
         },
     }
 })

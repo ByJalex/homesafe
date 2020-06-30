@@ -159,7 +159,7 @@ class template
                                     <div id="brand_nav">
                                         <div class="dropdown-menu" >
                                             <div v-for='item in allbrands'>
-                                                <a class="dropdown-item" href="#">{{item.nombre_m}}</a>
+                                                <a class="dropdown-item" :href="'brand?m='+ item.nombre_m">{{item.nombre_m}}</a>
                                             </div>
                                         </div>
                                     </div>

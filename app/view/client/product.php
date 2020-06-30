@@ -17,7 +17,6 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                 </div> <!-- slider-nav.// -->
             </article> <!-- gallery-wrap .end// -->
         </aside>
-
         <main class="col-md-6 border-left" v-for="item in productInformation">
             <article class="content-body">
                 <h2 class="title">{{item.nombre_p}}</h2>

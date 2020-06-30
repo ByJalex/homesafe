@@ -7,7 +7,8 @@ const singleProduct = new Vue({
         },
         productInformation: {},
         orders: 'Cargando',
-        sum: 1
+        sum: 1,
+        loaderProduct: true
     },
     mounted() {
         this.getUrlParam();

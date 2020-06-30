@@ -3,7 +3,8 @@ const category = new Vue({
     data: {
         allCategory: [],
         urlParameter: '',
-        counter: 0
+        counter: 0,
+        loaderProduct: true
     },
     mounted(){
         this.getAllCategoryIndividual();
@@ -16,6 +17,7 @@ const category = new Vue({
              .then(response=>(
                 (this.allCategory=response.data.allcategory),
                 (this.counter = this.allCategory.length)
+                (this.loaderProduct = false)
              ))
         },
         getUrlParam: function () {

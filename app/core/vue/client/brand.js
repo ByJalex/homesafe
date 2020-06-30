@@ -1,5 +1,5 @@
-const brand = new Vue({
-    el: '#brand',
+const brand_c = new Vue({
+    el: '#brand_c',
     data: {
         allbrand: [],
         urlParameter: '',
@@ -14,7 +14,7 @@ const brand = new Vue({
             let params = new URLSearchParams(location.search);
             axios.get('http://localhost/homesafe/api/brand/allBrandProducts?name='+ params.get('c'))
              .then(response=>(
-                (this.allbrand=response.data.allbrand),
+                (this.allbrand=response.data.allcategory),
                 (this.counter = this.allbrand.length)
              ))
         },

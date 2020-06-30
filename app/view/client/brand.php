@@ -4,7 +4,7 @@ $title = 'Marcas';
 $header = template::header($title);
 ?>
 
-<div id="brand">
+<div id="brand_c">
     <section class="section-pagetop bg">
     <div class="container">
         <h2 class="title-page">Marcas</h2>

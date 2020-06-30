@@ -53,8 +53,6 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                                 </figure>
                             </div> <!-- col.// -->
                         </div> <!-- row.// -->
-
-                        <a href="#" class="btn btn-outline-primary"> Ver todas mis ordenes </a>
                     </div> <!-- card-body .// -->
                 </article> <!-- card.// -->
 

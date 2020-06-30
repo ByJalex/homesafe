@@ -22,8 +22,8 @@ $header = template::header($title);
 
             <div class="col-lg-12 text-center mt-3 mb-2">
                 <h3 class="section-title">Directores</h3>
-                <img src="../../../public/images/img_profile.jpg" class="img-fluid rounded mb-3" width="150">
-                <img src="../../../public/images/owner2.jpg" class="img-fluid rounded mb-3" width="150">
+                <img src="<?php echo RUTA_PADRE ?>public/images/img_profile.jpg" class="img-fluid rounded mb-3" width="150">
+                <img src="<?php echo RUTA_PADRE ?>public/images/owner2.jpg" class="img-fluid rounded mb-3" width="150">
             </div>
             
         </div>

@@ -142,18 +142,6 @@ class template
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="<?php echo RUTA_PADRE ?>home">Inicio</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>explore">Explorar</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>news">Noticias</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>about">Sobre nosotros</a>
-                                </li>
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> Marcas</a>
                                     <div id="brand_nav">
@@ -163,6 +151,13 @@ class template
                                             </div>
                                         </div>
                                     </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>news">Noticias</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo RUTA_PADRE ?>about">Sobre nosotros</a>
                                 </li>
                             </ul>
                         </div> <!-- collapse .// -->

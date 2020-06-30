@@ -3,6 +3,7 @@ const news = new Vue({
   data: {
     newsCard: [],
     newarray: [],
+    loaderProduct: true
   },
   mounted: function () {
     this.getnews();
@@ -15,6 +16,7 @@ const news = new Vue({
         .then(function (response) {
           news.newsCard = response.data.allnews;
           news.shortArrays();
+          news.loaderProduct = false;
         });
     },
     shortArrays: function () {

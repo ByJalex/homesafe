@@ -1,7 +1,8 @@
 const product = new Vue({
     el: '#prod',
     data: {
-        popularProducts: []
+        popularProducts: [],
+        loaderProduct: true
     },
     mounted: function () {
         this.getPopularProducts();
@@ -14,6 +15,7 @@ const product = new Vue({
             axios.get('https://homesafe-sv.herokuapp.com/api/product/popular')
                 .then(function (response) {
                     product.popularProducts = response.data.popularProducts;
+                    product.loaderProduct = false;
                 });
         },
     },

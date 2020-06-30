@@ -3,7 +3,8 @@ const brand_c = new Vue({
     data: {
         allbrand: [],
         urlParameter: '',
-        counter: 0
+        counter: 0,
+        loaderProduct: true
     },
     mounted(){
         this.getAllbrandIndividual();
@@ -15,7 +16,8 @@ const brand_c = new Vue({
             axios.get('http://localhost/homesafe/api/brand/allBrandProducts?name='+ params.get('m'))
              .then(response=>(
                 (this.allbrand=response.data.allcategory),
-                (this.counter = this.allbrand.length)
+                (this.counter = this.allbrand.length),
+                (this.loaderProduct = false)
              ))
         },
         getUrlParam: function () {

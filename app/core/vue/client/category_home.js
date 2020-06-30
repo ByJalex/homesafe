@@ -3,6 +3,7 @@ const category_home = new Vue({
     data: {
         allCategory: [],
         categories: [],
+        loaderProduct: true
     },
     mounted(){
         this.getAllCategoryLimit();
@@ -18,7 +19,8 @@ const category_home = new Vue({
         getAllCategory: function(){
             axios.get('http://localhost/homesafe/api/category/allCategory')
              .then(response=>(
-                (this.categories=response.data.allcategory)
+                (this.categories=response.data.allcategory),
+                (this.loaderProduct = false)
              ))
         }
     }

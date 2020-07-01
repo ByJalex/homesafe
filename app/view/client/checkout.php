@@ -4,79 +4,44 @@ $header = template::header(APP_NAME . ': Continuar pagando');
 ?>
 <!--Saltos de linea para contenerdor (Todo el contenido)-->
 <br>
-<div class="site-section">
+<div class="site-section" id="">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mb-5 mb-md-0">
+            <div class="col-md-6 mb-5 mb-md-0" id="pay">
                 <h2 class="h3 mb-3 text-black">Detalles de facturación</h2>
                 <div class="p-3 p-lg-5 border">
                     <div class="form-group">
                         <label for="c_country" class="text-black">Pais <span class="text-danger">*</span></label>
-                        <select id="c_country" class="form-control">
-                            <option value="1">Seleccionar un pais</option>
-                            <option value="2">bangladesh</option>
-                            <option value="3">Algeria</option>
-                            <option value="4">Afghanistan</option>
-                            <option value="5">Ghana</option>
-                            <option value="6">Albania</option>
-                            <option value="7">Bahrain</option>
-                            <option value="8">Colombia</option>
-                            <option value="9">El Salvador</option>
-                        </select>
+                        <div>
+                            El Salvador
+                        </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-6">
-                            <label for="c_fname" class="text-black">Primer Nombre <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="c_fname" name="c_fname">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="c_lname" class="text-black">Apellidos <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="c_lname" name="c_lname">
+                        <div class="col-md-12">
+                            <label for="c_fname" class="text-black">Nombre <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" v-model="userInformation.nombre_c">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-md-12">
                             <label for="c_address" class="text-black">Direccion <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Dirección">
+                            <input type="text" class="form-control" v-model="userInformation.direccion_c" placeholder="Dirección">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Apartamento, suite, unidad, etc. (opcional)">
-                    </div>
-
                     <div class="form-group row mb-5">
                         <div class="col-md-6">
                             <label for="c_email_address" class="text-black">Correo Electronico <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="c_email_address" name="c_email_address">
+                            <input type="text" class="form-control" v-model="userInformation.correo_c">
                         </div>
                         <div class="col-md-6">
                             <label for="c_phone" class="text-black">Telefono <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Phone Number">
+                            <input type="text" class="form-control" v-model="userInformation.telefono_c" placeholder="Phone Number">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-
-                <div class="row mb-5">
-                    <div class="col-md-12">
-                        <h2 class="h3 mb-3 text-black">Código promocional</h2>
-                        <div class="p-3 p-lg-5 border">
-
-                            <label for="c_code" class="text-black mb-3">Ingrese su código de cupón si tiene uno.</label>
-                            <div class="input-group w-75">
-                                <input type="text" class="form-control" id="c_code" placeholder="Coupon Code" aria-label="Coupon Code" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary btn-sm px-4" type="button" id="button-addon2">Aplicar</button>
-                                </div>
-                            </div>
-                            <label for="c_code" class="text-danger mb-3 d-none">Cupon no valido.</label>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-md-6" id="cart_process">
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <h2 class="h3 mb-3 text-black">Tu pedido</h2>
@@ -87,21 +52,9 @@ $header = template::header(APP_NAME . ': Continuar pagando');
                                     <th>Total</th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Google Nest <strong class="mx-2">x</strong> 1</td>
-                                        <td>$250.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Google Wifi <strong class="mx-2">x</strong> 1</td>
-                                        <td>$100.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>Subtotal del carrito</strong></td>
-                                        <td class="text-black">$350.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-black font-weight-bold"><strong>Total del pedido</strong></td>
-                                        <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+                                    <tr v-for="(item, index) in showMyCart">
+                                        <td>{{item.nombre}} <strong class="mx-2">x</strong> {{(item.cantidad)}}</td>
+                                        <td>${{(item.precio * item.cantidad)}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -136,6 +89,9 @@ $header = template::header(APP_NAME . ': Continuar pagando');
         </div>
     </div>
 </div>
+
+<script src="app/core/vue/client/pay.js"></script>
+<script src="app/core/vue/client/cart_process.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

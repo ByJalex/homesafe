@@ -67,7 +67,7 @@ $header = template::header($title);
                     </div>
 
                     <div class="card-body border-top">
-                        <a href="#" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
+                        <a href="pay" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
                         <a href="home" class="btn btn-light"> <i class='bx bx-left-arrow-alt'></i> Continuar comprando </a>
                     </div>
                 </div> <!-- card.// -->

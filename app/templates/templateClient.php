@@ -25,6 +25,7 @@ class template
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/ui.css">
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/sweetalert.css">
             <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/client/test.css">
+            <link rel="stylesheet" href="<?php echo RUTA_PADRE ?>public/css/vanillatoasts.css">
             <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
         </head>
 
@@ -74,9 +75,9 @@ class template
                             <div class="col-lg-4 col-sm-6 col-12">
 
                                 <div class="widgets-wrap float-md-right">
-                                    <div class="widget-header  mr-1">
+                                    <div class="widget-header  mr-1" id="cart">
                                         <a href="<?php echo RUTA_PADRE ?>cart" class="icon icon-sm rounded-circle border"><i class='bx bx-cart-alt'></i></a>
-                                        <span class="badge badge-pill bg-primary notify">0</span>
+                                        <span class="badge badge-pill bg-primary notify" v-cloak>{{counterCart}}</span>
                                     </div>
                                     <?php
                                     if (isset($_SESSION['id_usuario'])) {
@@ -236,7 +237,9 @@ class template
             
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/brand_nav.js"></script>
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/inf.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/cart.js"></script>
             <script src="<?php echo RUTA_PADRE ?>app/core/vue/client/search_product.js"></script>
+            <script src="<?php echo RUTA_PADRE ?>public/js/vanillatoasts.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/jquery-2.0.0.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/bootstrap.bundle.min.js"></script>
             <script src="<?php echo RUTA_PADRE ?>public/js/client/sweetalert.min.js"></script>

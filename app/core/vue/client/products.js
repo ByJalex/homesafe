@@ -11,6 +11,9 @@ const product = new Vue({
 
     },
     methods: {
+        add: function(id, cantidad, imagen, nombre, precio){
+            cart.addTocCart(id, cantidad, imagen, nombre, precio);
+        },
         getPopularProducts: function () {
             axios.get('http://localhost/homesafe/api/product/popular')
                 .then(function (response) {

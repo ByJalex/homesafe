@@ -1,10 +1,11 @@
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');
-$title = 'Iniciar sesión';
+$title = 'Ver carrito';
 $header = template::header($title);
 ?>
 
-<section class="section-pagetop bg">
+<div id="cart_process">
+    <section class="section-pagetop bg">
     <div class="container">
         <h2 class="title-page">Carrito de compras</h2>
     </div> <!-- container //  -->
@@ -17,7 +18,7 @@ $header = template::header($title);
             <main class="col-md-9">
                 <div class="card">
 
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="cart">
                         <table class="table table-borderless table-shopping-cart">
                             <thead class="text-muted">
                                 <tr class="small text-uppercase">
@@ -28,29 +29,30 @@ $header = template::header($title);
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
+                                <tr v-for="item in showMyCart">
                                     <td>
                                         <figure class="itemside">
                                             <div class="aside"><img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg" class="img-sm"></div>
                                             <figcaption class="info">
-                                                <a href="#" class="title text-dark">Google Home</a>
-                                                <p class="text-muted small"><strong>Marca:</strong> Google</p>
+                                                <a href="#" class="title text-dark">{{item.nombre}}</a>
                                             </figcaption>
                                         </figure>
                                     </td>
                                     <td>
-                                        <select class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                        </select>
+                                        <div class="input-group mb-3 input-spinner">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-light" type="button" @click="item.cantidad--"> - </button>
+                            </div>
+                            <input type="text" class="form-control" :value="item.cantidad">
+                            <div class="input-group-append">
+                                <button class="btn btn-light" type="button" @click="item.cantidad++"> + </button>
+                            </div>
+                        </div>
                                     </td>
                                     <td>
                                         <div class="price-wrap">
-                                            <var class="price">$1156.00</var>
-                                            <small class="text-muted"> $315.20 Unitario </small>
+                                            <var class="price">${{item.precio * item.cantidad}}</var>
+                                            <small class="text-muted"> ${{item.precio}} Unitario </small>
                                         </div> <!-- price-wrap .// -->
                                     </td>
                                     <td class="text-right">
@@ -58,6 +60,7 @@ $header = template::header($title);
                                         <a href="" class="btn btn-light text-danger">Eliminar</a>
                                     </td>
                                 </tr>
+
 
                             </tbody>
                         </table>
@@ -98,7 +101,7 @@ $header = template::header($title);
                         </dl>
                         <dl class="dlist-align">
                             <dt>Descuento:</dt>
-                            <dd class="text-right">USD 658</dd>
+                            <dd class="text-right">USD 0</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Total:</dt>
@@ -116,6 +119,9 @@ $header = template::header($title);
 
     </div> <!-- container .//  -->
 </section>
+</div>
+
+<script src="app/core/vue/client/cart_process.js"></script>
 
 <?php
 require_once(RUTA_APP . 'templates/templateClient.php');

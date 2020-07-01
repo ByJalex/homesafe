@@ -60,7 +60,7 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
                     </figcaption>
                     <div class="d-flex justify-content-between mb-3">
                         <div class="ml-3">
-                            <button @click="add(item.id_producto, 1, item.imagen,item.Producto, item.Precio)" class="btn btn-primary"> <span class="text">Agregar al carrito</span></button>
+                            <button @click="add(item.id_producto, 1, item.imagen,item.Producto, parseFloat(item.Precio))" class="btn btn-primary"> <span class="text">Agregar al carrito</span></button>
                         </div>
                         <div class="mr-3 float">
                             <a href="#" class="btn btn-light"><i class='bx bxs-heart'></i></a>

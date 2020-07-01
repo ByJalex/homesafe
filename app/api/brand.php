@@ -17,7 +17,7 @@ class brand
     {
         $name = $_GET['name'];
         $con = bd::connection();
-        $sql = $con->prepare('SELECT productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m, productos.imagen
+        $sql = $con->prepare('SELECT productos.id_producto, productos.identificador,productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m, productos.imagen
         FROM productos INNER JOIN categoria_p ON productos.id_categoria_p = categoria_p.id_categoria_p INNER JOIN marca ON productos.id_marca = marca.id_marca 
         WHERE  marca.nombre_m = :name
         GROUP BY productos.id_producto, productos.nombre_p, productos.precio_p, categoria_p.categoria_p, marca.nombre_m');

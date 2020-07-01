@@ -9,6 +9,9 @@ const search_s = new Vue({
         this.getUserInformation();
     },
 	methods: {
+		add: function(id, cantidad, imagen, nombre, precio){
+            cart.addTocCart(id, cantidad, imagen, nombre, precio);
+        },
 		getUserInformation: function(){
 			let params = new URLSearchParams(location.search);
             const p = params.get('p');

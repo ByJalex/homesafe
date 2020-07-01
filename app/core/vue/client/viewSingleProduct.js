@@ -31,6 +31,9 @@ const singleProduct = new Vue({
         this.chargeComments();
     },
     methods: {
+        add: function(id, cantidad, imagen, nombre, precio){
+            cart.addTocCart(id, cantidad, imagen, nombre, precio);
+        },
         sendMessage: function(){
             comments.sendComment(this.commentary);
             comments.come = this.commentary;
@@ -86,7 +89,7 @@ const singleProduct = new Vue({
         },
         deductSum: function () {
             if (this.sum == 1) {
-
+                
             } else {
                 this.sum--;
             }

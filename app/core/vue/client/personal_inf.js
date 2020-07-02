@@ -4,6 +4,8 @@ const personal_inf = new Vue({
 		userInformation: {
 
 		},
+		pag: 1,
+		NUM_RESULTS: 4,
 		loaderOfAllContent: true,
 		countOrders: 0,
 		orders: 0,

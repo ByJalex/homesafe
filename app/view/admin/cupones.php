@@ -22,7 +22,7 @@ Page::headerTemplate('Principal');
             <input type="text" placeholder="Buscar" v-model="searchCoupon" class="btn-block">
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-            <button data-toggle="modal" data-target="#addCoupon" class="btn btn-info ml-4"><i class="fas fa-plus-square mr-2"></i>Agregar una marca</button>
+            <button data-toggle="modal" data-target="#addCoupon" class="btn btn-info ml-4"><i class="fas fa-plus-square mr-2"></i>AgregapaginationNumerr una marca</button>
         </div>
     </div>
 

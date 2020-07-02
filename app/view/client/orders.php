@@ -20,7 +20,7 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                 <main class="col-md-9">
                     <article class="card  mb-3">
                         <div class="card-body">
-                            <h5 class="card-title mb-4">Ordenes recientes</h5>
+                            <h5 class="card-title mb-4">Ordenes recientes ( <span class="text-success">{{OrdersClient.length}}</span> )</h5>
 
                             <div class="loader col-lg-12 text-center m-5" v-if="loaderOrders">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -32,7 +32,7 @@ $header = template::header(APP_NAME . ': Mis ordenes');
 
                             <div class="row">
 
-                                <div class="col-md-6" v-for="item in OrdersClient">
+                                <div class="col-md-6" v-for="(item, index) in OrdersClient" v-show="(pag - 1) * NUM_RESULTS <= index  && pag * NUM_RESULTS > index">
                                     <figure class="itemside  mb-3">
                                         <figcaption class="info">
                                             <time class="text-muted"><i class='bx bxs-user'></i></i>Nombre del cliente: {{item.nombre_c}}</time>
@@ -48,8 +48,18 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                                 </div> <!-- col.// -->
 
                             </div> <!-- row.// -->
+                         <h4>pagina: {{pag}}</h4>
+                    <nav aria-label="...">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item" v-show="pag != 1" @click.prevent="pag -= 1">
+                                <a class="page-link" href="#">Atras</a>
+                            </li>
 
-                        </div> <!-- card-body .// -->
+                            <li class="page-item"  v-show="pag * NUM_RESULTS / OrdersClient.length < 1" @click.prevent="pag += 1">
+                                <a class="page-link" href="#">Siguiente</a>
+                            </li>
+                        </ul>
+                    </nav>
                     </article> <!-- card.// -->
 
                 </main>

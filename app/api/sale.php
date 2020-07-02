@@ -93,4 +93,52 @@ class sale
             echo json_encode(array('error' => true, 'purchased_articles' => $validacion));
         endif;
     }
+
+    public function createsale()
+    {
+        session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('INSERT INTO ventas(id_cliente, fecha, fecha_entrega, total, id_estado_v) VALUES (:cli, current_date, current_date, null, 1)');
+        $sql->bindParam(':cli', $_SESSION['id_usuario']);
+        $getId = $con->prepare('SELECT * FROM ventas WHERE id_cliente = '.$_SESSION['id_usuario']. 'ORDER BY id_venta DESC');
+        $getId->execute();
+        $sql->execute();
+        $validacion = $getId->fetch(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            echo json_encode(array('error' => false, 'ult_vent' => $validacion['id_venta']+1), JSON_PRETTY_PRINT);
+        else :
+            echo json_encode(array('error' => true, 'ult_vent' => $validacion['id_venta']+1), JSON_PRETTY_PRINT);
+        endif;
+    }
+
+    public function testsale()
+    {
+        session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM ventas');
+        $sql->execute();
+        $validacion = $sql->fetchAll(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            echo json_encode(array('error' => false, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+        else :
+            echo json_encode(array('error' => true, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+        endif;
+    }
+
+    public function insertAllProducts()
+    {
+        $ob = json_decode(json_encode($_POST['arr']), true);
+        $convert = (array) $ob;
+        print_r($convert);
+
+
+        #$sql = $con->prepare('SELECT * FROM ventas');
+        #$sql->execute();
+        #$validacion = $sql->fetchAll(PDO::FETCH_ASSOC);
+        #if ($validacion) :
+        #    echo json_encode(array('error' => false, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+        #else :
+        #    echo json_encode(array('error' => true, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+        #endif;
+    }
 }

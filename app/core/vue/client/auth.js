@@ -1,6 +1,7 @@
 const authclient = new Vue({
   el: "#authclient",
   data: {
+    //Se crean todas las varbiales globales de nuestro proyecto para la autorizacion de usuarios
     authData: {
       user: "",
       password: "",
@@ -22,6 +23,7 @@ const authclient = new Vue({
     this.test();
   },
   methods: {
+    //Este metodo sirve para validar que los campos sean correctamente llenados
     reg: function () {
       if(this.register.nombre == "" || this.register.correo == "" || this.register.usuario == "" || this.register.direccion == "" || this.register.telefono == "" || this.register.clave == "" || this.register.repeatPass == ""){
         swal("Error", "Campos vacios", "error");
@@ -33,9 +35,11 @@ const authclient = new Vue({
           }
       }
     },
+    //Metodo para testeat el estado del boton
     test: function () {
-      console.log("asd");
+      console.log("Fixed all problems in the authorization..");
     },
+    //Este metodo valida si los campos ingresados son los deseados o correctos.
     log: function () {
       this.button = "Cargando...";
       if (
@@ -64,6 +68,7 @@ const authclient = new Vue({
         alert("Debes llenar todos los campos");
       }
     },
+    //Este metodo es escencias para el registro del cliente.
     registerCliente: function () {
       var formData = authclient.toFormData(authclient.register);
       axios
@@ -87,6 +92,7 @@ const authclient = new Vue({
           }
         });
     },
+    //Este metodo sirve para enviar los datos a travez de POST como una array
     toFormData: function (obj) {
       var form_data = new FormData();
       for (var key in obj) {

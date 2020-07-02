@@ -52,7 +52,8 @@ const cart_process = new Vue({
 			this.showMyCart[index].cantidad = cantidad + 1;
 			localStorage.setItem("p_cart", JSON.stringify(cart_process.showMyCart));
 		},
-		
+		//Este metodo srive para obtener todo el contenido que esta en el localStorage relacionado al 
+		//Carrito de compras y llenarlo segun los datos existentes.
 		getAllContentOfMyCart: function(){
 		let datos = JSON.parse(localStorage.getItem('p_cart'));
 		if(datos === null){

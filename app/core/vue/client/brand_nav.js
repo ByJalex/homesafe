@@ -5,10 +5,12 @@ const brand = new Vue({
             
         ]
     },
+    //Aqui se incializan todos los valores 
     mounted(){
         this.getAllBrands();
     },
     methods: {
+        //Se obtienien todas las marcas pero en el navbar, para evitar problemas con vue
         getAllBrands: function () {
             axios.get('http://localhost/homesafe/api/brand/allbrands')
              .then(response=>(

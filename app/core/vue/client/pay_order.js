@@ -36,6 +36,7 @@ console.log(this.detailSale.arr);
                 .then(function (response) {
                     $('#exampleModalCenter').modal('hide');
                     localStorage.clear();
+                    window.location="account/orders"
                     });
 		},
 		toFormData: function (obj) {

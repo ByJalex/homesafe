@@ -93,4 +93,37 @@ class auth
             echo json_encode(array('error' => true, 'userloggedin' => $validacion));
         endif;
     }
+
+    public function Registerclient()
+    {
+        $con = bd::connection();
+        $usu_c = $_POST['usuario'];
+        $sql = $con->prepare('SELECT * FROM cliente WHERE usu_c = :usuario');
+        $sql->bindParam(':usuario', $usu_c);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        if($validacion){
+            #echo 'El usuario si existe';
+            echo json_encode(array('error' => true, 'userExist' => $validacion));
+        }else{
+
+            $con = bd::connection();
+            $correo_c = $_POST['correo'];
+            $nombre_c = $_POST['nombre'];
+            $usu_c = $_POST['usuario'];
+            $clave_c = $_POST['clave'];
+            $direccion_c = $_POST['direccion'];
+            $telefono_c = $_POST['telefono'];
+    
+            $sql = $con->prepare('INSERT INTO cliente(correo_c, nombre_c, usu_c, clave_c, direccion_c, telefono_c, id_estado_user) 
+                                VALUES (:correo, :nombre, :usuario, :clave, :direccion, :telefono, 1);');
+            $sql->bindParam(':correo', $correo_c);
+            $sql->bindParam(':nombre', $nombre_c);
+            $sql->bindParam(':usuario', $usu_c);
+            $sql->bindParam(':clave', $clave_c);
+            $sql->bindParam(':direccion', $direccion_c);
+            $sql->bindParam(':telefono', $telefono_c);
+            $sql->execute();
+        }
+    }
 }

@@ -88,7 +88,7 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                 }
                 ?>
                 <a href="<?php echo $parameter ?>" class="btn  btn-primary"> Comprar ahora </a>
-                <a href="#" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt'></i> </a>
+                <button  @click="add(productInformation.id_producto, 1, productInformation.imagen,productInformation.nombre_p, parseFloat(productInformation.precio_p))" class="btn  btn-outline-primary"> <span class="text">Añadir al carrito</span> <i class='bx bx-cart-alt'></i> </button>
             </article> <!-- product-info-aside .// -->
 
             <!--Fin del contenido para mostrar producto-->
@@ -121,16 +121,15 @@ $header = template::header(APP_NAME . ': Nombre del producto');
                     </div>
                 </div>
                 <div class="input-group mt-4" id="">
-  <input v-model="sendParams.com" type="text" class="form-control" placeholder="Escribe un comentario" aria-label="Recipient's username" aria-describedby="button-addon2">
-  <div class="input-group-append">
-    <button @click="loadValidation" class="btn btn-outline-primary" type="button">
-        <i v-if="loaderComment" class='bx bxs-send'></i>
-        <i v-else="loaderComment" class='bx bx-loader-alt bx-spin'></i>
-    </button>
+              <input v-model="sendParams.com" type="text" class="form-control" placeholder="Escribe un comentario" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button @click="loadValidation" class="btn btn-outline-primary" type="button">
+                    <i v-if="loaderComment" class='bx bxs-send'></i>
+                    <i v-else="loaderComment" class='bx bx-loader-alt bx-spin'></i>
+                </button>
   </div>
 </div>
             </article> <!-- product-info-aside .// -->
-
             <!--Fin del contenido para mostrar comentarios de producto-->
         </main> <!-- col.// -->
     </div> <!-- row.// -->

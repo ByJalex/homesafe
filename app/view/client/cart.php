@@ -29,7 +29,7 @@ $header = template::header($title);
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="item in showMyCart">
+                                <tr v-for="(item, index) in showMyCart">
                                     <td>
                                         <figure class="itemside">
                                             <div class="aside"><img src="<?php echo RUTA_URL?>public/images/Products/84850.jpg" class="img-sm"></div>
@@ -41,23 +41,23 @@ $header = template::header($title);
                                     <td>
                                         <div class="input-group mb-3 input-spinner">
                             <div class="input-group-prepend">
-                                <button class="btn btn-light" type="button" @click="item.cantidad--"> - </button>
+                                <button class="btn btn-light" type="button" @click="item.cantidad!= 1 ? rest(index, item.cantidad) : ''"> - </button>
                             </div>
-                            <input type="text" class="form-control" :value="item.cantidad">
+                            <input disabled="" type="text" class="form-control" :value="item.cantidad">
                             <div class="input-group-append">
-                                <button class="btn btn-light" type="button" @click="item.cantidad++"> + </button>
+                                <button class="btn btn-light" type="button" @click="sum(index, item.cantidad)"> + </button>
                             </div>
                         </div>
                                     </td>
                                     <td>
                                         <div class="price-wrap">
-                                            <var class="price">${{item.precio * item.cantidad}}</var>
+                                            <var class="price">${{(item.precio * item.cantidad)}}</var>
                                             <small class="text-muted"> ${{item.precio}} Unitario </small>
                                         </div> <!-- price-wrap .// -->
                                     </td>
                                     <td class="text-right">
                                         <!--<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class='bx bxs-heart'></i></a>-->
-                                        <a href="" class="btn btn-light text-danger">Eliminar</a>
+                                        <button @click="deleteProduct(index)" class="btn btn-light text-danger">Eliminar</button>
                                     </td>
                                 </tr>
 
@@ -68,7 +68,7 @@ $header = template::header($title);
 
                     <div class="card-body border-top">
                         <a href="#" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
-                        <a href="index.php" class="btn btn-light"> <i class='bx bx-left-arrow-alt'></i> Continuar comprando </a>
+                        <a href="home" class="btn btn-light"> <i class='bx bx-left-arrow-alt'></i> Continuar comprando </a>
                     </div>
                 </div> <!-- card.// -->
 
@@ -97,7 +97,7 @@ $header = template::header($title);
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Precio total:</dt>
-                            <dd class="text-right">USD 568</dd>
+                            <dd class="text-right">USD ${{sumarFrutas}}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Descuento:</dt>
@@ -105,7 +105,7 @@ $header = template::header($title);
                         </dl>
                         <dl class="dlist-align">
                             <dt>Total:</dt>
-                            <dd class="text-right  h5"><strong>$1,650</strong></dd>
+                            <dd class="text-right  h5"><strong>${{sumarFrutas}}</strong></dd>
                         </dl>
                         <hr>
                         <p class="text-center mb-3">

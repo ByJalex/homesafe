@@ -51,17 +51,17 @@ $header = template::header($title);
                             <figure class="card card-product-grid">
                                 <div class="img-wrap">
                                     <a href="product.php" class="img-wrap"> <img :src="item.imagen">
-                                        <a class="btn-overlay" href="#"><i class='bx bx-search'></i> Vista rápida</a>
+                                        <a class="btn-overlay" :href="'product?p='+ item.identificador + '&k=' + item.id_producto"><i class='bx bx-search'></i> Vista rápida</a>
                                 </div> <!-- img-wrap.// -->
                                 <figcaption class="info-wrap">
                                     <div class="fix-height">
-                                        <a href="#" class="title">{{item.nombre_p}}</a>
+                                        <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="title">{{item.nombre_p}}</a>
                                         <small>{{item.nombre_m}}</small>
                                         <div class="price-wrap mt-2">
                                             <span class="price">${{item.precio_p}}</span>
                                         </div> <!-- price-wrap.// -->
                                     </div>
-                                    <a href="#" class="btn btn-block btn-light">Ver producto</a>
+                                    <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="btn btn-block btn-light">Ver producto</a>
                                 </figcaption>
                             </figure>
                         </div> <!-- col.// -->

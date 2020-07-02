@@ -48,13 +48,13 @@ $header = template::header(APP_NAME . ': compra en línea de productos tecnológ
                             <br>
                             <p>
                                 <a :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="btn btn-primary"> Ver producto </a>
+                                <button @click="add(item.id_producto, 1, item.imagen,item.nombre_p, parseFloat(item.precio_p))" :href="'product?p='+ item.identificador + '&k=' + item.id_producto" class="btn btn-light mt-1"> Añadir al carrito </button>
                             </p>
                         </aside> <!-- col.// -->
                     </div> <!-- row.// -->
                 </div> <!-- card-body .// -->
             </article>
             <!--Fin de contenido-->
-
         </div> <!-- container .//  -->
     </section>
 </div>

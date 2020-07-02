@@ -23,7 +23,7 @@ const authclient = new Vue({
   },
   methods: {
     reg: function () {
-      if(register.nombre == ""  regis){
+      if(this.register.nombre == "" || this.register.correo == "" || this.register.usuario == "" || this.register.direccion == "" || this.register.telefono == "" || this.register.clave == "" || this.register.repeatPass == ""){
         swal("Error", "Campos vacios", "error");
       }else{
         if (this.register.clave != this.repeatPass) {

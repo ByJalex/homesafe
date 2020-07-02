@@ -11,7 +11,7 @@ $header = template::header(APP_NAME.' inicia sesión');
         <div class="card-body">
             <h4 class="card-title mb-4">Iniciar sesión</h4>
             <div class="form-group">
-                <input class="form-control" placeholder="Correo" v-model="authData.user" type="email">
+                <input class="form-control" placeholder="Nombre de usuario" v-model="authData.user" type="email">
             </div> <!-- form-group// -->
             <div class="form-group">
                 <input class="form-control" placeholder="Contraseña" v-model="authData.password" type="password">

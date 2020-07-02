@@ -8,6 +8,7 @@ const cart_process = new Vue({
 	},
 	mounted: function(){
 		this.getAllContentOfMyCart();
+		localStorage.setItem('t', this.sumarFrutas);
 	},
 	computed: {
 		sumarFrutas: function(){
@@ -46,11 +47,13 @@ const cart_process = new Vue({
 		rest: function(index, cantidad){
 			this.showMyCart[index].cantidad = cantidad - 1;
 			localStorage.setItem("p_cart", JSON.stringify(cart_process.showMyCart));
+			localStorage.setItem('t', this.sumarFrutas);
 		},
 		//Este metodo sirve para sumar las cantidades del carrito de compras
 		sum: function(index, cantidad){
 			this.showMyCart[index].cantidad = cantidad + 1;
 			localStorage.setItem("p_cart", JSON.stringify(cart_process.showMyCart));
+			localStorage.setItem('t', this.sumarFrutas);
 		},
 		//Este metodo srive para obtener todo el contenido que esta en el localStorage relacionado al 
 		//Carrito de compras y llenarlo segun los datos existentes.

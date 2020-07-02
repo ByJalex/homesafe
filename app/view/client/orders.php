@@ -40,7 +40,7 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                                             <p>Orden# {{item.id_venta}}</p>
                                             <time class="text-muted"><i class='bx bx-calendar'></i>Fecha del pedido creado: {{item.fecha}}</time><br>
                                             <time class="text-muted"><i class='bx bx-calendar'></i>Fecha de entrega del pedido {{item.fecha_entrega}}</time>
-                                            <p>Total de la orden: ${{item.total}}</p>
+                                            <p>Total de la orden: <strong>${{item.total}}</strong></p>
                                             <span class="text-success">Estado de la venta: {{item.estado_venta}}</span><br>
                                             <button @click="getDetailOrders(item.id_venta)" class="btn btn-primary mt-2 mb-2" data-toggle="modal" data-target="#detalleVenta">Ver detalle del pedido</button>
                                             <!-- -->

@@ -98,7 +98,7 @@ class sale
     {
         session_start();
         $con = bd::connection();
-        $sql = $con->prepare('INSERT INTO ventas(id_cliente, fecha, fecha_entrega, total, id_estado_v) VALUES (:cli, current_date, current_date, null, 1)');
+        $sql = $con->prepare('INSERT INTO ventas(id_cliente, fecha, fecha_entrega, total, id_estado_v) VALUES (:cli, current_date, current_date, '.$_GET['t'].', 1)');
         $sql->bindParam(':cli', $_SESSION['id_usuario']);
         $getId = $con->prepare('SELECT * FROM ventas ORDER BY id_venta DESC');
         $getId->execute();
@@ -126,32 +126,19 @@ class sale
         $sql = $con->prepare($prepareString);
         $sql->execute();
     }
-
-    public function viewDetail()
+    public function testVieAllSale()
     {
         session_start();
         $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM detalle_venta');
+        $sql = $con->prepare('SELECT cliente.nombre_c, productos.nombre_p, detalle_venta.cantidad, detalle_venta.precio_unitario, ventas.fecha, ventas.total FROM detalle_venta INNER JOIN productos on detalle_venta.id_producto = productos.id_producto INNER JOIN ventas ON detalle_venta.id_venta = ventas.id_venta INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente  WHERE cliente.id_cliente = :idUser GROUP BY cliente.nombre_c, productos.nombre_p, detalle_venta.cantidad, detalle_venta.precio_unitario, ventas.fecha, ventas.total');
+        $sql->bindParam(':idUser', $_SESSION['id_usuario']);
         $sql->execute();
         $validacion = $sql->fetchAll(PDO::FETCH_ASSOC);
         if ($validacion) :
-            echo json_encode(array('error' => false, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+            echo json_encode(array('error' => false, 'purchased_articles' => $validacion));
         else :
-            echo json_encode(array('error' => true, 'ventas' => $validacion), JSON_PRETTY_PRINT);
+            echo json_encode(array('error' => true, 'purchased_articles' => $validacion));
         endif;
     }
 
-    public function viewSale()
-    {
-        session_start();
-        $con = bd::connection();
-        $sql = $con->prepare('SELECT * FROM detalle_venta');
-        $sql->execute();
-        $validacion = $sql->fetchAll(PDO::FETCH_ASSOC);
-        if ($validacion) :
-            echo json_encode(array('error' => false, 'ventas' => $validacion), JSON_PRETTY_PRINT);
-        else :
-            echo json_encode(array('error' => true, 'ventas' => $validacion), JSON_PRETTY_PRINT);
-        endif;
-    }
 }

@@ -18,17 +18,18 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                 $account = template::profile(2);
                 ?>
                 <main class="col-md-9">
-                    <article class="card  mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title mb-4">Ordenes recientes ( <span class="text-success">{{OrdersClient.length}}</span> )</h5>
-
-                            <div class="loader col-lg-12 text-center m-5" v-if="loaderOrders">
+                    <div class="loader col-lg-12 text-center m-5" v-if="loaderOrders">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                                     <path fill="none" stroke="#7d7c7c" stroke-width="8" stroke-dasharray="42.76482137044271 42.76482137044271" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform:scale(0.8);transform-origin:50px 50px">
                                         <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="3.125s" keyTimes="0;1" values="0;256.58892822265625"></animate>
                                     </path>
                                 </svg>
                             </div>
+                    <article class="card  mb-3" v-else="loaderOrders">
+                        <div class="card-body">
+                            <h5 class="card-title mb-4">Ordenes recientes ( <span class="text-success">{{OrdersClient.length}}</span> )</h5>
+
+                            
 
                             <div class="row">
 
@@ -71,12 +72,19 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                         <div class="modal-content">
                             <div class="modal-header border-0">
                                 <h5 class="modal-title" id="staticBackdropLabel">Detalle de la venta</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button @click="deleteDetailOrder" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body border-0">
-                                <table class="table table-hover">
+                                <div class="loader col-lg-12 m-5 mx-auto" style="width: 200px;" v-if="loaderDetailOrders">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                                <path fill="none" stroke="#7d7c7c" stroke-width="8" stroke-dasharray="42.76482137044271 42.76482137044271" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform:scale(0.8);transform-origin:50px 50px">
+                                                    <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="3.125s" keyTimes="0;1" values="0;256.58892822265625"></animate>
+                                                </path>
+                                            </svg>
+                                        </div>
+                                <table class="table table-hover" v-else="loaderDetailOrders">
                                     <thead>
                                         <tr>
                                             <th scope="col">Nombre del producto</th>
@@ -85,13 +93,7 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <div class="loader col-lg-12 text-center m-5" v-if="loaderDetailOrders">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-                                                <path fill="none" stroke="#7d7c7c" stroke-width="8" stroke-dasharray="42.76482137044271 42.76482137044271" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform:scale(0.8);transform-origin:50px 50px">
-                                                    <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="3.125s" keyTimes="0;1" values="0;256.58892822265625"></animate>
-                                                </path>
-                                            </svg>
-                                        </div>
+                                        
                                         <tr v-for="item in DetailOrder">
                                             <td>{{item.nombre_p}}</td>
                                             <td>{{item.cantidad}}</td>

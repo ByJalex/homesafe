@@ -26,12 +26,13 @@ const personal_inf = new Vue({
         this.getPendingOrders();
 		this.getShopedArticles();
 		this.getOrders();
-		this.getDetailOrders();
+		//this.getDetailOrders();
     },
 	methods: {
 		//Serive para vaciar el array de detalle venta, para que a la hora de mostrar otro detalle venta no ese el anteriror
 		deleteDetailOrder: function(){
 			this.DetailOrder = [];	
+			this.loaderDetailOrders = true;
 		},
 		//carga la informacion personal de usuario
 		getUserInformation: function(){
@@ -41,7 +42,7 @@ const personal_inf = new Vue({
              ))
 		},
 		//Muestra el numero de ordes por cliente logeado
-		getOrders: function(){
+		getOrderss: function(){
 			axios.get('http://localhost/homesafe/api/sale/myorders')
 			.then(response=>(
                 (this.orders = response.data.orders),
@@ -77,7 +78,6 @@ const personal_inf = new Vue({
 			axios.get('http://localhost/homesafe/api/client/detallePedidosPorCliente?id='+id)
 			.then(response=>(
 				(this.DetailOrder = response.data.DetallePedidosPorCliente),
-				(console.log(response.data.DetallePedidosPorCliente)),
 				(this.loaderDetailOrders = false)
              ))
 		}

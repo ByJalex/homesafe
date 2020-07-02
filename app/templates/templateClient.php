@@ -84,8 +84,8 @@ class template
                                     ?>
                                         <div class="widget-header mr-4">
                                             <a href="<?php echo RUTA_PADRE ?>notifications" class="icon-sm rounded-circle border">
-                                                <i class='bx bx-bell'></i></a>
-                                            <span class="badge badge-pill bg-warning notify">1</span>
+                                            <i class='bx bx-heart' ></i></a>
+                                            <span class="badge badge-pill bg-warning notify">0</span>
                                         </div>
                                     <?php
                                     }

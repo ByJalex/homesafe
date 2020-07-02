@@ -117,7 +117,7 @@ class template
                                             <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(150px, 32px, 0px);">
                                                 <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>account">Mi perfil</a>
                                                 <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>usersettings">Configuración</a>
-                                                <a class="dropdown-item" href="destroysession">Cerrar sesión</a>
+                                                <a class="dropdown-item" href="<?php echo RUTA_PADRE ?>destroysession">Cerrar sesión</a>
                                             </div>
                                         </div>
                                     <?php

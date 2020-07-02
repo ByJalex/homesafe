@@ -127,10 +127,9 @@ class sale
 
     public function insertAllProducts()
     {
-        $ob = json_decode(json_encode($_POST['arr']), true);
+        $ob = json_decode($_POST['arr'], true);
         $convert = (array) $ob;
         print_r($convert);
-
 
         #$sql = $con->prepare('SELECT * FROM ventas');
         #$sql->execute();

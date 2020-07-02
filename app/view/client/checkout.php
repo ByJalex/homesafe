@@ -84,8 +84,30 @@ $header = template::header(APP_NAME . ': Continuar pagando');
                             
                         </div>
                         <div id="pay_order">
-                                <button @click="payOrder" class="btn btn-primary float-right mb-5">Finalizar compra</button>
+                                <button data-toggle="modal" data-target="#exampleModalCenter" @click="payOrder" class="btn btn-primary float-right mb-5">Finalizar compra</button>
                             </div>
+                            <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="m-5 text-center">
+            <div>
+            <h5>¡Espere un momento por favor!</h5>
+        </div>
+        <div>
+            <p>Estamos procesando tu compra, porfavor no cierres el navegador.</p>
+        </div>
+        </div>
+      <div class="d-flex justify-content-center mb-5">
+          <div class="spinner-border" role="status">
+            <div>
+                <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
                     </div>
                 </div>
             </div>

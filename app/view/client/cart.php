@@ -17,7 +17,6 @@ $header = template::header($title);
         <div class="row">
             <main class="col-md-9">
                 <div class="card">
-
                     <div class="table-responsive" id="cart">
                         <table class="table table-borderless table-shopping-cart">
                             <thead class="text-muted">
@@ -65,9 +64,19 @@ $header = template::header($title);
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="card-body border-top">
-                        <a href="pay" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
+                    <div  class="card-body border-top">
+                        <div v-if="showMyCart == ''" class="text-center m-4">
+                            <h3>Carrito de compras vacio</h3>
+                        </div>
+                        <?php
+                $parameter = "pay";
+                if (isset($_SESSION['id_usuario'])) {
+                    $parameter = "pay";
+                } else {
+                    $parameter = "login";
+                }
+                ?>
+                        <a v-if="showMyCart != ''" href="<?php echo $parameter ?>" class="btn btn-primary float-md-right"> Realizar compra <i class='bx bx-right-arrow-alt'></i> </a>
                         <a href="home" class="btn btn-light"> <i class='bx bx-left-arrow-alt'></i> Continuar comprando </a>
                     </div>
                 </div> <!-- card.// -->

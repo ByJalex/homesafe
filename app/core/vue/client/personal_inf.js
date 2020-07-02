@@ -4,6 +4,8 @@ const personal_inf = new Vue({
 		userInformation: {
 
 		},
+		loaderOfAllContent: true,
+		countOrders: 0,
 		orders: 0,
 		pendingorders: 0,
 		wishList: 0,
@@ -55,7 +57,8 @@ const personal_inf = new Vue({
 			axios.get('http://localhost/homesafe/api/sale/articles')
 			.then(response=>(
                 (this.articles = response.data.purchased_articles),
-                (this.counter = this.articles.length)
+                (this.counter = this.articles.length),
+                (this.loaderOfAllContent = false)
              ))
 		},
 		//Metodo para cargar las orden correspondiente al usuario
@@ -63,7 +66,8 @@ const personal_inf = new Vue({
 			axios.get('http://localhost/homesafe/api/client/pedidosPorCliente')
 			.then(response=>(
 				(this.OrdersClient = response.data.pedidosPorCliente),
-				(this.loaderOrders = false)
+				(this.loaderOrders = false),
+				(this.countOrders = this.OrdersClient.length)
              ))
 		},
 		//metodo para cargar el detelle de cada orden

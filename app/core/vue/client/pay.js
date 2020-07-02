@@ -2,7 +2,7 @@ const pay = new Vue({
 	el: '#pay',
 	data: {
 		userInformation: {
-
+			loaderSale: false
 		}
 	},
 	mounted(){

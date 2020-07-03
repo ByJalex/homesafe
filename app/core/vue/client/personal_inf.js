@@ -8,15 +8,26 @@ const personal_inf = new Vue({
 		pendingorders: 0,
 		wishList: 0,
 		articles: [],
-		counter: 0
+		counter: 0,
+		OrdersClient:{
+
+		},
+		DetailOrder: [],
+		loaderOrders: true,
+		loaderDetailOrders: true
 	},
 	mounted(){
         this.getUserInformation();
         this.getOrders();
         this.getPendingOrders();
-        this.getShopedArticles();
+		this.getShopedArticles();
+		this.getOrders();
+		this.getDetailOrders();
     },
 	methods: {
+		deleteDetailOrder: function(){
+			this.DetailOrder = [];	
+		},
 		getUserInformation: function(){
 			axios.get('http://localhost/homesafe/api/auth/loggedinclient')
 			.then(response=>(
@@ -43,6 +54,21 @@ const personal_inf = new Vue({
                 (this.counter = this.articles.length)
              ))
 		},
+		getOrders: function(){
+			axios.get('http://localhost/homesafe/api/client/pedidosPorCliente')
+			.then(response=>(
+				(this.OrdersClient = response.data.pedidosPorCliente),
+				(this.loaderOrders = false)
+             ))
+		},
+		getDetailOrders: function(id){
+			axios.get('http://localhost/homesafe/api/client/detallePedidosPorCliente?id='+id)
+			.then(response=>(
+				(this.DetailOrder = response.data.DetallePedidosPorCliente),
+				(console.log(response.data.DetallePedidosPorCliente)),
+				(this.loaderDetailOrders = false)
+             ))
+		}
 	}
 })
 

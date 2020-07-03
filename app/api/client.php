@@ -33,4 +33,32 @@ class client{
         $sql->bindParam(':id_cliente', $id);
         $sql->execute();
     }
+
+    public function pedidosPorCliente()
+    {
+        session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT ventas.id_venta, cliente.nombre_c, ventas.fecha, ventas.fecha_entrega, ventas.total, estado_venta.estado_venta
+        FROM ventas INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente INNER JOIN estado_venta ON ventas.id_estado_v = estado_venta.id_estado_v
+        WHERE ventas.id_cliente = :idc');
+        $sql->bindParam(':idc', $_SESSION['id_usuario']);
+        $sql->execute();
+        $getClient = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'pedidosPorCliente' => $getClient));
+    }
+
+    public function detallePedidosPorCliente()
+    {
+        session_start();
+        $con = bd::connection();
+        $v = $_GET['id'];
+        $sql = $con->prepare('SELECT productos.nombre_p, detalle_venta.cantidad, detalle_venta.precio_unitario
+        FROM detalle_venta INNER JOIN productos ON detalle_venta.id_producto = productos.id_producto
+        WHERE detalle_venta.id_venta = :v');
+        #$sql->bindParam(':idc', $_SESSION['id_usuario']);
+        $sql->bindParam(':v', $v);
+        $sql->execute();
+        $getDetail = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'DetallePedidosPorCliente' => $getDetail));
+    }
 }

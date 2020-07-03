@@ -51,7 +51,7 @@ class template
                 }
                 ?>
 
-
+            <main>
                 <section class="header-main border-bottom">
                     <div class="container">
                         <div class="row align-items-center">
@@ -131,6 +131,7 @@ class template
                         </div> <!-- row.// -->
                     </div> <!-- container.// -->
                 </section> <!-- header-main .// -->
+            </main>
                 <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
                     <div class="container">
 

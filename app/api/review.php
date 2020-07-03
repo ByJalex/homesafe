@@ -63,10 +63,11 @@ class review{
         $idp = $_POST['idp'];
         $estre = $_POST['estre'];
         $com = $_POST['com'];
-        $sql = $con->prepare('INSERT INTO resenia(id_producto, id_cliente, estrellas, comentarios, fecha_comentario, id_estado_r) VALUES (:idp, :idc, :estre, :com, current_date, 1)');
+        $getstar = $_POST['getstar'];
+        $sql = $con->prepare('INSERT INTO resenia(id_producto, id_cliente, estrellas, comentarios, fecha_comentario, id_estado_r) VALUES (:idp, :idc, :getstar, :com, current_date, 1)');
         $sql->bindParam(':idp', $idp); 
         $sql->bindParam(':idc', $_SESSION['id_usuario']);
-        $sql->bindParam(':estre', $estre);
+        $sql->bindParam(':getstar', $getstar);
         $sql->bindParam(':com', $com);
         $sql->execute();
         $getPopularProducts = $sql->fetch(PDO::FETCH_ASSOC);

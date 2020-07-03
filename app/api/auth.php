@@ -52,9 +52,10 @@ class auth
         $con = bd::connection();
         $usuario = $_POST['user'];
         $clave = $_POST['password'];
+        $createHash = hash("haval256,3", $clave);
         $sql = $con->prepare('SELECT id_cliente from cliente where usu_c = :usu and clave_c = :cl');
         $sql->bindParam(':usu', $usuario);
-        $sql->bindParam(':cl', $clave);
+        $sql->bindParam(':cl', $createHash);
         $sql->execute();
         $validacion = $sql->fetch(PDO::FETCH_ASSOC);
         if ($validacion) :
@@ -94,6 +95,10 @@ class auth
         endif;
     }
 
+    public function testHash(){
+        echo hash("haval256,3", "Este es mi texto");
+    }
+
     public function Registerclient()
     {
         $con = bd::connection();
@@ -114,13 +119,13 @@ class auth
             $clave_c = $_POST['clave'];
             $direccion_c = $_POST['direccion'];
             $telefono_c = $_POST['telefono'];
-    
+            $createHash = hash("haval256,3", $clave_c);
             $sql = $con->prepare('INSERT INTO cliente(correo_c, nombre_c, usu_c, clave_c, direccion_c, telefono_c, id_estado_user) 
                                 VALUES (:correo, :nombre, :usuario, :clave, :direccion, :telefono, 1);');
             $sql->bindParam(':correo', $correo_c);
             $sql->bindParam(':nombre', $nombre_c);
             $sql->bindParam(':usuario', $usu_c);
-            $sql->bindParam(':clave', $clave_c);
+            $sql->bindParam(':clave', $createHash);
             $sql->bindParam(':direccion', $direccion_c);
             $sql->bindParam(':telefono', $telefono_c);
             $sql->execute();

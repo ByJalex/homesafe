@@ -22,8 +22,10 @@ const singleProduct = new Vue({
         sendParams: {
             idp: 0,
             estre: 3,
-            com: ''
-        }
+            com: '',
+            //3 por defecto xD
+            getstar: 3
+        },
     },
     //Esto se ejecuta a la hora que se carga la pagina
     mounted() {
@@ -33,6 +35,12 @@ const singleProduct = new Vue({
         this.chargeComments();
     },
     methods: {
+        openModal: function(){
+            $('#exampleModal').modal('open')
+        },
+        selectstar: function(star){
+            this.sendParams.getstar = star;
+        },
         add: function(id, cantidad, imagen, nombre, precio){
             cart.addTocCart(id, cantidad, imagen, nombre, precio);
         },
@@ -45,7 +53,8 @@ const singleProduct = new Vue({
             axios.get('http://localhost/homesafe/api/product/commentTest?p='+this.urlParam.secondaryId)
             .then(response=>(
                 (this.allComments = response.data.comments),
-                (this.counterComments = this.allComments.length)
+                (this.counterComments = this.allComments.length),
+                ($('#exampleModal').modal('hide'))
                 ));
         },
         changeToInf: function(){

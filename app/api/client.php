@@ -33,20 +33,20 @@ class client{
         $sql->bindParam(':id_cliente', $id);
         $sql->execute();
     }
-
+    //Esta funcion siver para cargar los pedidos por cliente
     public function pedidosPorCliente()
     {
         session_start();
         $con = bd::connection();
         $sql = $con->prepare('SELECT ventas.id_venta, cliente.nombre_c, ventas.fecha, ventas.fecha_entrega, ventas.total, estado_venta.estado_venta
         FROM ventas INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente INNER JOIN estado_venta ON ventas.id_estado_v = estado_venta.id_estado_v
-        WHERE ventas.id_cliente = :idc');
+        WHERE ventas.id_cliente = :idc ORDER BY ventas.id_venta DESC');
         $sql->bindParam(':idc', $_SESSION['id_usuario']);
         $sql->execute();
         $getClient = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'pedidosPorCliente' => $getClient));
     }
-
+    //Esta funcion sirve para cargar los detalle de cada pedido del cliente
     public function detallePedidosPorCliente()
     {
         session_start();

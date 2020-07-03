@@ -14,6 +14,7 @@ const product = new Vue({
         add: function(id, cantidad, imagen, nombre, precio){
             cart.addTocCart(id, cantidad, imagen, nombre, precio);
         },
+        //esta funcion siver para cargar los productos mas populares en la tienda, los carga en Home
         getPopularProducts: function () {
             axios.get('http://localhost/homesafe/api/product/popular')
                 .then(function (response) {

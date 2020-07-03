@@ -1,3 +1,4 @@
+//Todo este js siver para poder cargar la vista de cada producto indivual ademas de sus comentarios
 const singleProduct = new Vue({
     el: '#singleProduct',
     data: {
@@ -24,6 +25,7 @@ const singleProduct = new Vue({
             com: ''
         }
     },
+    //Esto se ejecuta a la hora que se carga la pagina
     mounted() {
         this.getUrlParam();
         this.getProductInformation();
@@ -34,6 +36,7 @@ const singleProduct = new Vue({
         add: function(id, cantidad, imagen, nombre, precio){
             cart.addTocCart(id, cantidad, imagen, nombre, precio);
         },
+        //Cargar los comentarios del producto y cambiar 
         sendMessage: function(){
             comments.sendComment(this.commentary);
             comments.come = this.commentary;
@@ -56,6 +59,7 @@ const singleProduct = new Vue({
             this.urlParam.id = params.get('p');
             this.urlParam.secondaryId = params.get('k');
         },
+        //Este carga la cantidad de ordenes que se han hecho de ese mismo producto
         getOrders: function () {
             var formData = this.toFormData(this.urlParam);
             axios.post('http://localhost/homesafe/api/sale/countorders', formData, {
@@ -67,6 +71,7 @@ const singleProduct = new Vue({
                     singleProduct.orders = response.data.ordersDetail;
                 });
         },
+        //Este metodo carga toda la informacion de los productos
         getProductInformation: function () {
             var formData = this.toFormData(this.urlParam);
             axios.post('http://localhost/homesafe/api/product/unique', formData, {
@@ -94,6 +99,7 @@ const singleProduct = new Vue({
                 this.sum--;
             }
         },
+        ////////////////////////////Enviar comentarios del producto////////////////////////////
         sendComment: function(parameter){
             comments.come = parameter;
             console.log(this.come);

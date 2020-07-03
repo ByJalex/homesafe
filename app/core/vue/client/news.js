@@ -10,6 +10,7 @@ const news = new Vue({
   },
   computed: {},
   methods: {
+    //Este metodo manda a llamar las noticias de la tienda
     getnews: function () {
       axios
         .get("http://localhost/homesafe/api/news/allNews")

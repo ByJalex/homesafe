@@ -41,11 +41,11 @@ $header = template::header(APP_NAME . ': Continuar pagando');
                     </div>
                 </div>
             </div>
-            <div class="col-md-6" id="cart_process">
+            <div class="col-md-6" >
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <h2 class="h3 mb-3 text-black">Tu pedido</h2>
-                        <div class="p-3 p-lg-5 border">
+                        <div class="p-3 p-lg-5 border" id="cart_process"> 
                             <table class="table site-block-order-table mb-5">
                                 <thead>
                                     <th>Producto</th>
@@ -58,7 +58,6 @@ $header = template::header(APP_NAME . ': Continuar pagando');
                                     </tr>
                                 </tbody>
                             </table>
-
                             <div class="border p-3 mb-3">
                                 <h3 class="h6 mb-0"><a class="d-block" data-toggle="collapse" href="#collapsebank" role="button" aria-expanded="false" aria-controls="collapsebank">Pagar con tarjeta</a></h3>
                                 <div class="collapse" id="collapsebank">
@@ -82,7 +81,11 @@ $header = template::header(APP_NAME . ': Continuar pagando');
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
+                        <div id="pay_order">
+                                <button @click="payOrder" class="btn btn-primary float-right mb-5">Finalizar compra</button>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -91,6 +94,7 @@ $header = template::header(APP_NAME . ': Continuar pagando');
 </div>
 
 <script src="app/core/vue/client/pay.js"></script>
+<script src="app/core/vue/client/pay_order.js"></script>
 <script src="app/core/vue/client/cart_process.js"></script>
 
 <?php

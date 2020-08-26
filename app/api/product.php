@@ -19,7 +19,7 @@ class product
         $sql = $con->prepare('SELECT detalle_venta.id_producto AS "id_producto", SUM(cantidad) AS cantidad,  productos.nombre_p as "Producto", productos.precio_p as "Precio", ROUND(AVG(estrellas),1) as Ranking, identificador FROM detalle_venta inner join productos on detalle_venta.id_producto = productos.id_producto inner join resenia on resenia.id_producto = productos.id_producto GROUP BY detalle_venta.id_producto, productos.nombre_p, productos.precio_p, resenia.id_producto, productos.identificador ORDER BY SUM(cantidad) ASC LIMIT 8');
         $sql->execute();
         $getPopularProducts = $sql->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode(array('error' => false, 'popularProducts' => $getPopularProducts));
+        // echo json_encode(array('error' => false, 'popularProducts' => $getPopularProducts));
     }
 
     public function search()

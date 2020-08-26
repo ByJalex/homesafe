@@ -117,7 +117,9 @@ class Page
 
           <!-- Main Content -->
           <div id="content">
-
+             <?php
+             echo $_SESSION['newsession'];
+             ?>
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 

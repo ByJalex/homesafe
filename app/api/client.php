@@ -22,6 +22,15 @@ class client{
         echo json_encode(array('error' => false, 'allclients' => $getClient));
     }
 
+    public function allClientReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT cl.id_estado_user, cl.id_cliente, cl.correo_c, cl.nombre_c, cl.usu_c, cl.clave_c, cl.direccion_C, cl.telefono_c, cl.imagen_c, es.estado_user FROM cliente cl, estado_user es WHERE cl.id_estado_user = es.id_estado_user ORDER BY cl.id_cliente ASC');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
     public function updateclient()
     {
         $con = bd::connection();
@@ -60,5 +69,11 @@ class client{
         $sql->execute();
         $getDetail = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('error' => false, 'DetallePedidosPorCliente' => $getDetail));
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }

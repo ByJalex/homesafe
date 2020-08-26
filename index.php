@@ -11,6 +11,8 @@ require_once 'app/libs/controller.php';
 require_once 'app/libs/model.php';
 require_once 'app/libs/view.php';
 require_once 'app/libs/api.php';
+require_once 'app/libs/libraries/fpdf181/fpdf.php';
+
 
 /**-> */
 //Módo debug (DEBUG_MODE = true si esta en produccion, FALSE: si esta en desarrollo)

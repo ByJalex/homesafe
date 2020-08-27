@@ -34,6 +34,15 @@ class coupons
         echo json_encode(array('error' => false, 'allcoupons' => $getPopularProducts));
     }
 
+    public function allCouponsReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT cu.id_cupon, cu.cupon, cu.descuento, cu.cantidad, va.validez, cu.id_validez_c FROM cupones cu, validez_cupon va WHERE cu.id_validez_c = va.id_validez_c ORDER BY id_cupon DESC');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
     public function getvalidity()
     {
         $con = bd::connection();
@@ -87,5 +96,11 @@ class coupons
         $sql = $con->prepare('DELETE FROM cupones WHERE id_cupon = :idCuponProducto');
         $sql->bindParam(':idCuponProducto', $id);
         $sql->execute();
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }

@@ -10,7 +10,8 @@ Page::headerTemplate('Principal');
 <div class="container mb-4">
     <div class="row container d-flex justify-content-end">
     <p class="">Agregar nuevo empleado</p>
-    <a href="#" class="btn btn-info ml-4" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a> 
+    <a href="#" class="btn btn-info ml-4" data-toggle="modal" data-target="#agregarmodal"><i class="fas fa-plus-square"></i></a>
+    <a href="<?php echo RUTA_PADRE ?>privatesite/reportEmpleado" target="_blank" class="btn btn-primary ml-4">Generar reporte</a> 
     </div>
 </div>
 

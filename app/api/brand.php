@@ -36,6 +36,15 @@ class brand
         echo json_encode(array('error' => false, 'allbrands' => $getPopularProducts));
     }
 
+    public function allBrandReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM marca  ORDER BY id_marca DESC');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
 
     public function addbrand()
     {
@@ -75,5 +84,11 @@ class brand
         $sql = $con->prepare('DELETE FROM marca WHERE id_marca = :id_marca');
         $sql->bindParam(':id_marca', $id);
         $sql->execute();
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }

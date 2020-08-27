@@ -23,6 +23,7 @@ Page::headerTemplate('Principal');
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
             <button data-toggle="modal" data-target="#addCategory" class="btn btn-info ml-4"><i class="fas fa-plus-square mr-2"></i>Agregar una categoria</button>
+            <a href="<?php echo RUTA_PADRE ?>privatesite/reportCategorias" target="_blank" class="btn btn-primary ml-4">Generar reporte</a>
         </div>
     </div>
 

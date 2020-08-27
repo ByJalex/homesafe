@@ -42,6 +42,15 @@ class product
         echo json_encode(array('error' => false, 'popularProducts' => $getProducts));
     }
 
+    public function allProductosReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM productos');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
     public function unique()
     {
         $con = bd::connection();
@@ -134,5 +143,11 @@ class product
         $sql = $con->prepare('DELETE FROM productos WHERE id_producto = :idProducto');
         $sql->bindParam(':idProducto', $id);
         $sql->execute();
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }

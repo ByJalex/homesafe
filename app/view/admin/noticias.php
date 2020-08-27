@@ -23,6 +23,7 @@ Page::headerTemplate('Principal');
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
             <button data-toggle="modal" data-target="#addBrand" class="btn btn-info ml-4"><i class="fas fa-plus-square mr-2"></i>Agregar una marca</button>
+            <a href="<?php echo RUTA_PADRE ?>privatesite/reportNoticias" target="_blank" class="btn btn-primary ml-4">Generar reporte</a>
         </div>
     </div>
 

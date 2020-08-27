@@ -1,0 +1,44 @@
+<?php
+require_once(RUTA_APP . 'templates/report.php');
+require(ROOT_PATH . "/app/api/brand.php");
+$pdf = new Report;
+
+
+$pdf->startReport('Marcas');
+
+
+$brand = new brand;
+$hola = $brand::allBrandReport();
+if (true) {
+    $pdf->SetFillColor(175);
+    $pdf->SetFont('Times', 'B', 12);
+
+    $pdf->SetFont('Times', 'B', 11);
+    $pdf->Cell(40, 10, utf8_decode('Marca'), 1, 0, 'C', 1);
+    $pdf->Cell(150, 10, utf8_decode('Descripcion'), 1, 1, 'C', 1);
+
+    foreach ($hola as $value) {
+        $pdf->SetFillColor(175);
+        $pdf->SetFont('Times', 'B', 12);    
+        if (true) {
+            if ($dataBrand = $brand->allBrandReport()) {
+                $pdf->SetFillColor(225);
+                $pdf->SetFont('Times', 'B', 11);
+                $pdf->SetFont('Times', '', 11);
+
+                $pdf->Cell(40, 10, utf8_decode($value['nombre_m']), 1, 0);
+                $pdf->MultiCell(150, 10, utf8_decode($value['descripcion_m']), 1, 1);
+            } else {
+                $pdf->Cell(0, 10, utf8_decode('No hay productos para esta categoría'), 1, 1);
+            }
+        } else {
+            $pdf->Cell(0, 10, utf8_decode('Ocurrió un error en una categoría'), 1, 1);
+        }
+    }
+} else {
+    $pdf->Cell(0, 10, utf8_decode("Sucedio un error"), 1, 1);
+    #print_r($param);
+}
+
+$pdf->Output();
+?>

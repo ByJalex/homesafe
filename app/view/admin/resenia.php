@@ -13,6 +13,7 @@ Page::headerTemplate('Principal');
                 <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Paginación
                 </button>
+                <a href="<?php echo RUTA_PADRE ?>privatesite/reportResenia" target="_blank" class="btn btn-primary ml-4">Generar reporte</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
                     <button v-for="item in paginationNumer" @click="getPagination(item.number)" class="dropdown-item" href="#">{{item.number}}</button>
                 </div>

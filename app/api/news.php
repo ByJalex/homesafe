@@ -24,6 +24,17 @@ class news{
         echo json_encode(array('error' => false, 'allnews' => $getNews));
     }
 
+    public function allNewsReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT noticias.titulo_noticia, noticias.noticia, noticias.imagen_n, estado_noticia.estado_noticia
+        FROM noticias INNER JOIN estado_noticia ON noticias.id_est_noticia = estado_noticia.id_est_noticia
+        GROUP BY noticias.titulo_noticia, noticias.noticia, noticias.imagen_n, estado_noticia.estado_noticia');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
     public function addNews()
     {
         $con = bd::connection();
@@ -64,6 +75,12 @@ class news{
         $sql = $con->prepare('DELETE FROM noticias WHERE id_noticia = :idnoticia');
         $sql->bindParam(':idnoticia', $id);
         $sql->execute();
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }
 ?>

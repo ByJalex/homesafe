@@ -22,6 +22,15 @@ class category{
         echo json_encode(array('error' => false, 'allcategory' => $getCategory));
     }
 
+    public function allCategoryReport()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM categoria_p  ORDER BY id_categoria_p DESC');
+        $sql->execute();
+        $getStock = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getStock);
+    }
+
     public function allCategoryProducts()
     {
         $name = $_GET['name'];
@@ -78,5 +87,11 @@ GROUP BY productos.id_producto, productos.nombre_p, productos.precio_p, categori
         $sql = $con->prepare('DELETE FROM categoria_p WHERE id_categoria_p = :idCategoria   ');
         $sql->bindParam(':idCategoria', $id);
         $sql->execute();
+    }
+
+    public function setId($value)
+    {
+        $this->id = $value;
+        return true;
     }
 }

@@ -4,20 +4,21 @@ require(ROOT_PATH . "/app/api/product.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Productos');
+$pdf->startReport('Productos por categorias');
 
 
 $product = new product;
 $hola = $product::allProductosReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
     $pdf->Cell(65, 10, utf8_decode('Nombre'), 1, 0, 'C', 1);
     $pdf->Cell(15, 10, utf8_decode('Precio'), 1, 0, 'C', 1);
     $pdf->Cell(25, 10, utf8_decode('Modelo'), 1, 0, 'C', 1);
-    $pdf->Cell(75, 10, utf8_decode('Descripcion'), 1, 1, 'C', 1);
+    $pdf->Cell(75, 10, utf8_decode('Descripción'), 1, 1, 'C', 1);
     
 
     foreach ($hola as $value) {
@@ -28,6 +29,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->cell(65, 10, utf8_decode($value['nombre_p']), 1, 0);
                 $pdf->cell (15, 10, ($value['precio_p']), 1, 0);

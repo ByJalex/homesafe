@@ -4,18 +4,19 @@ require(ROOT_PATH . "/app/api/brand.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Marcas');
+$pdf->startReport('Marcas de productos');
 
 
 $brand = new brand;
 $hola = $brand::allBrandReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
     $pdf->Cell(40, 10, utf8_decode('Marca'), 1, 0, 'C', 1);
-    $pdf->Cell(150, 10, utf8_decode('Descripcion'), 1, 1, 'C', 1);
+    $pdf->Cell(150, 10, utf8_decode('Descripción'), 1, 1, 'C', 1);
 
     foreach ($hola as $value) {
         $pdf->SetFillColor(175);
@@ -25,6 +26,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->Cell(40, 10, utf8_decode($value['nombre_m']), 1, 0);
                 $pdf->MultiCell(150, 10, utf8_decode($value['descripcion_m']), 1, 1);

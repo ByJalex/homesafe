@@ -4,13 +4,14 @@ require(ROOT_PATH . "/app/api/review.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Reseñas');
+$pdf->startReport('Reseñas de nuestros productos');
 
 
 $review = new review;
 $hola = $review::allReviewReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
@@ -28,6 +29,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->cell(55, 10, utf8_decode($value['nombre_c']), 1, 0);
                 $pdf->cell (85, 10, utf8_decode($value['nombre_p']), 1, 0);

@@ -10,13 +10,14 @@ $pdf->startReport('Empleados');
 $employees = new employees;
 $hola = $employees::allEmployeesReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
     $pdf->Cell(55, 10, utf8_decode('Nombre'), 1, 0, 'C', 1);
     $pdf->Cell(40, 10, utf8_decode('Usuario'), 1, 0, 'C', 1);
-    $pdf->Cell(25, 10, utf8_decode('Telefono'), 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, utf8_decode('Teléfono'), 1, 0, 'C', 1);
     $pdf->Cell(60, 10, utf8_decode('Correo'), 1, 1, 'C', 1);
     
 
@@ -28,6 +29,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->cell(55, 10, utf8_decode($value['correo']), 1, 0);
                 $pdf->cell (40, 10, utf8_decode($value['usuario']), 1, 0);

@@ -43,45 +43,61 @@ const client = new Vue({
     },
     mounted() {
         this.getAllClients();
+        this.stockChart();
     },
 
     computed: {
-        filteredClient: function () {
+        filteredClient: function() {
             return this.allClients.filter((a) => {
                 return a.correo_c.match(this.searchClient.toLowerCase());
             });
         },
-        filteredDetail: function () {
+        filteredDetail: function() {
             return this.saleDetail.filter((a) => {
                 return a.fecha.match(this.searchDetail.toLowerCase());
             });
         }
     },
     methods: {
-        clearArray: function () {
+        loadChart: function(myParameter) {
+            new Morris.Donut({
+                element: 'chartAa',
+                data: myParameter,
+                xkey: 'year',
+                ykeys: ['value'],
+                labels: ['label']
+            });
+        },
+        stockChart: function() {
+            axios.get('http://localhost/homesafe/api/stock/clientsGraphic')
+                .then(response => {
+                    this.loadChart(response.data.popularProducts)
+                })
+        },
+        clearArray: function() {
             console.log('xd');
             this.saleDetail = [];
         },
-        getSaleDetail: function (id) {
+        getSaleDetail: function(id) {
             axios.get('http://localhost/homesafe/api/sale/detail?i=' + id)
-                .then(function (response) {
+                .then(function(response) {
                     client.saleDetail = response.data.detailSale;
                 })
         },
-        getAllClients: function () {
+        getAllClients: function() {
             axios.get('http://localhost/homesafe/api/client/allclient')
-                .then(function (response) {
+                .then(function(response) {
                     client.allClients = response.data.allclients;
                 })
         },
-        addClient: function () {
+        addClient: function() {
             var formData = client.toFormData(client.addClients);
             axios.post('http://localhost/homesafe/api/coupons/addcoupons', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function (response) {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function(response) {
                     swal("Exito", "Agregado correctamente", "success");
                     client.getAllClients();
                     client.addClients.cupon = '';
@@ -90,7 +106,7 @@ const client = new Vue({
                     $('#addClient').modal('hide');
                 });
         },
-        editClient: function (correo_c, nombre_c, id_cliente, usu_c, direccion_c, telefono_c, imagen_c, id_estado_user, estado_user) {
+        editClient: function(correo_c, nombre_c, id_cliente, usu_c, direccion_c, telefono_c, imagen_c, id_estado_user, estado_user) {
             client.editMyClient.id_cliente = id_cliente;
             client.editMyClient.correo_c = correo_c;
             client.editMyClient.nombre_c = nombre_c;
@@ -100,44 +116,44 @@ const client = new Vue({
             client.editMyClient.imagen_c = imagen_c;
             client.editMyClient.id_estado_user = estado_user;
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);
             }
             return form_data;
         },
-        updateClient: function () {
+        updateClient: function() {
             var formData = client.toFormData(client.editMyClient);
             axios.post('http://localhost/homesafe/api/coupons/updatecoupons', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function () {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function() {
                     swal("Exito", "Actualizado correctamente", "success");
                     client.getAllClients();
                     $('#updateClients').modal('hide');
                 });
         },
 
-        dClient: function (id) {
+        dClient: function(id) {
             client.getIdClient.id = id;
         },
-        deleteClient: function () {
+        deleteClient: function() {
             var formData = client.toFormData(client.getIdClient);
             axios.post('http://localhost/homesafe/api/coupons/deletecoupons', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function () {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function() {
                     swal("Exito", "Eliminado correctamente", "success");
                     client.getAllClients();
                     $('#deleteClients').modal('hide');
                 });
         },
-        getPagination: function (number) {
+        getPagination: function(number) {
             client.NUM_RESULTS = number;
         }
     },

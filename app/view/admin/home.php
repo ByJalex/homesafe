@@ -82,26 +82,14 @@ Page::headerTemplate('Principal');
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Productos agotados</h1>
+      <h1 class="h3 mb-0 text-gray-800">Graficos</h1>
     </div>
-
+  
     <div class="row">
-
-      <div class="col-xl-3 col-md-6 mb-4" v-for="item in productsSoulOut">
-        <div class="card border-left-danger shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                <div><img src="../../../public/images/noticias/Gear-Nest-Mini-Family-Shot-SOURCE-Google.jpg" alt="google" width="200px" class="img-fluid"></div>
-                <br>
-                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 text-center">{{productsSoulOut.id_producto}}</div>
-                <!-- <div class="h5 mb-0 font-weight text-gray-800 text-center"></div> -->
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-12">
+      <h1>Cantidad de productos en Stock</h1>
+        <div id="adawdawdawdawdawsaw" style="width: auto;"></div>
       </div>
-
     </div>
 
   </div>

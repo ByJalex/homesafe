@@ -31,6 +31,8 @@ class Page
       <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
       <link href="<?php echo RUTA_PADRE ?>public/css/dataTable/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
       <link href="<?php echo RUTA_PADRE ?>public/css/sweetalert.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+      
 
     </head>
 
@@ -214,7 +216,9 @@ class Page
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.responsive.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/responsive.bootstrap4.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/sweetalert.min.js"></script>
-
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     </body>
 
     </html>

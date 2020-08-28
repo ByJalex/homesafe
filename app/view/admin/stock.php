@@ -3,12 +3,6 @@ require_once(RUTA_APP . 'templates/templateAdmin.php');
 Page::headerTemplate('Principal');
 ?>
 <div class="container-fluid" id="stock">
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Clientes con mas compras</h1>
-        <div id="dawdadawgrfrhft" style="width: auto;"></div>
-    </div>
-
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Stock de productos</h1>
     </div>

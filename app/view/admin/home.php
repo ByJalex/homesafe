@@ -83,28 +83,28 @@ Page::headerTemplate('Principal');
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Graficos</h1>
+            <h1 class="h3 mb-0 text-gray-800">Gráficos importantes</h1>
         </div>
 
         <div class="row">
             <div class="col-6">
-                <h1>Grafico 1</h1>
+                <h4>Gráfico de productos por categoria</h4>
                 <div id="chart1" style="width: auto;"></div>
             </div>
             <div class="col-6">
-                <h1>Grafico 2</h1>
+                <h4>Gráfico de stock por productos</h4>
                 <div id="chart2" style="width: auto;"></div>
             </div>
             <div class="col-6">
-                <h1>Grafico 3</h1>
+                <h4>Gráfico de ventas más altas</h4>
                 <div id="chart3" style="width: auto;"></div>
             </div>
             <div class="col-6">
-                <h1>Grafico 4</h1>
+                <h4>Gráfico de cliente activos e inactivos</h4>
                 <div id="chart4" style="width: auto;"></div>
             </div>
             <div class="col-6">
-                <h1>Grafico 5</h1>
+                <h4>Gráfico de cliente con mayores compras</h4>
                 <div id="chart5" style="width: auto;"></div>
             </div>
         </div>

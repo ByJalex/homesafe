@@ -13,6 +13,7 @@ const dashboard = new Vue({
         this.salesNow();
         this.revieNow();
         this.soldoutProduct();
+        // Aqui se cargan todos los metodos de los graficos
         this.stockChart1();
         this.stockChart2();
         this.stockChart3();
@@ -23,6 +24,8 @@ const dashboard = new Vue({
 
     },
     methods: {
+        // Todas estas funciones de chart 1, 2 3, 4, 5 con las funciones para los graficos,
+        // y para estas graficas ocupamos morris.js ya que es mas facil de implementar.
         chart1: function(myParameter) {
             new Morris.Donut({
                 element: 'chart1',
@@ -68,6 +71,7 @@ const dashboard = new Vue({
                 labels: ['Cantidad']
             });
         },
+        //Aqui se mandan a llamar desde la api cada consulta para el grafico
         stockChart1: function() {
             axios.get('http://localhost/homesafe/api/stock/chartGraphic1')
                 .then(response => {

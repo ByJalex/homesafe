@@ -37,10 +37,11 @@ const personal_inf = new Vue({
         },
         testSendData: function(a) {
             console.log(a)
-            axios.get("http://localhost/api/data?parameter=" + a)
-                .then(response => {
-
-                })
+            window.open('http://localhost/homesafe/reportClient/generate_report?param=' + a, '_blank');
+            //axios.get("http://localhost/api/data?parameter=" + a)
+            //.then(response => {
+            //
+            //    })
         },
         //carga la informacion personal de usuario
         getUserInformation: function() {

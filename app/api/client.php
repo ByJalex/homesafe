@@ -22,6 +22,21 @@ class client{
         echo json_encode(array('error' => false, 'allclients' => $getClient));
     }
 
+    public function detallePedidosPorCliente2()
+    {
+        //session_start();
+        $con = bd::connection();
+        $v = $_GET['param'];
+        $sql = $con->prepare('SELECT productos.nombre_p, detalle_venta.cantidad, detalle_venta.precio_unitario
+        FROM detalle_venta INNER JOIN productos ON detalle_venta.id_producto = productos.id_producto
+        WHERE detalle_venta.id_venta = :v');
+        #$sql->bindParam(':idc', $_SESSION['id_usuario']);
+        $sql->bindParam(':v', $v);
+        $sql->execute();
+        $getDetail = $sql->fetchAll(PDO::FETCH_ASSOC);
+        return ($getDetail);
+    }
+
     public function allClientReport()
     {
         $con = bd::connection();

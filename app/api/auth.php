@@ -81,6 +81,20 @@ class auth
         endif;
     }
 
+    public function userloggedinReport()
+    {
+        #session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT * FROM cliente WHERE id_cliente = '. $_SESSION['id_usuario']);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        if ($validacion) :
+            return (array( 'userloggedin' => $validacion));
+        else :
+            return (array('userloggedin' => $validacion));
+        endif;
+    }
+
     public function loggedinclient()
     {
         session_start();

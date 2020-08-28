@@ -43,7 +43,7 @@ $header = template::header(APP_NAME . ': Mis ordenes');
                                             <p>Total de la orden: <strong>${{item.total}}</strong></p>
                                             <span class="text-success">Estado de la venta: {{item.estado_venta}}</span><br>
                                             <button @click="getDetailOrders(item.id_venta)" class="btn btn-primary mt-2 mb-2" data-toggle="modal" data-target="#detalleVenta">Ver detalle del pedido</button>
-                                            <button @click="testSendData(item.id_venta)">Generar reporte</button>
+                                            <button class="btn mt-2 mb-2" @click="testSendData(item.id_venta)">Generar reporte</button>
                                             <!-- -->
                                         </figcaption>
                                     </figure>

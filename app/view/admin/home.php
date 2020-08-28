@@ -79,6 +79,8 @@ Page::headerTemplate('Principal');
         </div>
     </div>
 
+    <!-- En este apartado estan los div para cada grafico con su respectivo id -->
+    <!-- con ese id se hace referencia en el js  -->
     <div class="container-fluid">
 
         <!-- Page Heading -->

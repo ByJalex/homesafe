@@ -1,4 +1,6 @@
 <?php
+//Se hace referencia a nuestro template reporte
+//y a nuestra api a ocupar
 require_once(RUTA_APP . 'templates/report.php');
 require(ROOT_PATH . "/app/api/category.php");
 $pdf = new Report;
@@ -10,7 +12,9 @@ $pdf->startReport('Categoría de productos');
 $category = new category;
 $hola = $category::allCategoryReport();
 if (true) {
+    //Aqui se le da color a las filas de el reporte
     $pdf->SetFillColor(66, 126, 166);
+    //Aqui se la color al texto del reporte para que sea blanco
     $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 

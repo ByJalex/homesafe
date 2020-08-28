@@ -1,4 +1,6 @@
 <?php
+//Se hace referencia a nuestro template reporte
+//y a nuestra api a ocupar
 require_once(RUTA_APP . 'templates/report.php');
 require(ROOT_PATH . "/app/api/review.php");
 $pdf = new Report;

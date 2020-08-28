@@ -68,10 +68,19 @@ const client = new Vue({
                 labels: ['label']
             });
         },
+        loadChart2: function(a) {
+            new Morris.Donut({
+                element: 'testChart',
+                data: a,
+                xkey: 'year',
+                ykeys: ['value'],
+                labels: ['label']
+            });
+        },
         stockChart: function() {
             axios.get('http://localhost/homesafe/api/stock/clientsGraphic')
                 .then(response => {
-                    this.loadChart(response.data.popularProducts)
+                    this.loadChart(response.data.popularProducts), this.loadChart2(response.data.popularProducts)
                 })
         },
         clearArray: function() {

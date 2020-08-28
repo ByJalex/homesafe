@@ -13,16 +13,19 @@ const dashboard = new Vue({
         this.salesNow();
         this.revieNow();
         this.soldoutProduct();
-        this.stockChart();
+        this.stockChart1();
         this.stockChart2();
+        this.stockChart3();
+        this.stockChart4();
+        this.stockChart5();
     },
     computed: {
 
     },
     methods: {
-        chart: function(myParameter) {
+        chart1: function(myParameter) {
             new Morris.Donut({
-                element: 'myfirstchart',
+                element: 'chart1',
                 data: myParameter,
                 xkey: 'year',
                 ykeys: ['value'],
@@ -31,17 +34,68 @@ const dashboard = new Vue({
         },
         chart2: function(asd) {
             new Morris.Bar({
-                element: 'adawdawdawdawdawsaw',
+                element: 'chart2',
                 data: asd,
                 xkey: 'label',
                 ykeys: ['value'],
                 labels: ['Cantidad']
             });
         },
-        stockChart: function() {
-            axios.get('http://localhost/homesafe/api/stock/prodGraphic')
+        chart3: function(asd) {
+            new Morris.Bar({
+                element: 'chart3',
+                data: asd,
+                xkey: 'label',
+                ykeys: ['value'],
+                labels: ['Cantidad']
+            });
+        },
+        chart4: function(asd) {
+            new Morris.Donut({
+                element: 'chart4',
+                data: asd,
+                xkey: 'label',
+                ykeys: ['value'],
+                labels: ['value']
+            });
+        },
+        chart5: function(asd) {
+            new Morris.Bar({
+                element: 'chart5',
+                data: asd,
+                xkey: 'label',
+                ykeys: ['value'],
+                labels: ['Cantidad']
+            });
+        },
+        stockChart1: function() {
+            axios.get('http://localhost/homesafe/api/stock/chartGraphic1')
+                .then(response => {
+                    this.chart1(response.data.popularProducts)
+                })
+        },
+        stockChart2: function() {
+            axios.get('http://localhost/homesafe/api/stock/chartGraphic2')
                 .then(response => {
                     this.chart2(response.data.popularProducts)
+                })
+        },
+        stockChart3: function() {
+            axios.get('http://localhost/homesafe/api/stock/chartGraphic3')
+                .then(response => {
+                    this.chart3(response.data.popularProducts)
+                })
+        },
+        stockChart4: function() {
+            axios.get('http://localhost/homesafe/api/stock/chartGraphic4')
+                .then(response => {
+                    this.chart4(response.data.popularProducts)
+                })
+        },
+        stockChart5: function() {
+            axios.get('http://localhost/homesafe/api/stock/chartGraphic5')
+                .then(response => {
+                    this.chart5(response.data.popularProducts)
                 })
         },
 
@@ -57,7 +111,7 @@ const dashboard = new Vue({
                     dashboard.sales = response.data.salesnow;
                     var numeroUno = parseInt(dashboard.sales.count, 10);
                     dashboard.salePorcent = (numeroUno * 2.5);
-                    console.log(dashboard.salePorcent);
+                    //console.log(dashboard.salePorcent);
                 });
         },
         revieNow: function() {

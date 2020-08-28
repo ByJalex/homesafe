@@ -12,36 +12,52 @@ class stock
     {
         echo 'Parace que hace falta un parametro.';
     }
-
-    public function loadChartSale(){
+#
+    public function chartGraphic1(){
         $con = bd::connection();
-        $sql = $con->prepare("SELECT COUNT(ventas.id_cliente) as value, cliente.nombre_c as label
+        $sql = $con->prepare("SELECT productos.id_categoria_p AS value, categoria_p.categoria_p AS label
+        FROM productos INNER JOIN categoria_p ON productos.id_categoria_p = categoria_p.id_categoria_p
+        GROUP BY productos.id_categoria_p, categoria_p.categoria_p");
+        $sql->execute();
+        $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('popularProducts' => $getCategory));
+    }
+
+    public function chartGraphic2(){
+        $con = bd::connection();
+        $sql = $con->prepare("SELECT cantidad as value, productos.nombre_p as label
+        FROM stock INNER JOIN productos ON stock.id_producto = productos.id_producto
+        ");
+        $sql->execute();
+        $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array('popularProducts' => $getCategory));
+    }
+#
+    public function chartGraphic3(){
+        $con = bd::connection();
+        $sql = $con->prepare('SELECT cliente.nombre_c as label, ventas.total as value
         FROM ventas INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente
-        GROUP BY cliente.nombre_c,  ventas.total ORDER BY ventas.total DESC LIMIT 3");
+        WHERE ventas.total >= 900.00');
         $sql->execute();
         $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('popularProducts' => $getCategory));
     }
-
-    public function clientsGraphic(){
+#
+    public function chartGraphic4(){
         $con = bd::connection();
-        $sql = $con->prepare('SELECT cliente.nombre_c as label, ventas.total as value FROM ventas INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente WHERE ventas.total >= 900.00');
+        $sql = $con->prepare("SELECT COUNT(cliente.nombre_c) as value, estado_user.estado_user as label
+        FROM cliente INNER JOIN estado_user ON cliente.id_estado_user = estado_user.id_estado_user
+        GROUP BY estado_user.estado_user");
         $sql->execute();
         $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('popularProducts' => $getCategory));
     }
-
-    public function categoryGraphic(){
+#
+    public function chartGraphic5(){
         $con = bd::connection();
-        $sql = $con->prepare('SELECT productos.id_categoria_p AS value, categoria_p.categoria_p AS label FROM productos INNER JOIN categoria_p ON productos.id_categoria_p = categoria_p.id_categoria_p GROUP BY productos.id_categoria_p, categoria_p.categoria_p');
-        $sql->execute();
-        $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode(array('popularProducts' => $getCategory));
-    }
-
-    public function prodGraphic(){
-        $con = bd::connection();
-        $sql = $con->prepare('SELECT cantidad as value, productos.nombre_p as label FROM stock INNER JOIN productos ON stock.id_producto = productos.id_producto');
+        $sql = $con->prepare('SELECT COUNT(ventas.id_cliente) as value, cliente.nombre_c as label
+        FROM ventas INNER JOIN cliente ON ventas.id_cliente = cliente.id_cliente
+        GROUP BY cliente.nombre_c,  ventas.total ORDER BY ventas.total DESC LIMIT 3');
         $sql->execute();
         $getCategory = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode(array('popularProducts' => $getCategory));

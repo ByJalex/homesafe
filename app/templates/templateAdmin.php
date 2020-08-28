@@ -202,7 +202,7 @@ class Page
 
       <!-- vue core JavaScript-->
       <script src="../app/core/vue/admin/userloggedin.js"></script>
-
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
       <!-- Bootstrap core JavaScript-->
       <script src="<?php echo RUTA_PADRE ?>public/js/admin/jquery.min.js"></script>
       <script src="<?php echo RUTA_PADRE ?>public/js/admin/bootstrap.bundle.min.js"></script>
@@ -216,7 +216,7 @@ class Page
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/dataTables.responsive.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/dataTable/responsive.bootstrap4.min.js"></script>
       <script type="text/javascript" src="<?php echo RUTA_PADRE ?>public/js/sweetalert.min.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+      
       <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     </body>

@@ -4,17 +4,18 @@ require(ROOT_PATH . "/app/api/coupons.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Cupones');
+$pdf->startReport('Cupónes');
 
 
 $coupons = new coupons;
 $hola = $coupons::allCouponsReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
-    $pdf->Cell(50, 10, utf8_decode('Cupon'), 1, 0, 'C', 1);
+    $pdf->Cell(50, 10, utf8_decode('Cupón'), 1, 0, 'C', 1);
     $pdf->Cell(40, 10, utf8_decode('Descuento'), 1, 0, 'C', 1);
     $pdf->Cell(50, 10, utf8_decode('Cantidad'), 1, 0, 'C', 1);
     $pdf->Cell(40, 10, utf8_decode('Validez'), 1, 1, 'C', 1);
@@ -27,6 +28,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->Cell(50, 10, utf8_decode($value['cupon']), 1, 0);
                 $pdf->Cell(40, 10, utf8_decode($value['descuento']), 1, 0);

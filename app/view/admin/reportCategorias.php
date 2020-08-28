@@ -4,17 +4,18 @@ require(ROOT_PATH . "/app/api/category.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Categorias');
+$pdf->startReport('Categoría de productos');
 
 
 $category = new category;
 $hola = $category::allCategoryReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
-    $pdf->Cell(185, 10, utf8_decode('Nombres de la categoria'), 1, 1, 'C', 1);
+    $pdf->Cell(185, 10, utf8_decode('Nombres de la categoría'), 1, 1, 'C', 1);
 
     foreach ($hola as $value) {
         $pdf->SetFillColor(175);
@@ -24,6 +25,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->Cell(185, 10, utf8_decode($value['categoria_p']), 1, 1);
             } else {

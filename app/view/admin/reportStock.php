@@ -4,17 +4,18 @@ require(ROOT_PATH . "/app/api/stock.php");
 $pdf = new Report;
 
 
-$pdf->startReport('Stock');
+$pdf->startReport('Stock de productos');
 
 
 $stock = new stock;
 $hola = $stock::allStockReport();
 if (true) {
-    $pdf->SetFillColor(175);
+    $pdf->SetFillColor(66, 126, 166);
+    $pdf->SetTextColor(240, 240, 240);
     $pdf->SetFont('Times', 'B', 12);
 
     $pdf->SetFont('Times', 'B', 11);
-    $pdf->Cell(50, 10, utf8_decode('cantidad'), 1, 0, 'C', 1);
+    $pdf->Cell(50, 10, utf8_decode('Cantidad'), 1, 0, 'C', 1);
     $pdf->Cell(130, 10, utf8_decode('Productos'), 1, 1, 'C', 1);
     foreach ($hola as $value) {
         $pdf->SetFillColor(175);
@@ -24,6 +25,7 @@ if (true) {
                 $pdf->SetFillColor(225);
                 $pdf->SetFont('Times', 'B', 11);
                 $pdf->SetFont('Times', '', 11);
+                $pdf->SetTextColor(15, 15, 15);
 
                 $pdf->Cell(50, 10, ($value['cantidad']), 1, 0);
                 $pdf->Cell(130, 10, utf8_decode($value['nombre_p']), 1, 1);

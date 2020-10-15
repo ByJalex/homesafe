@@ -9,9 +9,24 @@ class auth
     {
     }
 
+    public function destruirSesion(){
+        session_start();
+        session_destroy();
+    }
+
     public function auth()
     {
         echo 'Parece que hace falta algun parametro';
+    }
+
+    public function blockAccount()
+    {
+        $con = bd::connection();
+        $sql = $con->prepare('UPDATE cliente SET block = true WHERE usu_c = :usu');
+        $sql->bindParam(':usu', $_GET['username']);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'blockAccount' => true));
     }
 
     public function authadmin()
@@ -53,14 +68,14 @@ class auth
         $usuario = $_POST['user'];
         $clave = $_POST['password'];
         $createHash = hash("haval256,3", $clave);
-        $sql = $con->prepare('SELECT id_cliente from cliente where usu_c = :usu and clave_c = :cl');
+        $sql = $con->prepare('SELECT id_cliente, block from cliente where usu_c = :usu and clave_c = :cl');
         $sql->bindParam(':usu', $usuario);
         $sql->bindParam(':cl', $createHash);
         $sql->execute();
         $validacion = $sql->fetch(PDO::FETCH_ASSOC);
         if ($validacion) :
             session_start(array(true));
-            $_SESSION['id_usuario'] = $validacion['id_cliente'];
+            $validacion['block'] ? '' :  $_SESSION['id_usuario'] = $validacion['id_cliente'];
             echo json_encode(array('error' => false, 'usuario' => $validacion));
         else :
             echo json_encode(array('error' => true, 'usuario' => $validacion));

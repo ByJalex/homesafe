@@ -15,6 +15,7 @@ $header = template::header(APP_NAME.' inicia sesión');
             </div> <!-- form-group// -->
             <div class="form-group">
                 <input class="form-control" placeholder="Contraseña" v-model="authData.password" type="password">
+                
             </div> <!-- form-group// -->
 
             <div class="form-group">
@@ -28,7 +29,7 @@ $header = template::header(APP_NAME.' inicia sesión');
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->
 
-    <p class="text-center mt-4">¿Aún no tienes cuenta? <a href="register.php">Registrate.</a></p>
+    <p class="text-center mt-4">¿Aún no tienes cuenta? <a href="register">Registrate.</a></p>
     <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
     </section>

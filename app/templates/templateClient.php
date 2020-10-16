@@ -258,6 +258,10 @@ class template
     <script src="<?php echo RUTA_PADRE ?>public/js/client/jquery-2.0.0.min.js"></script>
     <script src="<?php echo RUTA_PADRE ?>public/js/client/bootstrap.bundle.min.js"></script>
     <script src="<?php echo RUTA_PADRE ?>public/js/client/sweetalert.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+    </script>
     <script>
     var timeout;
     document.onmousemove = function() {

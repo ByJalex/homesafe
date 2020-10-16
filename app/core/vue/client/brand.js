@@ -12,7 +12,9 @@ const brand_c = new Vue({
         this.getUrlParam();
     },
     methods: {
-
+        updatePassword: function(){
+            console.log("DDAW")
+        },
         //Se obtienen todas las marcas por individual
         getAllbrandIndividual: function () {
             let params = new URLSearchParams(location.search);

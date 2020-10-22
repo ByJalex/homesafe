@@ -12,7 +12,7 @@ define('ROOT_PATH', $_SERVER['DOCUMENT_ROOT'] . '/homesafe');
 define('RUTA_URL', 'https://homesafe-sv.herokuapp.com/');
 //Zona horaria
 define('TIME_ZONE', 'America/El_Salvador');
-define('DEBUG_MODE', false); //True para desarrollo y false para producción
+define('DEBUG_MODE', true); //True para desarrollo y false para producción
 //Modo de errores/ Debug Mode
 //Configuración del contenedor
 define('PATCH_OS', explode(DIRECTORY_SEPARATOR, RUTA_APP));

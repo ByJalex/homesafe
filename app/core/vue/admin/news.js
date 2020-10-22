@@ -39,7 +39,7 @@ const news = new Vue({
     },
     methods: {
         getAllNews: function () {
-            axios.get('http://localhost/homesafe/api/news/allNews')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/news/allNews')
                 .then(function(response){
                     news.allNews = response.data.allnews;
                 })

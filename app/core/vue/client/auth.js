@@ -58,7 +58,7 @@ const authclient = new Vue({
             console.log("Fixed all problems in the authorization..");
         },
         blockUser() {
-            axios.get("http://localhost/homesafe/api/auth/blockAccount?username=" + this.authData.user)
+            axios.get("https://homesafe-sv.herokuapp.com/homesafe/api/auth/blockAccount?username=" + this.authData.user)
                 .then(respose => {
                     swal("Error", "Se bloqueo tu cuenta por intento de hackeo", "error");
                 })
@@ -72,7 +72,7 @@ const authclient = new Vue({
             ) {
                 var formData = authclient.toFormData(authclient.authData);
                 axios
-                    .post("http://localhost/homesafe/api/auth/authclient", formData, {
+                    .post("https://homesafe-sv.herokuapp.com/homesafe/api/auth/authclient", formData, {
                         headers: {
                             "Content-Type": "multipart/form-data",
                         },
@@ -103,7 +103,7 @@ const authclient = new Vue({
         registerCliente: function() {
             var formData = authclient.toFormData(authclient.register);
             axios
-                .post("http://localhost/homesafe/api/auth/Registerclient", formData, {
+                .post("https://homesafe-sv.herokuapp.com/homesafe/api/auth/Registerclient", formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },

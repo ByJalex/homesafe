@@ -12,7 +12,7 @@ const search = new Vue({
     methods: {
         //Metodo para obtener las marcas
         getAllBrands: function () {
-            axios.get('http://localhost/homesafe/api/brand/allbrands')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/brand/allbrands')
              .then(response=>(
                 (this.allbrands = response.data.allbrands)
              ))

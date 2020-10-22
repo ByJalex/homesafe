@@ -13,7 +13,7 @@ const news = new Vue({
     //Este metodo manda a llamar las noticias de la tienda
     getnews: function () {
       axios
-        .get("http://localhost/homesafe/api/news/allNews")
+        .get("https://homesafe-sv.herokuapp.com/homesafe/api/news/allNews")
         .then(function (response) {
           news.newsCard = response.data.allnews;
           news.shortArrays();

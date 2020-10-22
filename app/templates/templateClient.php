@@ -273,8 +273,8 @@ class template
     }
 
     function salir() {
-        window.location.href = "http://localhost/homesafe/login";
-        axios.get("http://localhost/homesafe/api/auth/destruirSesion")
+        window.location.href = "https://homesafe-sv.herokuapp.com/homesafe/login";
+        axios.get("https://homesafe-sv.herokuapp.com/homesafe/api/auth/destruirSesion")
         .then(response=>{
             console.log("Se borraron todos los datos")
         })

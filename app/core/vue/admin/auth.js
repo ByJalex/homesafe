@@ -30,7 +30,7 @@ $_GET = function (paramToGet, jsFile) {
 var getParameter = $_GET("m");
 if(getParameter == "dev"){
     // var a = "Modo dev";
-    var uri = "http://localhost/homesafe/";
+    var uri = "https://homesafe-sv.herokuapp.com/homesafe/";
 }else{
     // var a = "Modo produccion";
     var uri = "http://homesafe-sv.herokuapp.com/";

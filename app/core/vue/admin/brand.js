@@ -41,14 +41,14 @@ const brand = new Vue({
     },
     methods: {
         getAllBrands: function () {
-            axios.get('http://localhost/homesafe/api/brand/allbrands')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/brand/allbrands')
                 .then(function (response) {
                     brand.allBrands = response.data.allbrands;
                 })
         },
         addbrand: function () {
             var formData = brand.toFormData(brand.addBrand);
-            axios.post('http://localhost/homesafe/api/brand/addbrand', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/addbrand', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -76,7 +76,7 @@ const brand = new Vue({
         },
         updateBrand: function () {
             var formData = brand.toFormData(brand.editMyBrand);
-            axios.post('http://localhost/homesafe/api/brand/updatebrand', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/updatebrand', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -98,7 +98,7 @@ const brand = new Vue({
         },
         deleteBrand: function () {
             var formData = brand.toFormData(brand.getIdBrand);
-            axios.post('http://localhost/homesafe/api/brand/deletebrand', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/deletebrand', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

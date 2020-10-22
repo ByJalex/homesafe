@@ -50,7 +50,7 @@ const singleProduct = new Vue({
             comments.come = this.commentary;
         },
         chargeComments: function(){
-            axios.get('http://localhost/homesafe/api/product/commentTest?p='+this.urlParam.secondaryId)
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/product/commentTest?p='+this.urlParam.secondaryId)
             .then(response=>(
                 (this.allComments = response.data.comments),
                 (this.counterComments = this.allComments.length),
@@ -71,7 +71,7 @@ const singleProduct = new Vue({
         //Este carga la cantidad de ordenes que se han hecho de ese mismo producto
         getOrders: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('http://localhost/homesafe/api/sale/countorders', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/sale/countorders', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -83,7 +83,7 @@ const singleProduct = new Vue({
         //Este metodo carga toda la informacion de los productos
         getProductInformation: function () {
             var formData = this.toFormData(this.urlParam);
-            axios.post('http://localhost/homesafe/api/product/unique', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/product/unique', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -116,7 +116,7 @@ const singleProduct = new Vue({
         },
         sendMessage: function(){
             var formData = this.toFormData(this.sendParams);
-            axios.post('http://localhost/homesafe/api/review/sendreview', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/review/sendreview', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -134,7 +134,7 @@ const singleProduct = new Vue({
             let params = new URLSearchParams(location.search);
             this.sendParams.idp = params.get('k');
             singleProduct.loaderComment = false;
-            axios.get('http://localhost/homesafe/api/review/send?p='+ this.sendParams.idp)
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/review/send?p='+ this.sendParams.idp)
             .then(response=>(
                 (this.params = response.data),
                 (singleProduct.loaderComment = true),

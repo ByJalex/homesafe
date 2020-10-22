@@ -22,7 +22,7 @@ $header = template::header(APP_NAME . ': Configuración de cuenta');
                         <figure class="icontext">
                             <div class="icon">
                                 <img class="rounded-circle img-sm border"
-                                    src="http://localhost/homesafe/public/images/person_3.jpg">
+                                    src="https://homesafe-sv.herokuapp.com/homesafe/public/images/person_3.jpg">
                             </div>
                             <div class="text">
                                 <strong> Josue Alfonso Ayala Martinez </strong> <br>

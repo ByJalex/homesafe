@@ -73,44 +73,44 @@ const dashboard = new Vue({
         },
         //Aqui se mandan a llamar desde la api cada consulta para el grafico
         stockChart1: function() {
-            axios.get('http://localhost/homesafe/api/stock/chartGraphic1')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/chartGraphic1')
                 .then(response => {
                     this.chart1(response.data.popularProducts)
                 })
         },
         stockChart2: function() {
-            axios.get('http://localhost/homesafe/api/stock/chartGraphic2')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/chartGraphic2')
                 .then(response => {
                     this.chart2(response.data.popularProducts)
                 })
         },
         stockChart3: function() {
-            axios.get('http://localhost/homesafe/api/stock/chartGraphic3')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/chartGraphic3')
                 .then(response => {
                     this.chart3(response.data.popularProducts)
                 })
         },
         stockChart4: function() {
-            axios.get('http://localhost/homesafe/api/stock/chartGraphic4')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/chartGraphic4')
                 .then(response => {
                     this.chart4(response.data.popularProducts)
                 })
         },
         stockChart5: function() {
-            axios.get('http://localhost/homesafe/api/stock/chartGraphic5')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/chartGraphic5')
                 .then(response => {
                     this.chart5(response.data.popularProducts)
                 })
         },
 
         getParametersDashboard: function() {
-            axios.get('http://localhost/homesafe/api/dashboard/countcustomers')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/dashboard/countcustomers')
                 .then(function(response) {
                     dashboard.customers = response.data.customers;
                 });
         },
         salesNow: function() {
-            axios.get('http://localhost/homesafe/api/dashboard/countsalesnow')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/dashboard/countsalesnow')
                 .then(function(response) {
                     dashboard.sales = response.data.salesnow;
                     var numeroUno = parseInt(dashboard.sales.count, 10);
@@ -119,13 +119,13 @@ const dashboard = new Vue({
                 });
         },
         revieNow: function() {
-            axios.get('http://localhost/homesafe/api/dashboard/countreviewnow')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/dashboard/countreviewnow')
                 .then(function(response) {
                     dashboard.review = response.data.reviewnow;
                 });
         },
         soldoutProduct: function() {
-            axios.get('http://localhost/homesafe/api/dashboard/productsoldout')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/dashboard/productsoldout')
                 .then(function(response) {
                     dashboard.productsSoulOut = response.data.productsoldout;
                 });

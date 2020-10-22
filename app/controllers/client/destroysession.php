@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header("Location: http://localhost/homesafe/home");
+header("Location: https://homesafe-sv.herokuapp.com/homesafe/home");
 ?>

@@ -10,7 +10,7 @@ const userloggedin = new Vue({
     },
     methods: {
         getUserLoggedIn: function () {
-            axios.get('http://localhost/homesafe/api/auth/userloggedin')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/auth/userloggedin')
                 .then(function (response) {
                     userloggedin.userInformation = response.data.userloggedin;
                 });

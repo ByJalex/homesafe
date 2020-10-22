@@ -45,7 +45,7 @@ const coupon = new Vue({
     },
     methods: {
         generateNewCoupon: function () {
-            axios.get('http://localhost/homesafe/api/coupons/generatecupon')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/generatecupon')
                 .then(function (response) {
                     coupon.addCoupons.cupon = response.data.code;
                 })
@@ -55,20 +55,20 @@ const coupon = new Vue({
             this.editMyCoupon.idDropdownEstate = id;
         },
         getValidityCoupon: function () {
-            axios.get('http://localhost/homesafe/api/coupons/getvalidity')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/getvalidity')
                 .then(function (response) {
                     coupon.couponDropdown = response.data.validity;
                 })
         },
         getAllCoupons: function () {
-            axios.get('http://localhost/homesafe/api/coupons/allcoupons')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/allcoupons')
                 .then(function (response) {
                     coupon.allCoupons = response.data.allcoupons;
                 })
         },
         addCoupon: function () {
             var formData = coupon.toFormData(coupon.addCoupons);
-            axios.post('http://localhost/homesafe/api/coupons/addcoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/addcoupons', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -98,7 +98,7 @@ const coupon = new Vue({
         },
         updateCoupon: function () {
             var formData = coupon.toFormData(coupon.editMyCoupon);
-            axios.post('http://localhost/homesafe/api/coupons/updatecoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/updatecoupons', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -115,7 +115,7 @@ const coupon = new Vue({
         },
         deleteCoupon: function () {
             var formData = coupon.toFormData(coupon.getIdCoupon);
-            axios.post('http://localhost/homesafe/api/coupons/deletecoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/deletecoupons', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

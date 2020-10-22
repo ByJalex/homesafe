@@ -14,7 +14,7 @@ const pay_order = new Vue({
 			//swal.showLoading()
   		},
 		payOrder: function(){
-			axios.get('http://localhost/homesafe/api/sale/createsale?t='+localStorage.getItem('t'))
+			axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/sale/createsale?t='+localStorage.getItem('t'))
 			.then(response=>(
 				//console.log(response.data.ult_vent),
 				this.ult_vent = response.data.ult_vent,
@@ -28,7 +28,7 @@ const pay_order = new Vue({
 		},
 		insertSale: function(){
 			var formData = pay_order.toFormData(pay_order.detailSale);	
-            axios.post('http://localhost/homesafe/api/sale/insertAllProducts?v='+localStorage.getItem('i'), formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/sale/insertAllProducts?v='+localStorage.getItem('i'), formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

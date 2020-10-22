@@ -12,7 +12,7 @@ const brand = new Vue({
     methods: {
         //Se obtienien todas las marcas pero en el navbar, para evitar problemas con vue
         getAllBrands: function () {
-            axios.get('http://localhost/homesafe/api/brand/allbrands')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/brand/allbrands')
              .then(response=>(
                 (this.allbrands = response.data.allbrands)
              ))

@@ -16,7 +16,7 @@ const product = new Vue({
         },
         //esta funcion siver para cargar los productos mas populares en la tienda, los carga en Home
         getPopularProducts: function () {
-            axios.get('http://localhost/homesafe/api/product/popular')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/product/popular')
                 .then(function (response) {
                     product.popularProducts = response.data.popularProducts;
                     product.loaderProduct = false;

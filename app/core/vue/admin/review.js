@@ -44,7 +44,7 @@ const review = new Vue({
     methods: {
         //El que obtiene todo los datos de la tabla
         getAllReview: function () {
-            axios.get('http://localhost/homesafe/api/review/allreview')
+            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/review/allreview')
                 .then(function (response) {
                     review.allReviews = response.data.allreview;
                 })
@@ -52,7 +52,7 @@ const review = new Vue({
         //Para agregar una nueva marca
         addReview: function () {
             var formData = review.toFormData(review.addReviews);
-            axios.post('http://localhost/homesafe/api/category/addcategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/addcategory', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -81,7 +81,7 @@ const review = new Vue({
         //para actualizar una marca
         updateReview: function () {
             var formData = review.toFormData(review.editMyReview);
-            axios.post('http://localhost/homesafe/api/category/updatecategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/updatecategory', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -103,7 +103,7 @@ const review = new Vue({
         //Elimina
         deleteReview: function () {
             var formData = review.toFormData(review.getIdReview);
-            axios.post('http://localhost/homesafe/api/category/deletecategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/deletecategory', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

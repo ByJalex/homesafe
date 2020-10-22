@@ -262,7 +262,7 @@ class template
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
     async defer>
     </script>
-    <script>
+<!--     <script>
     var timeout;
     document.onmousemove = function() {
         clearTimeout(timeout);
@@ -283,7 +283,7 @@ class template
             console.log("Se borraron todos los datos")
         })
     }
-    </script>
+    </script> -->
 </body>
 
 </html>

@@ -20,7 +20,8 @@ const authclient = new Vue({
         },
         textPasswordValidity: 'text-danger',
         textPasswordVerify: '',
-        intentosDeLogin: 0
+        intentosDeLogin: 0,
+        primerIntento: true
     },
     mounted() {
         this.test();
@@ -43,15 +44,21 @@ const authclient = new Vue({
         },
         //Este metodo sirve para validar que los campos sean correctamente llenados
         reg: function() {
-            if (this.register.nombre == "" || this.register.correo == "" || this.register.usuario == "" || this.register.direccion == "" || this.register.telefono == "" || this.register.clave == "" || this.register.repeatPass == "") {
-                swal("Error", "Campos vacios", "error");
-            } else {
-                if (this.register.clave != this.repeatPass) {
-                    swal("Error", "Claves incorrectas", "error");
+            if(this.primerIntento){
+                swal("Error", "necesita validar que no sea un robot", "error");
+                this.primerIntento = false
+            }else{
+                if (this.register.nombre == "" || this.register.correo == "" || this.register.usuario == "" || this.register.direccion == "" || this.register.telefono == "" || this.register.clave == "" || this.register.repeatPass == "") {
+                    swal("Error", "Campos vacios", "error");
                 } else {
-                    this.registerCliente();
+                    if (this.register.clave != this.repeatPass) {
+                        swal("Error", "Claves incorrectas", "error");
+                    } else {
+                        this.registerCliente();
+                    }
                 }
             }
+            
         },
         //Metodo para testeat el estado del boton
         test: function() {

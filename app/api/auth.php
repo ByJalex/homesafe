@@ -29,6 +29,18 @@ class auth
         echo json_encode(array('error' => false, 'blockAccount' => true));
     }
 
+    public function updatePassword(){
+        session_start();
+        $con = bd::connection();
+        $sql = $con->prepare('UPDATE cliente SET clave_c = :newpass WHERE id_cliente = :usu');
+        $createHash = hash("haval256,3", $_GET['password']);
+        $sql->bindParam(':newpass', $createHash);
+        $sql->bindParam(':usu', $_SESSION['id_usuario']);
+        $sql->execute();
+        $validacion = $sql->fetch(PDO::FETCH_ASSOC);
+        echo json_encode(array('error' => false, 'update' => $_SESSION['id_usuario']));
+    }
+
     public function authadmin()
     {
         $con = bd::connection();

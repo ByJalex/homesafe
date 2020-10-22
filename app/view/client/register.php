@@ -46,6 +46,12 @@ $header = template::header('Registro de '.APP_NAME);
                     </div> <!-- form-group end.// -->
                 </div>
                 <small :class="textPasswordValidity">{{textPasswordVerify}}</small>
+                <div class="form-row">
+                    <form action="captcha.php" method="POST">
+                        <div class="g-recaptcha" data-sitekey="6LeSNdgZAAAAAB_0aKglHS3vNgxuTpEMJPQTLziP"></div>
+                        <br/>
+                    </form>
+                </div>
                 <div class="form-group">
                     <button @click="reg" class="btn btn-primary btn-block"> Registrarse </button>
                 </div> <!-- form-group// -->

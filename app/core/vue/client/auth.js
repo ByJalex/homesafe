@@ -44,10 +44,10 @@ const authclient = new Vue({
         },
         //Este metodo sirve para validar que los campos sean correctamente llenados
         reg: function() {
-            if(this.primerIntento){
+            if (this.primerIntento) {
                 swal("Error", "necesita validar que no sea un robot", "error");
                 this.primerIntento = false
-            }else{
+            } else {
                 if (this.register.nombre == "" || this.register.correo == "" || this.register.usuario == "" || this.register.direccion == "" || this.register.telefono == "" || this.register.clave == "" || this.register.repeatPass == "") {
                     swal("Error", "Campos vacios", "error");
                 } else {
@@ -58,14 +58,14 @@ const authclient = new Vue({
                     }
                 }
             }
-            
+
         },
         //Metodo para testeat el estado del boton
         test: function() {
             console.log("Fixed all problems in the authorization..");
         },
         blockUser() {
-            axios.get("https://homesafe-sv.herokuapp.com/homesafe/api/auth/blockAccount?username=" + this.authData.user)
+            axios.get("https://homesafe-sv.herokuapp.com/api/auth/blockAccount?username=" + this.authData.user)
                 .then(respose => {
                     swal("Error", "Se bloqueo tu cuenta por intento de hackeo", "error");
                 })
@@ -79,7 +79,7 @@ const authclient = new Vue({
             ) {
                 var formData = authclient.toFormData(authclient.authData);
                 axios
-                    .post("https://homesafe-sv.herokuapp.com/homesafe/api/auth/authclient", formData, {
+                    .post("https://homesafe-sv.herokuapp.com/api/auth/authclient", formData, {
                         headers: {
                             "Content-Type": "multipart/form-data",
                         },
@@ -110,7 +110,7 @@ const authclient = new Vue({
         registerCliente: function() {
             var formData = authclient.toFormData(authclient.register);
             axios
-                .post("https://homesafe-sv.herokuapp.com/homesafe/api/auth/Registerclient", formData, {
+                .post("https://homesafe-sv.herokuapp.com/api/auth/Registerclient", formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },

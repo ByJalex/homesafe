@@ -5,23 +5,23 @@ const category_home = new Vue({
         categories: [],
         loaderProduct: true
     },
-    mounted(){
+    mounted() {
         this.getAllCategoryLimit();
         this.getAllCategory();
     },
     methods: {
-        getAllCategoryLimit: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/category/allCategoryLimit')
-             .then(response=>(
-                (this.allCategory=response.data.allcategory)
-             ))
+        getAllCategoryLimit: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategoryLimit')
+                .then(response => (
+                    (this.allCategory = response.data.allcategory)
+                ))
         },
-        getAllCategory: function(){
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/category/allCategory')
-             .then(response=>(
-                (this.categories=response.data.allcategory),
-                (this.loaderProduct = false)
-             ))
+        getAllCategory: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategory')
+                .then(response => (
+                    (this.categories = response.data.allcategory),
+                    (this.loaderProduct = false)
+                ))
         }
     }
 })

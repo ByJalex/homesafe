@@ -3,23 +3,23 @@ const search = new Vue({
     data: {
         search: '',
         allProducts: [
-            
+
         ]
     },
-    mounted(){
+    mounted() {
         //this.getAllBrands();
     },
     methods: {
         //Metodo para obtener las marcas
-        getAllBrands: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/brand/allbrands')
-             .then(response=>(
-                (this.allbrands = response.data.allbrands)
-             ))
+        getAllBrands: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/brand/allbrands')
+                .then(response => (
+                    (this.allbrands = response.data.allbrands)
+                ))
         },
         //Metodo para buscar los productos
-        send: function(){
-            window.location = 'search?p='+ this.search;
+        send: function() {
+            window.location = 'search?p=' + this.search;
         }
     }
 })

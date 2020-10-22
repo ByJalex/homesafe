@@ -31,27 +31,27 @@ const news = new Vue({
         this.getAllNews();
     },
     computed: {
-        filteredNew: function(){
+        filteredNew: function() {
             return this.allNews.filter((a) => {
                 return a.titulo_noticia.match(this.searchNews.toLowerCase());
             });
         }
     },
     methods: {
-        getAllNews: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/news/allNews')
-                .then(function(response){
+        getAllNews: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/news/allNews')
+                .then(function(response) {
                     news.allNews = response.data.allnews;
                 })
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);
             }
             return form_data;
         },
-        getPagination: function (number) {
+        getPagination: function(number) {
             brand.NUM_RESULTS = number;
         }
     },

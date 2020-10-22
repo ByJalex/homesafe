@@ -6,21 +6,21 @@ const category = new Vue({
         counter: 0,
         loaderProduct: true
     },
-    mounted(){
+    mounted() {
         this.getAllCategoryIndividual();
         this.getUrlParam();
     },
     methods: {
-        getAllCategoryIndividual: function () {
+        getAllCategoryIndividual: function() {
             let params = new URLSearchParams(location.search);
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/category/allCategoryProducts?name='+ params.get('c'))
-             .then(response=>(
-                (this.allCategory=response.data.allcategory),
-                (this.counter = this.allCategory.length)
-                (this.loaderProduct = false)
-             ))
+            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategoryProducts?name=' + params.get('c'))
+                .then(response => (
+                    (this.allCategory = response.data.allcategory),
+                    (this.counter = this.allCategory.length)
+                    (this.loaderProduct = false)
+                ))
         },
-        getUrlParam: function () {
+        getUrlParam: function() {
             let params = new URLSearchParams(location.search);
             this.urlParameter = params.get('c');
         },

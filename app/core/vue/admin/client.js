@@ -78,7 +78,7 @@ const client = new Vue({
             });
         },
         stockChart: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/clientsGraphic')
+            axios.get('https://homesafe-sv.herokuapp.com/api/stock/clientsGraphic')
                 .then(response => {
                     this.loadChart(response.data.popularProducts), this.loadChart2(response.data.popularProducts)
                 })
@@ -88,20 +88,20 @@ const client = new Vue({
             this.saleDetail = [];
         },
         getSaleDetail: function(id) {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/sale/detail?i=' + id)
+            axios.get('https://homesafe-sv.herokuapp.com/api/sale/detail?i=' + id)
                 .then(function(response) {
                     client.saleDetail = response.data.detailSale;
                 })
         },
         getAllClients: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/client/allclient')
+            axios.get('https://homesafe-sv.herokuapp.com/api/client/allclient')
                 .then(function(response) {
                     client.allClients = response.data.allclients;
                 })
         },
         addClient: function() {
             var formData = client.toFormData(client.addClients);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/addcoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/coupons/addcoupons', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -134,7 +134,7 @@ const client = new Vue({
         },
         updateClient: function() {
             var formData = client.toFormData(client.editMyClient);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/updatecoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/coupons/updatecoupons', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -151,7 +151,7 @@ const client = new Vue({
         },
         deleteClient: function() {
             var formData = client.toFormData(client.getIdClient);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/coupons/deletecoupons', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/coupons/deletecoupons', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

@@ -53,14 +53,14 @@ const category = new Vue({
             });
         },
         stockChart: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/categoryGraphic')
+            axios.get('https://homesafe-sv.herokuapp.com/api/stock/categoryGraphic')
                 .then(response => {
                     this.loadChart(response.data.popularProducts)
                 })
         },
         //El que obtiene todo los datos de la tabla
         getAllCategory: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/category/allCategory')
+            axios.get('https://homesafe-sv.herokuapp.com/api/category/allCategory')
                 .then(function(response) {
                     category.allCategory = response.data.allcategory;
                 })
@@ -69,7 +69,7 @@ const category = new Vue({
         //Para agregar una nueva marca
         addCategory: function() {
             var formData = category.toFormData(category.addCategorys);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/addcategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/category/addcategory', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -98,7 +98,7 @@ const category = new Vue({
         //para actualizar una marca
         updateCategory: function() {
             var formData = category.toFormData(category.editMyCategory);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/updatecategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/category/updatecategory', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -120,7 +120,7 @@ const category = new Vue({
         //Elimina
         deleteCategory: function() {
             var formData = category.toFormData(category.getIdCategory);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/category/deletecategory', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/category/deletecategory', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

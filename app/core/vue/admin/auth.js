@@ -1,7 +1,7 @@
 // Uso y ejemplos en: http://blog.ikhuerta.com/get-extraer-variables-por-get-en-javascript
 var $_getVariables = { isset: false };
 var $_getGlobalVariables = {};
-var $_GETAllVariables = function () {
+var $_GETAllVariables = function() {
     var scripts = document.getElementsByTagName("script");
     for (var i = 0; i < scripts.length; i++) {
         var script = (scripts[i].src + "").split("/");
@@ -18,7 +18,7 @@ var $_GETAllVariables = function () {
     }
     $_getVariables.isset = true;
 };
-$_GET = function (paramToGet, jsFile) {
+$_GET = function(paramToGet, jsFile) {
     if (!$_getVariables.isset)
         $_GETAllVariables();
     if (jsFile)
@@ -28,10 +28,10 @@ $_GET = function (paramToGet, jsFile) {
 };
 
 var getParameter = $_GET("m");
-if(getParameter == "dev"){
+if (getParameter == "dev") {
     // var a = "Modo dev";
-    var uri = "https://homesafe-sv.herokuapp.com/homesafe/";
-}else{
+    var uri = "https://homesafe-sv.herokuapp.com/";
+} else {
     // var a = "Modo produccion";
     var uri = "http://homesafe-sv.herokuapp.com/";
 }
@@ -50,17 +50,17 @@ var authadmin = new Vue({
         console.log(uri);
     },
     methods: {
-        login: function () {
+        login: function() {
             if (!authadmin.authData.user == '' || !authadmin.authData.password == '') {
                 var formData = authadmin.toFormData(authadmin.authData);
-                axios.post(uri+'api/auth/authadmin', formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    }
-                })
-                    .then(function (response) {
+                axios.post(uri + 'api/auth/authadmin', formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    })
+                    .then(function(response) {
                         if (authadmin.respuesta = response.data.usuario) {
-                            window.location.href = uri+'privatesite/home';
+                            window.location.href = uri + 'privatesite/home';
                         } else {
                             // swal("Error", "Credenciales incorrectas mierda fea :)", "error");
                             alert('Credenciales incorrectas');
@@ -70,7 +70,7 @@ var authadmin = new Vue({
                 alert('Debes llenar todos los campos');
             }
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);

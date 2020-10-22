@@ -54,13 +54,13 @@ const stock = new Vue({
             });
         },
         stockChart: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/loadChartSale')
+            axios.get('https://homesafe-sv.herokuapp.com/api/stock/loadChartSale')
                 .then(response => {
                     this.loadChart(response.data.popularProducts)
                 })
         },
         getAllStock: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/stock/allStock')
+            axios.get('https://homesafe-sv.herokuapp.com/api/stock/allStock')
                 .then(function(response) {
                     stock.stockChart = response.data.stock;
                 })
@@ -68,7 +68,7 @@ const stock = new Vue({
         // addStock es una funcion
         addStock: function() {
             var formData = stock.toFormData(stock.addStocks);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/stock/addStock', formData, {
+            axios.post('https://homesafe-sv.herokuapp.com/api/stock/addStock', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }

@@ -35,114 +35,114 @@ const singleProduct = new Vue({
         this.chargeComments();
     },
     methods: {
-        openModal: function(){
+        openModal: function() {
             $('#exampleModal').modal('open')
         },
-        selectstar: function(star){
+        selectstar: function(star) {
             this.sendParams.getstar = star;
         },
-        add: function(id, cantidad, imagen, nombre, precio){
+        add: function(id, cantidad, imagen, nombre, precio) {
             cart.addTocCart(id, cantidad, imagen, nombre, precio);
         },
         //Cargar los comentarios del producto y cambiar 
-        sendMessage: function(){
+        sendMessage: function() {
             comments.sendComment(this.commentary);
             comments.come = this.commentary;
         },
-        chargeComments: function(){
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/product/commentTest?p='+this.urlParam.secondaryId)
-            .then(response=>(
-                (this.allComments = response.data.comments),
-                (this.counterComments = this.allComments.length),
-                ($('#exampleModal').modal('hide'))
+        chargeComments: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/product/commentTest?p=' + this.urlParam.secondaryId)
+                .then(response => (
+                    (this.allComments = response.data.comments),
+                    (this.counterComments = this.allComments.length),
+                    ($('#exampleModal').modal('hide'))
                 ));
         },
-        changeToInf: function(){
+        changeToInf: function() {
             this.comments ? ((this.products = true), (this.comments = false)) : this.comments = true;
         },
-        changeToComments: function(){
+        changeToComments: function() {
             this.products ? ((this.comments = true), (this.products = false)) : this.products = true;
         },
-        getUrlParam: function () {
+        getUrlParam: function() {
             let params = new URLSearchParams(location.search);
             this.urlParam.id = params.get('p');
             this.urlParam.secondaryId = params.get('k');
         },
         //Este carga la cantidad de ordenes que se han hecho de ese mismo producto
-        getOrders: function () {
+        getOrders: function() {
             var formData = this.toFormData(this.urlParam);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/sale/countorders', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function (response) {
+            axios.post('https://homesafe-sv.herokuapp.com/api/sale/countorders', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function(response) {
                     singleProduct.orders = response.data.ordersDetail;
                 });
         },
         //Este metodo carga toda la informacion de los productos
-        getProductInformation: function () {
+        getProductInformation: function() {
             var formData = this.toFormData(this.urlParam);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/product/unique', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function (response) {
+            axios.post('https://homesafe-sv.herokuapp.com/api/product/unique', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function(response) {
                     singleProduct.productInformation = response.data.uniqueProduct;
                     singleProduct.loadDataProduct = false;
                     singleProduct.products = true;
                 });
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);
             }
             return form_data;
         },
-        deductSum: function () {
+        deductSum: function() {
             if (this.sum == 1) {
-                
+
             } else {
                 this.sum--;
             }
         },
         ////////////////////////////Enviar comentarios del producto////////////////////////////
-        sendComment: function(parameter){
+        sendComment: function(parameter) {
             comments.come = parameter;
             console.log(this.come);
             this.loadValidation();
         },
-        sendMessage: function(){
+        sendMessage: function() {
             var formData = this.toFormData(this.sendParams);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/review/sendreview', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function (response) {
-                     swal("Exito", "Comentario enviado.", "success");
-                        singleProduct.chargeComments();
-                        singleProduct.sendParams.com = "";
+            axios.post('https://homesafe-sv.herokuapp.com/api/review/sendreview', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function(response) {
+                    swal("Exito", "Comentario enviado.", "success");
+                    singleProduct.chargeComments();
+                    singleProduct.sendParams.com = "";
                 });
         },
-        val: function(){
+        val: function() {
             this.params.test.id_cliente != this.myParameter ? swal("Error", "No puedes comentar un producto que aún no has comprado.", "error") : this.sendMessage();
         },
-        loadValidation: function(){
+        loadValidation: function() {
             let params = new URLSearchParams(location.search);
             this.sendParams.idp = params.get('k');
             singleProduct.loaderComment = false;
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/review/send?p='+ this.sendParams.idp)
-            .then(response=>(
-                (this.params = response.data),
-                (singleProduct.loaderComment = true),
-                (this.myParameter = response.data.myId),
-                (this.val())
+            axios.get('https://homesafe-sv.herokuapp.com/api/review/send?p=' + this.sendParams.idp)
+                .then(response => (
+                    (this.params = response.data),
+                    (singleProduct.loaderComment = true),
+                    (this.myParameter = response.data.myId),
+                    (this.val())
                 ));
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);

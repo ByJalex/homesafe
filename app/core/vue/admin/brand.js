@@ -33,27 +33,27 @@ const brand = new Vue({
     },
 
     computed: {
-        filteredBrand: function () {
+        filteredBrand: function() {
             return this.allBrands.filter((a) => {
                 return a.nombre_m.match(this.searchBrand.toLowerCase());
             });
         }
     },
     methods: {
-        getAllBrands: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/brand/allbrands')
-                .then(function (response) {
+        getAllBrands: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/brand/allbrands')
+                .then(function(response) {
                     brand.allBrands = response.data.allbrands;
                 })
         },
-        addbrand: function () {
+        addbrand: function() {
             var formData = brand.toFormData(brand.addBrand);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/addbrand', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function (response) {
+            axios.post('https://homesafe-sv.herokuapp.com/api/brand/addbrand', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function(response) {
                     swal("Exito", "Agregado correctamente", "success");
                     brand.getAllBrands();
                     brand.addBrand.marca = '';
@@ -61,27 +61,27 @@ const brand = new Vue({
                     $('#addBrand').modal('hide');
                 });
         },
-        editbrand: async function (nombre, imagen, desc, id) {
+        editbrand: async function(nombre, imagen, desc, id) {
             brand.editMyBrand.marca = nombre;
             brand.editMyBrand.imagen = imagen;
             brand.editMyBrand.desc = desc;
             brand.editMyBrand.id = id;
         },
-        toFormData: function (obj) {
+        toFormData: function(obj) {
             var form_data = new FormData();
             for (var key in obj) {
                 form_data.append(key, obj[key]);
             }
             return form_data;
         },
-        updateBrand: function () {
+        updateBrand: function() {
             var formData = brand.toFormData(brand.editMyBrand);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/updatebrand', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function () {
+            axios.post('https://homesafe-sv.herokuapp.com/api/brand/updatebrand', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function() {
                     swal("Exito", "Actualizado correctamente", "success");
                     brand.getAllBrands();
                     brand.editMyBrand.marca = '';
@@ -92,24 +92,24 @@ const brand = new Vue({
                 });
         },
 
-        dBrand: function (id) {
+        dBrand: function(id) {
             brand.getIdBrand.id = id;
             console.log(id);
         },
-        deleteBrand: function () {
+        deleteBrand: function() {
             var formData = brand.toFormData(brand.getIdBrand);
-            axios.post('https://homesafe-sv.herokuapp.com/homesafe/api/brand/deletebrand', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(function () {
+            axios.post('https://homesafe-sv.herokuapp.com/api/brand/deletebrand', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then(function() {
                     swal("Exito", "Eliminado correctamente", "success");
                     brand.getAllBrands();
                     $('#deleteBrand').modal('hide');
                 });
         },
-        getPagination: function (number) {
+        getPagination: function(number) {
             brand.NUM_RESULTS = number;
         }
     },

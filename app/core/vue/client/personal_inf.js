@@ -37,7 +37,7 @@ const personal_inf = new Vue({
         },
         testSendData: function(a) {
             console.log(a)
-            window.open('https://homesafe-sv.herokuapp.com/homesafe/reportClient/generate_report?param=' + a, '_blank');
+            window.open('https://homesafe-sv.herokuapp.com/reportClient/generate_report?param=' + a, '_blank');
             //axios.get("https://homesafe-sv.herokuapp.com/api/data?parameter=" + a)
             //.then(response => {
             //
@@ -45,14 +45,14 @@ const personal_inf = new Vue({
         },
         //carga la informacion personal de usuario
         getUserInformation: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/auth/loggedinclient')
+            axios.get('https://homesafe-sv.herokuapp.com/api/auth/loggedinclient')
                 .then(response => (
                     (this.userInformation = response.data.userloggedin)
                 ))
         },
         //Muestra el numero de ordes por cliente logeado
         getOrderss: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/sale/myorders')
+            axios.get('https://homesafe-sv.herokuapp.com/api/sale/myorders')
                 .then(response => (
                     (this.orders = response.data.orders),
                     (console.log(response.data.orders))
@@ -60,13 +60,13 @@ const personal_inf = new Vue({
         },
         //Carga las ordenes perdientes
         getPendingOrders: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/sale/pendingorders')
+            axios.get('https://homesafe-sv.herokuapp.com/api/sale/pendingorders')
                 .then(response => (
                     (this.pendingorders = response.data.pending_orders)
                 ))
         },
         getShopedArticles: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/sale/articles')
+            axios.get('https://homesafe-sv.herokuapp.com/api/sale/articles')
                 .then(response => (
                     (this.articles = response.data.purchased_articles),
                     (this.counter = this.articles.length),
@@ -75,7 +75,7 @@ const personal_inf = new Vue({
         },
         //Metodo para cargar las orden correspondiente al usuario
         getOrders: function() {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/client/pedidosPorCliente')
+            axios.get('https://homesafe-sv.herokuapp.com/api/client/pedidosPorCliente')
                 .then(response => (
                     (this.OrdersClient = response.data.pedidosPorCliente),
                     (this.loaderOrders = false),
@@ -84,7 +84,7 @@ const personal_inf = new Vue({
         },
         //metodo para cargar el detelle de cada orden
         getDetailOrders: function(id) {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/client/detallePedidosPorCliente?id=' + id)
+            axios.get('https://homesafe-sv.herokuapp.com/api/client/detallePedidosPorCliente?id=' + id)
                 .then(response => (
                     (this.DetailOrder = response.data.DetallePedidosPorCliente),
                     (this.loaderDetailOrders = false)

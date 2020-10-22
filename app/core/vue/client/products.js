@@ -4,20 +4,20 @@ const product = new Vue({
         popularProducts: [],
         loaderProduct: true
     },
-    mounted: function () {
+    mounted: function() {
         this.getPopularProducts();
     },
     computed: {
 
     },
     methods: {
-        add: function(id, cantidad, imagen, nombre, precio){
+        add: function(id, cantidad, imagen, nombre, precio) {
             cart.addTocCart(id, cantidad, imagen, nombre, precio);
         },
         //esta funcion siver para cargar los productos mas populares en la tienda, los carga en Home
-        getPopularProducts: function () {
-            axios.get('https://homesafe-sv.herokuapp.com/homesafe/api/product/popular')
-                .then(function (response) {
+        getPopularProducts: function() {
+            axios.get('https://homesafe-sv.herokuapp.com/api/product/popular')
+                .then(function(response) {
                     product.popularProducts = response.data.popularProducts;
                     product.loaderProduct = false;
                 });
